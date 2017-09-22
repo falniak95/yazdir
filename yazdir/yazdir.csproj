@@ -99,6 +99,7 @@
     <Content Include="webSitesi\test\blog.html" />
     <Content Include="webSitesi\test\contact.html" />
     <Content Include="webSitesi\test\icons.html" />
+    <Content Include="webSitesi\test\images\logocuk.png" />
     <Content Include="webSitesi\test\index.html" />
     <Content Include="webSitesi\test\portfolio.html" />
     <Content Include="webSitesi\test\single.html" />
@@ -121,7 +122,6 @@
   <ItemGroup>
     <Folder Include="webSitesi\test\css\" />
     <Folder Include="webSitesi\test\fonts\" />
-    <Folder Include="webSitesi\test\images\" />
     <Folder Include="webSitesi\test\js\" />
   </ItemGroup>
   <PropertyGroup>
