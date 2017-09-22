@@ -95,9 +95,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="webSitesi\test\about.html" />
     <Content Include="webSitesi\test\blog.html" />
     <Content Include="webSitesi\test\contact.html" />
