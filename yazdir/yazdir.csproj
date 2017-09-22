@@ -98,6 +98,15 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="webSitesi\test\about.html" />
+    <Content Include="webSitesi\test\blog.html" />
+    <Content Include="webSitesi\test\contact.html" />
+    <Content Include="webSitesi\test\icons.html" />
+    <Content Include="webSitesi\test\index.html" />
+    <Content Include="webSitesi\test\portfolio.html" />
+    <Content Include="webSitesi\test\single.html" />
+    <Content Include="webSitesi\test\typography.html" />
+    <Content Include="webSitesi\test\w3layouts-License.txt" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -106,11 +115,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="HtmlPage1.html" />
+    <Content Include="webSitesi\HtmlPage1.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="webSitesi\test\css\" />
+    <Folder Include="webSitesi\test\fonts\" />
+    <Folder Include="webSitesi\test\images\" />
+    <Folder Include="webSitesi\test\js\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
