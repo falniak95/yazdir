@@ -101,6 +101,14 @@
     <Content Include="webSitesi\test\about.html" />
     <Content Include="webSitesi\test\blog.html" />
     <Content Include="webSitesi\test\contact.html" />
+    <Content Include="webSitesi\test\css\blog.css" />
+    <Content Include="webSitesi\test\css\bootstrap.css" />
+    <Content Include="webSitesi\test\css\chocolat.css" />
+    <Content Include="webSitesi\test\css\font-awesome.css" />
+    <Content Include="webSitesi\test\css\popuo-box.css" />
+    <Content Include="webSitesi\test\css\single.css" />
+    <Content Include="webSitesi\test\css\slicebox.css" />
+    <Content Include="webSitesi\test\css\style.css" />
     <Content Include="webSitesi\test\icons.html" />
     <Content Include="webSitesi\test\images\logocuk.png" />
     <Content Include="webSitesi\test\index.html" />
@@ -123,7 +131,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="webSitesi\test\css\" />
     <Folder Include="webSitesi\test\fonts\" />
     <Folder Include="webSitesi\test\js\" />
   </ItemGroup>
