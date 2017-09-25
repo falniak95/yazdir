@@ -22,13 +22,14 @@ namespace yazdir.webSitesi.test
                 connection.Open();
                 MySqlCommand command = new MySqlCommand();
                 command.Connection = connection;
-                command.CommandText = "insert into uye_Bireysel (userName,password,eMail) values ('"+kAdi.Value+"','"+password1.Value+"','"+mail.Value+"')";
+                command.CommandText = "insert into uye_Bireysel (userName,password,eMail,name,surname) values ('"+kAdi.Value+"','"+password1.Value+"','"+mail.Value+"','"+name.Value+"','"+surname.Value+"')";
                 command.ExecuteNonQuery();
                 connection.Close();
             }
             catch(Exception xe)
             {
                 Response.Write("<script>alert('"+xe.Message+"')</script>");
+                //Response.Redirect("http://www.google.com");
             }
         }
         protected void Page_Load(object sender, EventArgs e)

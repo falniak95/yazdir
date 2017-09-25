@@ -125,7 +125,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </div>
 
- 
 
 
 	<!-- Modal1 -->
@@ -174,8 +173,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<h3 class="agileinfo_sign">Üye Ol!</h3>
 						<div class="login-form">
                             <form id="girisler" runat="server">
-								<input type="text" runat="server" id="kAdi" name="name" placeholder="Kullanıcı Adı" class="kullaniciadi" required="">
+								<input type="text" runat="server" id="kAdi" name="userName" placeholder="Kullanıcı Adı" class="kullaniciadi" required="">
 								<input type="email" runat="server" id="mail" name="email" placeholder="E-mail" class="email">
+                                <input type="text" runat="server" id="name" name="name" placeholder="İsim"  required="">
+                                <input type="text" runat="server" id="surname" name="surname" placeholder="Soyisim"  required="">
 								<input type="password" runat="server"  name="password" id="password1" placeholder="Şifre" required="">
 								<input type="password" runat="server"  name="password" id="password2" placeholder="Şifre Tekrarı" required="">
                             
@@ -183,7 +184,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </form>
 								<%--<input type="submit" value="Gönder" id="signUpButton" onclick=""">--%>
 
-
+                            
 
 						</div>
 						<p><a href="#"> Üye olarak şartlarımızı kabul etmiş sayılırsın.</a></p>
