@@ -76,7 +76,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 			</div>
 			<ul class="agile_forms">
-				<li><a class="active" href="#" data-toggle="modal" data-target="#myModal2"> Giriş Yap</a> </li>
+				<li><a class="active" href="#" data-toggle="modal" data-target="#myModal2"> OTURUM AÇ </a> </li>
 				<li><a href="#" data-toggle="modal" data-target="#myModal3"> Kayıt Ol</a> </li>
                 <li><a href="#" data-toggle="modal"data-target="#kazanmayaBasla"> Kazanmaya Başla</a> </li>
 			</ul>
@@ -138,7 +138,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 
 					<div class="signin-form profile">
-						<h3 class="agileinfo_sign">Giriş Yap</h3>
+						<h3 class="agileinfo_sign">GIRIS YAP VE ISE BASLA</h3>
 						<div class="login-form">
 							<form action="#" method="post">
                                
@@ -147,7 +147,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<input type="password" id="grsPassword" runat="server" name="password" placeholder="Şifre" required="">
 								<div class="tp">
 
-									<asp:Button ID="grsButon" runat="server" Text="Giriş Yap" OnClick="grsbuton" />
+									<asp:Button ID="grsButon" runat="server" Text="OTURUM AÇ" OnClick="grsbuton" />
                                     
 								</div>
                                     </form>
@@ -255,18 +255,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="banner-bottom">
 		<div class="container">
 			<div class="mid_agile_bannner_top_info">
-				<h2>Let’s made Your own Business</h2>
+				<h2>Serbest çalışanlarla daha fazlasını yapın</h2>
 				<div class="heading-underline">
 					<div class="h-u1"></div>
 					<div class="h-u2"></div>
 					<div class="h-u3"></div>
 					<div class="clearfix"></div>
 				</div>
-				<p>Lorem ipsum dolor sit amet, Lorem ipsum Lorem ipsum.Integer varius est vitae iaculis suscipit. Integer sed rutrum lectus.</p>
+				<p>Takımınız için mükemmel biri ile çalışın.</p>
 			</div>
 			<div class="col-md-6 agileits_banner_bottom_left">
-				<h3>welcome to <span>Treasurer</span></h3>
-				<p class="w3l_para">Curabitur nec purus eget urna pulvinar placerat. Integer varius est vitae iaculis suscipit. Integer sed rutrum lectus.</p>
+				<h3>welcome to <span> YAZZDIR</span></h3>
+				<p class="w3l_para">Ayrıcalıklarla Dolu YAZZDIR Dünyası Seni Bekliyor.</p>
 				<div class="w3l_social_icons">
 					<div class="w3l_social_icon_grid">
 						<div class="w3l_social_icon_gridl w3_facebook">
