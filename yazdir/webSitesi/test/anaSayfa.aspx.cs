@@ -72,7 +72,7 @@ namespace yazdir.webSitesi.test
             catch (Exception xe)
             {
                 Response.Write("<script>alert('" + xe.Message + "')</script>");
-                //Response.Redirect("http://www.google.com");
+                
             }
 
 
