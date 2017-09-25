@@ -54,13 +54,16 @@ namespace yazdir.webSitesi.test
                 connection.Open();
                 MySqlCommand command = new MySqlCommand();
                 command.Connection = connection;
-                command.CommandText = "select * from uye_Bireysel where eMail='"+grsMail+"'";
+                command.CommandText = "select * from uye_Bireysel where eMail='"+grsMail.Value+"'";
                 MySqlDataReader dataReader = command.ExecuteReader();
                 while(dataReader.Read())
                 {
                     if(dataReader[5].ToString()==grsPassword.Value)
                     {
-                        Response.Redirect("http://www.google.com");
+                        Session["on_eMail"] = grsMail.Value;
+                        Session["on_password"] = grsPassword.Value;
+                        Response.Redirect("/webSitesi/test/main.aspx");
+                        
                     }
                     else
                     {

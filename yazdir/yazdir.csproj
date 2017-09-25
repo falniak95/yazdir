@@ -159,6 +159,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Service.asmx" />
     <Content Include="webSitesi\test\anaSayfa.aspx" />
+    <Content Include="webSitesi\test\main.aspx" />
     <Content Include="webSitesi\test\yeniSayfa.aspx" />
     <Content Include="webSitesi\uyeEkle.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -207,7 +208,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="webSitesi\HtmlPage1.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -229,8 +229,13 @@
     <Compile Include="webSitesi\test\anaSayfa.aspx.designer.cs">
       <DependentUpon>anaSayfa.aspx</DependentUpon>
     </Compile>
-    <Compile Include="webSitesi\test\arkaPlan.cs" />
-    <Compile Include="webSitesi\test\indexController.cs" />
+    <Compile Include="webSitesi\test\main.aspx.cs">
+      <DependentUpon>main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webSitesi\test\main.aspx.designer.cs">
+      <DependentUpon>main.aspx</DependentUpon>
+    </Compile>
     <Compile Include="webSitesi\test\yeniSayfa.aspx.cs">
       <DependentUpon>yeniSayfa.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
