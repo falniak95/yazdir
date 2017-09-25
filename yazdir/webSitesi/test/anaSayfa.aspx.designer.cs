@@ -13,13 +13,40 @@ namespace yazdir.webSitesi.test {
     public partial class anaSayfa {
         
         /// <summary>
-        /// girisler control.
+        /// esasForm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm girisler;
+        protected global::System.Web.UI.HtmlControls.HtmlForm esasForm;
+        
+        /// <summary>
+        /// grsMail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl grsMail;
+        
+        /// <summary>
+        /// grsPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword grsPassword;
+        
+        /// <summary>
+        /// grs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button grs;
         
         /// <summary>
         /// kAdi control.

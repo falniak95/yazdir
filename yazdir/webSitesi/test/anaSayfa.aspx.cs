@@ -14,9 +14,10 @@ namespace yazdir.webSitesi.test
 
 
         public MySqlConnection connection;
+        
         public void register(object sender, EventArgs e)
         {
-            connection = new MySqlConnection("Server=furkanalniak.com;Database=furkanal_yazdir;Uid=furkanal_admin;Pwd='fk2017';");
+           connection = new MySqlConnection("Server=furkanalniak.com;Database=furkanal_yazdir;Uid=furkanal_admin;Pwd='fk2017';");
             try
             {
                 connection.Open();
@@ -42,5 +43,28 @@ namespace yazdir.webSitesi.test
             Response.Write("<script>alert('Furkan')</script>");
            
         }
+
+        public void grsbuton(object sender, EventArgs e)
+        {
+            
+            connection = new MySqlConnection("Server=furkanalniak.com;Database=furkanal_yazdir;Uid=furkanal_admin;Pwd='fk2017';");
+               connection.Open();
+            
+            MySqlCommand komut = new MySqlCommand();
+            komut.CommandText= "select * from uye where eMail='" + grsMail.Value.Trim() + "' and password='" + grsPassword.Value.Trim() + "'";
+              MySqlDataReader dr = komut.ExecuteReader();
+
+            if (dr.Read())
+            {
+                //  MessageBox.Show("Hoşgeldiniz");
+                Response.Write("<script>alert(Giriş yapıldı)</script>");
+            }
+            else
+            {
+                Response.Write("<script>alert(Giriş yapılamadı)</script>");
+                // MessageBox.Show("Hatalı Giriş");
+            }
+                connection.Close();
+         }
     }
 }
