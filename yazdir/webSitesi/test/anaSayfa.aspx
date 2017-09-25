@@ -1,9 +1,5 @@
-﻿<!--
-author: W3layouts
-author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="anaSayfa.aspx.cs" Inherits="yazdir.webSitesi.test.anaSayfa" %>
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -38,9 +34,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 
 <body>
+   
+
 	<!-- banner -->
 	<div class="agileits_top_menu">
+        
 
+           
       <!--<div class="ustBar">
 		<div class="w3l_header_left">
 			<ul>
@@ -102,27 +102,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 		<div class="clearfix"> </div>
 	</div>
-
+    
     <!-- Kazanmaya başla sayfası.-->
     <div class="modal fade" id="kazanmayaBasla" tabindex="-1" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="kazanmayaBasla">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button type="button" class="close" data-dismiss="modal"  runat="server" onclick="tikladi">&times;</button>
                     
                    <h3><center>Kazanmaya Başla</center> </h3>
                     <br>
                     <span><center>Tasarlanan bu sistem ile kazanmak çok kolay. Tek yapman gereken üye olup kurumların ya da kişilerin verdiği projelerde görev almak. Eğer öğrenciysen seni de düşündük. Küçük boyutlu projelere katılabilir hatta ödevinde yaşadığın sorunları ücretsiz çözüme ulaştırabilirsin.</center></span>
                     </br>
-                    <input type="submit" data-dismiss="modal" value="Tamam!"onclick="arkaPlan.testMetodu">
-
+                    <input type="submit" id="tmButton" data-dismiss="modal" value="Tamam!"/>
+                    <%--<form id="form1" runat="server">
+                    <asp:Button ID="Button1" Text="Button" runat="server" OnClick="tikladi"  />
+                        </form>--%>
                 </div>
                 
             </div>
         </div>
     </div>
 
+ 
 
 
 	<!-- Modal1 -->
@@ -137,7 +140,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<h3 class="agileinfo_sign">Giriş Yap</h3>
 						<div class="login-form">
 							<form action="#" method="post">
-								<input type="email" name="email" placeholder="Kullanıcı Adı" id="" required="">
+                               
+								<input type="email" id="furkanMail" name="email" placeholder="Kullanıcı Adı"  required="">
 								<input type="password" name="password" placeholder="Şifre" required="">
 								<div class="tp">
 									<input type="submit" value="Giriş Yap">
@@ -169,12 +173,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="signin-form profile">
 						<h3 class="agileinfo_sign">Üye Ol!</h3>
 						<div class="login-form">
-								<input type="text" name="name" placeholder="Kullanıcı Adı" class="kullaniciadi" required="">
-								<input type="email" name="email" placeholder="E-mail" class="email">
-								<input type="password" name="password" id="password1" placeholder="Şifre" required="">
-								<input type="password" name="password" id="password2" placeholder="Şifre Tekrarı" required="">
+                            <form id="girisler" runat="server">
+								<input type="text" runat="server" id="kAdi" name="name" placeholder="Kullanıcı Adı" class="kullaniciadi" required="">
+								<input type="email" runat="server" id="mail" name="email" placeholder="E-mail" class="email">
+								<input type="password" runat="server"  name="password" id="password1" placeholder="Şifre" required="">
+								<input type="password" runat="server"  name="password" id="password2" placeholder="Şifre Tekrarı" required="">
+                            
+                                <asp:Button ID="gndr" runat="server" Text="Kayıt Ol" OnClick="register" />
+                            </form>
+								<%--<input type="submit" value="Gönder" id="signUpButton" onclick=""">--%>
 
-								<input type="submit" value="Gönder" id="signUpButton">
+
+
 						</div>
 						<p><a href="#"> Üye olarak şartlarımızı kabul etmiş sayılırsın.</a></p>
 					</div>
@@ -937,7 +947,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			var pass2 = document.getElementById("password2").value;
 			var pass1 = document.getElementById("password1").value;
 			if (pass1 != pass2)
-				document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+				document.getElementById("password2").setCustomValidity("Şifreler uyuşmuyor.");
 			else
 				document.getElementById("password2").setCustomValidity('');
 			//empty string means no validation error
