@@ -41,7 +41,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-				<h1><a class="navbar-brand" href="index.aspx"><img src="images/logocuk.png" /></a></h1>
+				<h1><a class="navbar-brand" href="anaSayfa.aspx"><img src="images/logocuk.png" /></a></h1>
 
 				</div>
 			    <ul class="agile_forms">
