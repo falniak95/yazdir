@@ -146,6 +146,8 @@ input[type="submit"],input[type="reset"],a,.w3ls_team_grid1_pos ul li{
 }
 .categories{
 	margin:3em 0;
+     margin-right:65%;
+     margin-left:1%;
 }
 .posts,.categories,.tags1{
     padding: 1.5em;
@@ -163,6 +165,7 @@ input[type="submit"],input[type="reset"],a,.w3ls_team_grid1_pos ul li{
 .categories ul li i,.single-left2-left ul li i{
     padding-right: 1.5em;
 	color:#00a98f;
+
 }
 .categories ul li a,.single-left2-left ul li a{
 	color:#555;
@@ -285,6 +288,7 @@ nav.paging1{
 	.categories h3:after, .posts h3:after, .tags1 h3:after, .comments h3:after, .leave-coment-form h3:after {
 		width: 45%;
 		left: 30%;
+       
 	}
 	.event-left1-right {
 		margin: 0;
@@ -294,6 +298,7 @@ nav.paging1{
 	}
 	.categories {
 		margin: 2em 0;
+
 	}
 }
 @media (max-width:991px){
@@ -348,6 +353,7 @@ nav.paging1{
 	}
 	.categories h3:after, .posts h3:after, .tags1 h3:after, .comments h3:after, .leave-coment-form h3:after {
 		left: 40%;
+
 	}
 }
 @media (max-width:414px){
@@ -406,5 +412,75 @@ nav.paging1{
 	.categories h3:after, .posts h3:after, .tags1 h3:after, .comments h3:after, .leave-coment-form h3:after {
 		left: 5%;
 	}
-	
+
+            /*
+                tablo css
+
+            */
+            
+.helloBox{
+	margin:3em 0;
 }
+.posts,.helloBox,.tags1{
+    padding: 1.5em;
+    border: 2px solid #DBDBDB;
+}
+.helloBox ul li,.single-left2-left ul li{
+	list-style-type: none;
+    display: block;
+    margin-bottom: 1em;
+	font-size:14px;
+}
+.helloBox ul li i,.single-left2-left ul li i{
+    padding-right: 1.5em;
+	color:#00a98f;
+}
+.helloBox ul li a,.single-left2-left ul li a{
+	color:#555;
+	text-decoration:none;
+}
+.helloBox ul li a:hover,.single-left2-left ul li a:hover{
+	color:#00a98f;
+}
+.helloBox h3,.posts h3,.tags1 h3,.comments h3,.leave-coment-form h3{
+    font-size: 1.4em;
+    color: #212121;
+    position: relative;
+    letter-spacing: 1px;
+}
+.helloBox ul{
+	padding:2em 0 0;
+}
+.helloBox h3, .posts h3, .tags1 h3, .comments h3, .leave-coment-form h3 {
+		font-size: 1.2em;
+	}
+	.helloBox h3:after, .posts h3:after, .tags1 h3:after, .comments h3:after, .leave-coment-form h3:after {
+		width: 45%;
+		left: 30%;
+	}
+
+	.helloBox {
+		margin: 2em 0;
+	}
+    .helloBox h3:after, .posts h3:after, .tags1 h3:after, .comments h3:after, .leave-coment-form h3:after {
+		left: 50%;
+	}
+    .helloBox h3:after, .posts h3:after, .tags1 h3:after, .comments h3:after, .leave-coment-form h3:after {
+		left: 40%;
+	}
+	.helloBox h3:after, .posts h3:after, .tags1 h3:after, .comments h3:after, .leave-coment-form h3:after {
+		left: 30%;
+	}
+    	.helloBox h3:after, .posts h3:after, .tags1 h3:after, .comments h3:after, .leave-coment-form h3:after {
+		left: 20%;
+	}
+        	.posts, .helloBox, .tags1 {
+		padding: 1em;
+	}
+	.helloBox h3:after, .posts h3:after, .tags1 h3:after, .comments h3:after, .leave-coment-form h3:after {
+		left: 5%;
+	}
+            
+	}
+}
+	
