@@ -27,6 +27,28 @@ ul,label{
 body a:hover{
 	text-decoration:none;
 }
+
+
+
+#tmButton
+	-webkit-transition: 0.5s ease-in;
+    -moz-transition: 0.5s ease-in;
+    -ms-transition: 0.5s ease-in;
+    -o-transition: 0.5s ease-in;
+    transition:0.5s ease-in;
+}
+/*-- header --*/
+#tmButton
+	transition: .5s ease-in;
+	-webkit-transition: .5s ease-in;
+	-moz-transition: .5s ease-in;
+	-o-transition: .5s ease-in;
+	-ms-transition: .5s ease-in;
+}
+
+
+
+
 input[type="submit"],input[type="reset"],a,.w3ls_team_grid1_pos ul li{
 	-webkit-transition: 0.5s ease-in;
     -moz-transition: 0.5s ease-in;
