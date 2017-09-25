@@ -13,13 +13,13 @@ namespace yazdir.webSitesi.test {
     public partial class anaSayfa {
         
         /// <summary>
-        /// esasForm control.
+        /// giris control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm esasForm;
+        protected global::System.Web.UI.HtmlControls.HtmlForm giris;
         
         /// <summary>
         /// grsMail control.
@@ -40,13 +40,13 @@ namespace yazdir.webSitesi.test {
         protected global::System.Web.UI.HtmlControls.HtmlInputPassword grsPassword;
         
         /// <summary>
-        /// grs control.
+        /// grsButon control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button grs;
+        protected global::System.Web.UI.WebControls.Button grsButon;
         
         /// <summary>
         /// kAdi control.

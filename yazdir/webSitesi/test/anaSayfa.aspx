@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="anaSayfa.aspx.cs" Inherits="yazdir.webSitesi.test.anaSayfa" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" enableEventValidation="false" CodeBehind="anaSayfa.aspx.cs" Inherits="yazdir.webSitesi.test.anaSayfa" %>
 
 <!DOCTYPE html>
 <html lang="zxx">
@@ -35,7 +35,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <body>
    
-
+    <div class="tamami">
+        
+        <form id="giris" runat="server" enableEventValidation="false">
 	<!-- banner -->
 	<div class="agileits_top_menu">
         
@@ -140,12 +142,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="login-form">
 							<form action="#" method="post">
                                
-								<input type="email" id="furkanMail" name="email" placeholder="Kullanıcı Adı"  required="">
-								<input type="password" name="password" placeholder="Şifre" required="">
+                                
+								<input type="email" id="grsMail" runat="server" name="email" placeholder="Kullanıcı Adı"  required="">
+								<input type="password" id="grsPassword" runat="server" name="password" placeholder="Şifre" required="">
 								<div class="tp">
-									<input type="submit" value="Giriş Yap">
+
+									<asp:Button ID="grsButon" runat="server" Text="Giriş Yap" OnClick="grsbuton" />
+                                    
 								</div>
-							</form>
+                                    </form>
+							
 						</div>
 						<div class="login-social-grids">
 							<ul>
@@ -172,7 +178,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="signin-form profile">
 						<h3 class="agileinfo_sign">Üye Ol!</h3>
 						<div class="login-form">
-                            <form id="girisler" runat="server">
+                           <%-- <form id="girisler" runat="server">--%>
 								<input type="text" runat="server" id="kAdi" name="userName" placeholder="Kullanıcı Adı" class="kullaniciadi" required="">
 								<input type="email" runat="server" id="mail" name="email" placeholder="E-mail" class="email">
                                 <input type="text" runat="server" id="name" name="name" placeholder="İsim"  required="">
@@ -181,7 +187,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<input type="password" runat="server"  name="password" id="password2" placeholder="Şifre Tekrarı" required="">
                             
                                 <asp:Button ID="gndr" runat="server" Text="Kayıt Ol" OnClick="register" />
-                            </form>
+                          <%--  </form>--%>
 								<%--<input type="submit" value="Gönder" id="signUpButton" onclick=""">--%>
 
                             
@@ -590,7 +596,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 		</div>
 	</div>
-	</div>
+	
 	<!-- //choose-us -->
 
 	<!-- News -->
@@ -932,6 +938,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 	</div>
+            </form>
+    </div>
+  
 	<!-- //footer -->
 	<!-- menu -->
 	<!-- js -->
