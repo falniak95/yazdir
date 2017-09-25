@@ -262,7 +262,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="h-u3"></div>
 					<div class="clearfix"></div>
 				</div>
-				<p>Takımınız için mükemmel biri ile çalışın</p>
+				<p>Takımınız için mükemmel biri ile çalışın.</p>
 			</div>
 			<div class="col-md-6 agileits_banner_bottom_left">
 				<h3>welcome to <span> YAZZDIR</span></h3>
