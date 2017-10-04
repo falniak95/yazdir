@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" enableEventValidation="false" CodeBehind="anaSayfa.aspx.cs" Inherits="yazdir.webSitesi.test.anaSayfa" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true"   enableEventValidation="false" CodeBehind="anaSayfa.aspx.cs" Inherits="yazdir.webSitesi.test.anaSayfa" %>
 
 <!DOCTYPE html>
 <html lang="zxx">
@@ -35,9 +35,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <body>
    
-    <div class="tamami">
+    <div class="tamami" >
         
-        <form id="giris" runat="server" enableEventValidation="false">
+        <form id="giris" runat="server">
 	<!-- banner -->
 	<div class="agileits_top_menu">
         
@@ -185,8 +185,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <input type="text" runat="server" id="surname" name="surname" placeholder="Soyisim"  required="">
 								<input type="password" runat="server"  name="password" id="password1" placeholder="Şifre" required="">
 								<input type="password" runat="server"  name="password" id="password2" placeholder="Şifre Tekrarı" required="">
-                            
-                                <asp:Button ID="gndr" runat="server" Text="Kayıt Ol" OnClick="register" />
+                                 <asp:ScriptManager runat="server"></asp:ScriptManager>
+                                <asp:Button ID="tamamla" runat="server" OnClick="registerNow" Text="Tamamla!" />
+                                      
                           <%--  </form>--%>
 								<%--<input type="submit" value="Gönder" id="signUpButton" onclick=""">--%>
 

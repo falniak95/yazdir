@@ -103,12 +103,12 @@ namespace yazdir.webSitesi.test {
         protected global::System.Web.UI.HtmlControls.HtmlInputPassword password2;
         
         /// <summary>
-        /// gndr control.
+        /// tamamla control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button gndr;
+        protected global::System.Web.UI.WebControls.Button tamamla;
     }
 }

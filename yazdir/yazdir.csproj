@@ -229,6 +229,7 @@
     <Compile Include="webSitesi\test\anaSayfa.aspx.designer.cs">
       <DependentUpon>anaSayfa.aspx</DependentUpon>
     </Compile>
+    <Compile Include="webSitesi\test\Libraries\databaseConnection.cs" />
     <Compile Include="webSitesi\test\main.aspx.cs">
       <DependentUpon>main.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
