@@ -14,25 +14,27 @@ namespace yazdir.webSitesi.test
 
 
         public MySqlConnection connection;
-        
+
         public void register(object sender, EventArgs e)
         {
-           connection = new MySqlConnection("Server=furkanalniak.com;Database=furkanal_yazdir;Uid=furkanal_admin;Pwd='fk2017';");
+
+
+            connection = new MySqlConnection("Server=furkanalniak.com;Database=furkanal_yazdir;Uid=furkanal_admin;Pwd='fk2017';");
             try
             {
                 connection.Open();
                 MySqlCommand command = new MySqlCommand();
                 command.Connection = connection;
-                command.CommandText = "insert into uye_Bireysel (userName,password,eMail,name,surname) values ('"+kAdi.Value+"','"+password1.Value+"','"+mail.Value+"','"+name.Value+"','"+surname.Value+"')";
+                command.CommandText = "insert into uye_Bireysel (userName,password,eMail,name,surname) values ('" + kAdi.Value + "','" + password1.Value + "','" + mail.Value + "','" + name.Value + "','" + surname.Value + "')";
                 command.ExecuteNonQuery();
                 connection.Close();
             }
-            catch(Exception xe)
+            catch (Exception xe)
             {
-                Response.Write("<script>alert('"+xe.Message+"')</script>");
+                Response.Write("<script>alert('" + xe.Message + "')</script>");
                 //Response.Redirect("http://www.google.com");
             }
-        }
+        } 
         protected void Page_Load(object sender, EventArgs e)
         {
 
