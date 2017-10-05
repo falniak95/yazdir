@@ -40,6 +40,33 @@ namespace yazdir.webSitesi.test {
         protected global::System.Web.UI.HtmlControls.HtmlAnchor registerButtonTab;
         
         /// <summary>
+        /// kazanmayaBaslaTab control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor kazanmayaBaslaTab;
+        
+        /// <summary>
+        /// anaSayfaTab control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor anaSayfaTab;
+        
+        /// <summary>
+        /// oturumuKapatTab control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor oturumuKapatTab;
+        
+        /// <summary>
         /// grsMail control.
         /// </summary>
         /// <remarks>

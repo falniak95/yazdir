@@ -16,6 +16,16 @@ namespace yazdir.webSitesi.test
         string[] dizi = new string[] { "furkan", "kahraman", "emre", "ali", "tuncer", "kadir", "nuri", "bahadır", "test", "deneme", "e ticaret", "ödevi" };
         protected void Page_Load(object sender, EventArgs e)
         {
+            try
+            {
+                if (Session["on_eMail"].ToString() == "" || Session["on_eMail"].ToString() == null)
+                    Response.Redirect("/websitesi/test/404.html");
+            }
+            catch
+            {
+                Response.Redirect("/websitesi/test/404.html");
+            }
+
             selamlama.InnerText = "Merhaba " + Session["on_eMail"];
             Literal1 = new Literal();
             Literal1.Text = "";

@@ -60,11 +60,16 @@ namespace yazdir.webSitesi.test
                 {
                     logInButtonTab.Visible = false;
                     registerButtonTab.Visible = false;
+                    kazanmayaBaslaTab.Visible = false;
+                    //
+
                 }
                 else
                 {
                     logInButtonTab.Visible = true;
                     registerButtonTab.Visible = true;
+                    kazanmayaBaslaTab.Visible = true;
+                    //
                 }
             }
             catch

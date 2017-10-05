@@ -160,7 +160,9 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Service.asmx" />
+    <Content Include="webSitesi\test\404.html" />
     <Content Include="webSitesi\test\anaSayfa.aspx" />
+    <Content Include="webSitesi\test\images\404.png" />
     <Content Include="webSitesi\test\main.aspx" />
     <Content Include="webSitesi\test\yeniSayfa.aspx" />
     <Content Include="webSitesi\uyeEkle.aspx" />

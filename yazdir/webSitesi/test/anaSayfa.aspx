@@ -186,7 +186,9 @@ return (key == 8 || key == 13);
                     <ul class="agile_forms">
                         <li><a class="active" id="logInButtonTab" runat="server" href="#" data-toggle="modal" data-target="#myModal2">OTURUM AÇ </a></li>
                         <li><a class="active" id="registerButtonTab" runat="server" href="#" data-toggle="modal" data-target="#myModal3">Kayıt Ol</a> </li>
-                        <li><a href="#" data-toggle="modal" data-target="#kazanmayaBasla">Kazanmaya Başla</a> </li>
+                        <li><a href="#" id="kazanmayaBaslaTab" runat="server" data-toggle="modal" data-target="#kazanmayaBasla">Kazanmaya Başla</a> </li>
+                        <li><a href="/webSitesi/test/main.aspx" id="anaSayfaTab" visible="false" runat="server" data-toggle="modal" >Ana Sayfa</a> </li>
+                        <li><a href="#" id="oturumuKapatTab" visible="false" runat="server" data-toggle="modal" >Oturumu Kapat</a> </li>
                     </ul>
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
