@@ -3,18 +3,91 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace yazdir.webSitesi.test.Libraries
 {
     public class databaseConnection
     {
-        MySqlConnection connection = new MySqlConnection("Server=furkanalniak.com;Database=furkanal_yazdir;Uid=furkanal_admin;Pwd='fk2017';");
+        MySqlConnection connection = new MySqlConnection("Server=furkanalniak.com;Database=furkanal_yazdir;Convert Zero Datetime=True;Uid=furkanal_admin;Pwd='fk2017';");
 
-        databaseConnection()
+        public databaseConnection()
         {
 
         }
+        public int totalCount;
+        public string[] jobType, jobHeader, jobPrice, jobDate, jobLevel;
+        public string[] getJobListID()
+        {
+            string[] idList;
+            MySqlCommand countCommand = new MySqlCommand("select COUNT(ad_ownerCompany) from isler", connection);
+            openConnection();
+            totalCount = Convert.ToInt16(countCommand.ExecuteScalar());
+            idList = new string[totalCount];
+            jobType= new string[totalCount];
+            jobHeader= new string[totalCount];
+            jobPrice= new string[totalCount];
+            jobDate= new string[totalCount];
+            jobLevel= new string[totalCount];
+            MySqlCommand command = new MySqlCommand();
+            command.CommandText = "select * from isler";
+            command.Connection = connection;
+            MySqlDataReader dataRead = command.ExecuteReader();
+            int count = 0;
+            while(dataRead.Read())
+            {
+                idList[count] = dataRead["ad_ownerCompany"].ToString();
+                jobType[count] = dataRead["ad_jobType"].ToString();
+                jobHeader[count] = dataRead["ad_header"].ToString();
+                jobPrice[count]= dataRead["ad_price"].ToString();
+                jobDate[count] = dataRead["ad_date"].ToString();
+                jobLevel[count] = dataRead["ad_level"].ToString();
+                count++;
+            }
+            closeConnection();
 
+            return idList;
+        }
+        public string[] getCompanyInfo(int comingId)
+        {
+            string[] data = new string[8];
+            MySqlCommand command = new MySqlCommand();
+            command.Connection = connection;
+            command.CommandText = "select * from uye_Kurumsal where id="+comingId;
+            openConnection();
+            MySqlDataReader reader = command.ExecuteReader();
+            while(reader.Read())
+            {
+                data[0] = reader["id"].ToString();
+                data[1] = reader["vergiNo"].ToString();
+                data[2] = reader["comName"].ToString();
+                data[3]= reader["comNo"].ToString();
+                data[4] = reader["comSector"].ToString();
+                data[5]= reader["comCity"].ToString();
+                data[6]= reader["comAdress"].ToString();
+                data[7] = reader["comLogo"].ToString();
+            }
+            closeConnection();
+
+            return data;
+        }
+       
+        public DataSet getJobs()
+        {
+            DataSet _dataSet = new DataSet();
+            MySqlCommand command = new MySqlCommand();
+            command.CommandText = "select * from isler";
+            command.Connection = connection;
+            openConnection();
+            DataTable dataT = new DataTable();
+            _dataSet.Tables.Add(dataT);
+            MySqlDataAdapter link = new MySqlDataAdapter(command);
+            link.Fill(dataT);
+            closeConnection();
+
+            return _dataSet;
+        }
         public void openConnection()
         {
             if (connection.State == System.Data.ConnectionState.Closed)
