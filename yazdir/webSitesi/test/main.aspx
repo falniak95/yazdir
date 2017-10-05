@@ -5,9 +5,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>YAZZDIR E-Ticaret</title>
+  
+       <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
 <meta name="keywords" content="Treasurer Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
@@ -142,14 +149,24 @@ return (key == 8 || key == 13);
 				</div>
 			    <ul class="agile_forms">
                     <li class="dropdown">
-								<a href="#" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown">Short Codes <b class="fa fa-caret-down"></b></a>
+								<a href="#" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown">Profil <b class="fa fa-caret-down"></b></a>
+                     
+
+
+
+
 								<ul class="dropdown-menu agile_short_dropdown">
 									<li><a href="icons.html">Web Icons</a></li>
 									<li><a href="typography.html">Typography</a></li>
 								</ul>
 							</li>
-					<li><a class="active" href="#" data-toggle="modal" data-target="#myModal2"> Sign In</a> </li>
-					<li><a href="#" data-toggle="modal" data-target="#myModal3"> Sign Up</a> </li>
+					<li><a class="active" runat="server" id="ozluk" href="#" data-toggle="modal" data-target="#myModal2"> Mesajlar</a> </li>
+                   
+
+
+                     <li><a class="active" href="#" data-toggle="modal" data-target="#bnmModal">Benim Modal </a></li>
+
+					<li><a href="#" data-toggle="modal" data-target="#myModal3">Çıkış</a> </li>
 				</ul>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
@@ -177,6 +194,62 @@ return (key == 8 || key == 13);
 	  <div class="clearfix"> </div> 
     </div> 
         <div class="container">
+
+
+
+            <!-- burdan itibaren-->
+                     
+               
+
+   <div class="modal fade" id="bnmModal" tabindex="-1" role="dialog">
+                 
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                            <div class="signin-form profile">
+                                <h3 class="agileinfo_sign">GIRIS YAP VE ISE BASLA</h3>
+                                <div class="login-form">
+                                    </div>
+
+
+                                        <input type="email" id="grsMail" runat="server" name="email" placeholder="Kullanıcı Adı" required="">
+                                        <input type="password" id="grsPassword" runat="server" name="password" placeholder="Şifre" required="">
+                                      
+                                    
+                                </div>
+
+                            <%--<div class="login-social-grids">
+							<ul>
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-rss"></i></a></li>
+							</ul>
+						</div>--%>
+                                <p><a href="#" data-toggle="modal" data-target="#myModal3">Hesabın yok mu?</a></p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                  
+<!-- buraya kadar silmem gerekebilir-->
+
+
+
+
+
+
+
+
+
+
+
+
             <div class="row">
                 <div class="col-md-5">
         <div class="categories w3ls-categories" >

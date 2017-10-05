@@ -4,12 +4,18 @@
 <html lang="zxx">
 
 <head>
+
+
+
+
+
+
     <script language="C#" type="text/C#" runat="server">
     public void kahraman(object s, EventArgs e) {
 	ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Merhaba ben çalıştım.')", true);
 
 
-
+            
 
 }
 
