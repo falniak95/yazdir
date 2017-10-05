@@ -12,12 +12,16 @@ namespace yazdir.webSitesi
         protected void Page_Load(object sender, EventArgs e)
         {
             //VERILERI ALACUZ
-            Response.Write("Kullanıcı adım"+Request.QueryString["kullaniciadi"] + "\n");
+            Response.Write("Kullanıcı adım" + Request.QueryString["kullaniciadi"] + "\n");
             Response.Write(Request.QueryString["email"] + "\n");
             Response.Write(Request.QueryString["password1"] + "\n");
             Response.Write(Request.QueryString["password2"] + "\n");
 
 
+        }
+        public void qaq(object sender, EventArgs e)
+        {
+            Response.Redirect("http://furkanalniak.com");
         }
     }
 }

@@ -7,34 +7,54 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using MySql.Data.MySqlClient;
 using MySql.Data;
+
 namespace yazdir.webSitesi.test
 {
     public partial class anaSayfa : System.Web.UI.Page
     {
-
+        public anaSayfa()
+        {
+           // registerPageButton.Click += registerNow;
+        }
+        
+       
 
         public MySqlConnection connection;
+        public void deneme(object sender,EventArgs e)
+        {
+            Response.Write("<script>alert('selamun aleyküm')</script>");
+        }
         
         public void registerNow(object sender, EventArgs e)
         {
-            connection = new MySqlConnection("Server=furkanalniak.com;Database=furkanal_yazdir;Uid=furkanal_admin;Pwd='fk2017';");
-            try
-            {
-                connection.Open();
-                MySqlCommand command = new MySqlCommand();
-                command.Connection = connection;
-                command.CommandText = "insert into uye_Bireysel (userName,password,eMail,name,surname) values ('" + kAdi.Value + "','" + password1.Value + "','" + mail.Value + "','" + name.Value + "','" + surname.Value + "')";
-                command.ExecuteNonQuery();
-                connection.Close();
+             connection = new MySqlConnection("Server=furkanalniak.com;Database=furkanal_yazdir;Uid=furkanal_admin;Pwd='fk2017';");
+             try
+             {
+                if (kAdi.Value != "" && mail.Value != "" && name.Value != "" && surname.Value != "")
+                {
+                    connection.Open();
+                    MySqlCommand command = new MySqlCommand();
+                    command.Connection = connection;
+                    command.CommandText = "insert into uye_Bireysel (userName,password,eMail,name,surname) values ('" + kAdi.Value + "','" + password1.Value + "','" + mail.Value + "','" + name.Value + "','" + surname.Value + "')";
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                    Response.Write("<script>alert('Kayit tamamlandi.')</script>");
+                }
+                else
+                {
+                    Response.Write("<script>alert('İşlem tamamlanamadı.Gerekli alanları doldurun.')</script>");
+                }
             }
-            catch (Exception xe)
-            {
-                Response.Write("<script>alert('" + xe.Message + "')</script>");
-                //Response.Redirect("http://www.google.com");
-            }
+             catch (Exception xe)
+             {
+                 Response.Write("<script>alert('" + xe.Message + "')</script>");
+               
+             }
+       
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+
 
         }
     
@@ -115,6 +135,26 @@ namespace yazdir.webSitesi.test
             //    }
             //}
             //connection.Close();
+        }
+
+        protected void registerPageButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("http://furkanalniak.com");
+        }
+
+        protected void furkan(object sender, EventArgs e)
+        {
+            Response.Redirect("http://furkanalniak.com");
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("http://furkanalniak.com");
+        }
+
+        protected void testButonu_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("http://furkanalniak.com");
         }
     }
 }
