@@ -20,10 +20,6 @@ namespace yazdir.webSitesi.test
        
 
         public MySqlConnection connection;
-        public void deneme(object sender,EventArgs e)
-        {
-            Response.Write("<script>alert('selamun aleyküm')</script>");
-        }
         
         public void registerNow(object sender, EventArgs e)
         {
@@ -38,7 +34,9 @@ namespace yazdir.webSitesi.test
                     command.CommandText = "insert into uye_Bireysel (userName,password,eMail,name,surname) values ('" + kAdi.Value + "','" + password1.Value + "','" + mail.Value + "','" + name.Value + "','" + surname.Value + "')";
                     command.ExecuteNonQuery();
                     connection.Close();
-                    Response.Write("<script>alert('Kayit tamamlandi.')</script>");
+                    Session["on_eMail"] = mail.Value;
+                    Session["on_password"] = password1.Value;
+                    Response.Redirect("/webSitesi/test/main.aspx");
                 }
                 else
                 {
@@ -52,10 +50,32 @@ namespace yazdir.webSitesi.test
              }
        
         }
+        public string loggedMail;
+        public void checkLogIn()
+        {
+            try
+            {
+                loggedMail = Session["on_eMail"].ToString();
+                if (loggedMail != null || loggedMail != "")
+                {
+                    logInButtonTab.Visible = false;
+                    registerButtonTab.Visible = false;
+                }
+                else
+                {
+                    logInButtonTab.Visible = true;
+                    registerButtonTab.Visible = true;
+                }
+            }
+            catch
+            {
+
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
-
-
+            
+            checkLogIn();
         }
     
         public  void tikladi(object sender,EventArgs e)
@@ -71,26 +91,33 @@ namespace yazdir.webSitesi.test
             connection = new MySqlConnection("Server=furkanalniak.com;Database=furkanal_yazdir;Uid=furkanal_admin;Pwd='fk2017';");
             try
             {
-                connection.Open();
-                MySqlCommand command = new MySqlCommand();
-                command.Connection = connection;
-                command.CommandText = "select * from uye_Bireysel where eMail='"+grsMail.Value+"'";
-                MySqlDataReader dataReader = command.ExecuteReader();
-                while(dataReader.Read())
+                if (grsMail.Value != "" && grsPassword.Value != "")
                 {
-                    if(dataReader[5].ToString()==grsPassword.Value)
+                    connection.Open();
+                    MySqlCommand command = new MySqlCommand();
+                    command.Connection = connection;
+                    command.CommandText = "select * from uye_Bireysel where eMail='" + grsMail.Value + "'";
+                    MySqlDataReader dataReader = command.ExecuteReader();
+                    while (dataReader.Read())
                     {
-                        Session["on_eMail"] = grsMail.Value;
-                        Session["on_password"] = grsPassword.Value;
-                        Response.Redirect("/webSitesi/test/main.aspx");
-                        
+                        if (dataReader[5].ToString() == grsPassword.Value)
+                        {
+                            Session["on_eMail"] = grsMail.Value;
+                            Session["on_password"] = grsPassword.Value;
+                            Response.Redirect("/webSitesi/test/main.aspx");
+
+                        }
+                        else
+                        {
+                            Response.Redirect("http://furkanalniak.com");
+                        }
                     }
-                    else
-                    {
-                        Response.Redirect("http://furkanalniak.com");
-                    }
+                    connection.Close();
                 }
-                connection.Close();
+                else
+                {
+                    Response.Write("<script>alert('Geçerli bir mail veya şifre girin.')</script>");
+                }
             }
             catch (Exception xe)
             {

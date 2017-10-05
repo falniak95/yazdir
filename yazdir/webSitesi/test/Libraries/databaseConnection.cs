@@ -37,6 +37,7 @@ namespace yazdir.webSitesi.test.Libraries
                 //connection is closed already..
             }
         }
+        
         public void executeSqlCommand(string commandText)
         {
             MySqlCommand command = new MySqlCommand();

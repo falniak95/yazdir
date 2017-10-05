@@ -22,6 +22,51 @@ namespace yazdir.webSitesi.test {
         protected global::System.Web.UI.HtmlControls.HtmlForm allOf;
         
         /// <summary>
+        /// logInButtonTab control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor logInButtonTab;
+        
+        /// <summary>
+        /// registerButtonTab control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor registerButtonTab;
+        
+        /// <summary>
+        /// grsMail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl grsMail;
+        
+        /// <summary>
+        /// grsPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword grsPassword;
+        
+        /// <summary>
+        /// grsButon control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button grsButon;
+        
+        /// <summary>
         /// kAdi control.
         /// </summary>
         /// <remarks>
@@ -83,32 +128,5 @@ namespace yazdir.webSitesi.test {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button registerPageButton;
-        
-        /// <summary>
-        /// grsMail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl grsMail;
-        
-        /// <summary>
-        /// grsPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword grsPassword;
-        
-        /// <summary>
-        /// grsButon control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button grsButon;
     }
 }
