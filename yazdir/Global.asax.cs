@@ -17,13 +17,13 @@ namespace yazdir
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
-       
-        //public void tikladi(object sender, EventArgs e)
-        //{
-          
-        //    Response.Redirect("http://www.google.com");
-            
-        //}
+
+        public void ozGven(object sender, EventArgs e)
+        {
+
+            Response.Redirect("http://www.google.com");
+
+        }
     }
 
 }

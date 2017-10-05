@@ -13,13 +13,58 @@ namespace yazdir.webSitesi.test {
     public partial class anaSayfa {
         
         /// <summary>
-        /// giris control.
+        /// allOf control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm giris;
+        protected global::System.Web.UI.HtmlControls.HtmlForm allOf;
+        
+        /// <summary>
+        /// logInButtonTab control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor logInButtonTab;
+        
+        /// <summary>
+        /// registerButtonTab control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor registerButtonTab;
+        
+        /// <summary>
+        /// kazanmayaBaslaTab control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor kazanmayaBaslaTab;
+        
+        /// <summary>
+        /// anaSayfaTab control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor anaSayfaTab;
+        
+        /// <summary>
+        /// oturumuKapatTab control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor oturumuKapatTab;
         
         /// <summary>
         /// grsMail control.
@@ -103,12 +148,12 @@ namespace yazdir.webSitesi.test {
         protected global::System.Web.UI.HtmlControls.HtmlInputPassword password2;
         
         /// <summary>
-        /// gndr control.
+        /// registerPageButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button gndr;
+        protected global::System.Web.UI.WebControls.Button registerPageButton;
     }
 }
