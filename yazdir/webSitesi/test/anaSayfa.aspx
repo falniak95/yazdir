@@ -190,12 +190,42 @@ return (key == 8 || key == 13);
 
                     </div>
                     <ul class="agile_forms">
+
+
+                        <li class="dropdown">
+						 <a href="#" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown">Kaydol<b class="fa fa-caret-down"></b></a>
+          		
+
+
+
+
+								<ul class="dropdown-menu agile_short_dropdown">
+                                    <li><a class="active" id="registerButtonTab" runat="server" href="#" data-toggle="modal" data-target="#myModal3">bireysel</a> </li>
+                                   <li><a class="active" id="registerButtonTab2" runat="server" href="#" data-toggle="modal" data-target="#myModal4">kurumsal</a> </li>
+
+								</ul>
+							</li>
+
+
+
+
                         <li><a class="active" id="logInButtonTab" runat="server" href="#" data-toggle="modal" data-target="#myModal2">OTURUM AÇ </a></li>
-                        <li><a class="active" id="registerButtonTab" runat="server" href="#" data-toggle="modal" data-target="#myModal3">Kayıt Ol</a> </li>
+                        
                         <li><a href="#" id="kazanmayaBaslaTab" runat="server" data-toggle="modal" data-target="#kazanmayaBasla">Kazanmaya Başla</a> </li>
-                        <li><a href="/webSitesi/test/main.aspx" id="anaSayfaTab" visible="false" runat="server" data-toggle="modal" >Ana Sayfa</a> </li>
+                        <li><a href="/webSitesi/test/main.aspx" id="anaSayfaTab" visible="false" runat="server" data-toggle="modal">Ana Sayfa</a> </li>
                         <li><a href="#" id="oturumuKapatTab" visible="false" runat="server" data-toggle="modal" >Oturumu Kapat</a> </li>
-                    </ul>
+                        <asp:Button ID="Button1" runat="server" OnClick="sessionSifirla" UseSubmitBehavior="false" Text="Session Temizle" />
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                          </ul>
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
                         <nav>
@@ -293,7 +323,45 @@ return (key == 8 || key == 13);
                     </div>
                 </div>
             </div>
+            <!------------------------------------------------------------------------------------------------------------------->
+            <div class="modal fade" id="myModal4" tabindex="-1" role="dialog">
 
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                            <div class="signin-form profile">
+                                <h3 class="agileinfo_sign">kurumsal üyelik</h3>
+
+                                <div class="login-form">
+
+                                    <input type="text" runat="server" id="comName" name="comName" placeholder="Şirket Adı" class="sirketAdi" required="">
+                                    <input type="text" runat="server" id="comUserName" name="comUserName" placeholder="Kullanıcı Adı" class="kullaniciAdi" required="">
+                                    <input type="email" runat="server" id="comMail" name="comMail" placeholder="Mail" class="mail" required="">
+                                     <input type="text" runat="server" id="comNo" name="comNo" placeholder="Telefon no" class="sirketNo" required="">
+                                     <input type="password" runat="server" name="password" id="password3" placeholder="Şifre" required="">
+                                    <input type="password" runat="server" name="password" id="password4" placeholder="Şifre Tekrarı" required="">
+                               
+                                     <div class="btnKayit" >
+                                      <asp:Button ID="comRegisterPageButton" runat="server" UseSubmitBehavior="false" Text="Tamamla!" OnClick="registerNowKurumsal"  />
+                                    </div>
+                                    
+                                     </div>
+                                
+                                  
+                                   
+    
+    
+
+                                <p><a href="#">Üye olarak şartlarımızı kabul etmiş sayılırsın.</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!------------------------------------------------------------------------------------------------------------------->
 
 
             
@@ -306,7 +374,7 @@ return (key == 8 || key == 13);
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
 
                             <div class="signin-form profile">
-                                <h3 class="agileinfo_sign">Üye Ol!</h3>
+                                <h3 class="agileinfo_sign">bireysel üyelik</h3>
 
                                 <div class="login-form">
 

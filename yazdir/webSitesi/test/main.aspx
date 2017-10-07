@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" enableEventValidation="false" CodeBehind="main.aspx.cs" Inherits="yazdir.webSitesi.test.main" %>
+﻿        <%@ Page Language="C#" AutoEventWireup="true" enableEventValidation="false" CodeBehind="main.aspx.cs" Inherits="yazdir.webSitesi.test.main" %>
 
 <!DOCTYPE html>
 
@@ -14,7 +14,7 @@
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
 <meta name="keywords" content="Treasurer Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
@@ -148,24 +148,29 @@ return (key == 8 || key == 13);
 
 
 				</div>
+
+
 			    <ul class="agile_forms">
+
+                      
                     <li class="dropdown">
-								<a href="#" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown">Profil <b class="fa fa-caret-down"></b></a>
-                     
+						 <a href="#" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown">mesajlar <b class="fa fa-caret-down"></b></a>
+          		
 
 
 
 
 								<ul class="dropdown-menu agile_short_dropdown">
-									<li><a href="icons.html">Web Icons</a></li>
-									<li><a href="typography.html">Typography</a></li>
+                                    <li><a style="" href="icons.html">yeni mesaj</a></li>
+									<li><a href="icons.html">Gelen kutusu</a></li>
+									<li><a href="typography.html">Giden kutusu</a></li>
 								</ul>
 							</li>
-					<li><a class="active" runat="server" id="ozluk" href="#" data-toggle="modal" data-target="#myModal2"> Mesajlar</a> </li>
-                   
+					<%--<li><a class="active" runat="server" id="ozluk" href="#" data-toggle="dropdown" data-target="#myModal2">profil</a> </li>
+                   --%>
 
 
-                     <li><a class="active" href="#" data-toggle="modal" data-target="#bnmModal">Benim Modal </a></li>
+                     <li><a class="active" href="#" data-toggle="modal" data-target="#bnmModal">profil </a></li>
 
 					<li><a href="#" data-toggle="modal" data-target="#myModal3">Çıkış</a> </li>
 				</ul>
@@ -194,12 +199,7 @@ return (key == 8 || key == 13);
 			</nav>		
 	  <div class="clearfix"> </div> 
     </div> 
-        <div class="container">
 
-
-
-            <!-- burdan itibaren-->
-                     
                
 
    <div class="modal fade" id="bnmModal" tabindex="-1" role="dialog">
@@ -211,25 +211,22 @@ return (key == 8 || key == 13);
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
 
                             <div class="signin-form profile">
-                                <h3 class="agileinfo_sign">GIRIS YAP VE ISE BASLA</h3>
+                                <h3 class="agileinfo_sign">Hesap bilgileri</h3>
                                 <div class="login-form">
                                     </div>
 
+                                        <a style="padding-right:100%">Adı:</a>
+                                        <input type="text" id="userName" runat="server" name="userName" placeholder="" required="">
+                                        <a style="padding-right:100%">Soyadı:</a>
+                                        <input type="text" id="userLastName" runat="server" name="userLastName" placeholder="" required="">
+                                        <a style="padding-right:100%"> TC Kimlik No: </a>
+                                        <input type="text" id="identityNo" runat="server" name="identityNo" placeholder="" required="">
 
-                                        <input type="email" id="grsMail" runat="server" name="email" placeholder="Kullanıcı Adı" required="">
-                                        <input type="password" id="grsPassword" runat="server" name="password" placeholder="Şifre" required="">
-                                      
                                     
                                 </div>
 
-                            <%--<div class="login-social-grids">
-							<ul>
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-rss"></i></a></li>
-							</ul>
-						</div>--%>
-                                <p><a href="#" data-toggle="modal" data-target="#myModal3">Hesabın yok mu?</a></p>
+                           
+                                
                             </div>
 
                         </div>
@@ -237,7 +234,43 @@ return (key == 8 || key == 13);
                     </div>
 
                 </div>
-                  
+                  <!--------------------------------------------------------------------------->
+        <div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
+                 
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                           <%-- <button type="button" class="close" data-dismiss="modal">&times;</button>--%>
+
+                            <div class="signin-form profile">
+                                <h3 class="agileinfo_sign">GIRIS YAP VE ISE BASLA</h3>
+                                <div class="login-form">
+                                    </div>
+
+
+                                      <%--  <input type="email" id="Email1" runat="server" name="email" placeholder="Kullanıcı Adı" required="">
+                                        <input type="password" id="Password1" runat="server" name="password" placeholder="Şifre" required="">
+                                      --%>
+                                    
+                                </div>
+
+                           
+                                 </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+        <!---------------------------------------------------------------------------------------------->
+        <div class="container">
+
+
+
+            <!-- burdan itibaren-->
+                     
+        
 <!-- buraya kadar silmem gerekebilir-->
 
 

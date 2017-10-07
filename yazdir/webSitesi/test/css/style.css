@@ -63,6 +63,7 @@ input[type="submit"],.w3l_header_left ul li a,.related-post-right h4 a,.comments
 	-moz-transition: .5s ease-in;
 	-o-transition: .5s ease-in;
 	-ms-transition: .5s ease-in;
+   
 }
 .w3l_header_left{
 	float:left;
@@ -217,19 +218,21 @@ a.navbar-brand i{
     background: #ffffff;
     text-align: center;
 	padding:0;
-	border: none;
+	border: none; 
+  
 }
 .agile_short_dropdown li a{
 	text-transform:uppercase;
 	color:#212121;
-	font-size:13px;
+	font-size:20px;
 	font-weight:600;
 	padding: .8em 0;
 	border-bottom: 1px solid #ececef;
+   
 }
 .agile_short_dropdown > li > a:hover{
     color: #fff;
-    text-decoration: none;
+    text-decoration:solid;
     background-color:#00a98f;
 }
 ul.nav.navbar-nav {
@@ -498,7 +501,8 @@ h3.agileinfo_sign  {
     box-shadow: 0px 2px 1px rgba(28, 28, 29, 0.42);
 	
 }
-#grsButon :hover {
+
+#grsButon:hover{
     color: #fff;
        background: #000;
     transition: .5s all;
@@ -506,8 +510,8 @@ h3.agileinfo_sign  {
     -moz-transition: .5s all;
     -o-transition: .5s all;
     -ms-transition: .5s all;
-}
 
+}
 
 #registerPageButton  {
     outline: none;
@@ -524,14 +528,42 @@ h3.agileinfo_sign  {
     box-shadow: 0px 2px 1px rgba(28, 28, 29, 0.42);
 	
 }
-#registerPageButton :hover {
+#comRegisterPageButton{
+
+    outline: none;
+    padding: 0.8em 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+    margin-top: 1em;
+    border: none;
+    color: #FFFFFF;
+	text-transform:uppercase;
+    cursor: pointer;
+    background: #00a98f;
+    box-shadow: 0px 2px 1px rgba(28, 28, 29, 0.42);
+
+}
+
+#comRegisterPageButton:hover {
     color: #fff;
-       background: #000;
+    background: #000;
     transition: .5s all;
 	-webkit-transition: .5s all;
     -moz-transition: .5s all;
     -o-transition: .5s all;
     -ms-transition: .5s all;
+
+}
+#registerPageButton:hover{
+     color: #fff;
+    background: #000;
+    transition: .5s all;
+	-webkit-transition: .5s all;
+    -moz-transition: .5s all;
+    -o-transition: .5s all;
+    -ms-transition: .5s all;
+
 }
 
 
@@ -4271,4 +4303,6 @@ ul.social-icons li {
 		margin: 2% auto 0;
 		width: 63%;
 	}
+
+    
 }

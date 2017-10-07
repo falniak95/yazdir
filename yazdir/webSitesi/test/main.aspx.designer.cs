@@ -22,31 +22,31 @@ namespace yazdir.webSitesi.test {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// ozluk control.
+        /// userName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor ozluk;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText userName;
         
         /// <summary>
-        /// grsMail control.
+        /// userLastName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl grsMail;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText userLastName;
         
         /// <summary>
-        /// grsPassword control.
+        /// identityNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword grsPassword;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText identityNo;
         
         /// <summary>
         /// selamlama control.

@@ -14,13 +14,50 @@ namespace yazdir.webSitesi.test
     {
         public anaSayfa()
         {
-           // registerPageButton.Click += registerNow;
+            // registerPageButton.Click += registerNow;
         }
-        
-       
+
+        public void sessionSifirla(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("/websitesi/test/anaSayfa.aspx");
+        }
 
         public MySqlConnection connection;
-        
+
+        //*****************************************************************************
+        public void registerNowKurumsal(object sender, EventArgs e)
+        {
+            connection = new MySqlConnection("Server=furkanalniak.com;Database=furkanal_yazdir;Uid=furkanal_admin;Pwd='fk2017';");
+            try
+            {
+                if (comUserName.Value != "" && comMail.Value != "" )
+                {
+                    connection.Open();
+                    MySqlCommand command = new MySqlCommand();
+                    command.Connection = connection;
+                    command.CommandText = "insert into uye_Kurumsal (comName,comUsername,comEmail,comNo,comPassword) values ('" + comName.Value + "','" + comUserName.Value + "','" + comMail.Value + "','" + comNo.Value + "','" + password3.Value + "')";
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                    Session["on_eMail"] = mail.Value;
+                  //  Session["on_password"] = password1.Value;
+                    Response.Redirect("/webSitesi/test/main.aspx");
+                }
+                else
+                {
+                    Response.Write("<script>alert('İşlem tamamlanamadı.Gerekli alanları doldurun.')</script>");
+                }
+            }
+            catch (Exception xe)
+            {
+                Response.Write("<script>alert('" + xe.Message + "')</script>");
+
+            }
+        }
+
+    
+        //******************************************************************************
+
         public void registerNow(object sender, EventArgs e)
         {
              connection = new MySqlConnection("Server=furkanalniak.com;Database=furkanal_yazdir;Uid=furkanal_admin;Pwd='fk2017';");
@@ -50,6 +87,9 @@ namespace yazdir.webSitesi.test
              }
        
         }
+
+
+
         public string loggedMail;
         public void checkLogIn()
         {
