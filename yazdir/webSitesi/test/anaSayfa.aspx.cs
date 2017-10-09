@@ -39,8 +39,8 @@ namespace yazdir.webSitesi.test
                     command.CommandText = "insert into uye_Kurumsal (comName,comUsername,comEmail,comNo,comPassword) values ('" + comName.Value + "','" + comUserName.Value + "','" + comMail.Value + "','" + comNo.Value + "','" + password3.Value + "')";
                     command.ExecuteNonQuery();
                     connection.Close();
-                    Session["on_eMail"] = mail.Value;
-                  //  Session["on_password"] = password1.Value;
+                    Session["on_eMail"] = comMail.Value;
+                  //  Session["on_password"] = password3.Value;
                     Response.Redirect("/webSitesi/test/main.aspx");
                 }
                 else
@@ -138,6 +138,7 @@ namespace yazdir.webSitesi.test
             {
                 if (grsMail.Value != "" && grsPassword.Value != "")
                 {
+                    
                     connection.Open();
                     MySqlCommand command = new MySqlCommand();
                     command.Connection = connection;
@@ -150,7 +151,9 @@ namespace yazdir.webSitesi.test
                             Session["on_eMail"] = grsMail.Value;
                             Session["on_password"] = grsPassword.Value;
                             Response.Redirect("/webSitesi/test/main.aspx");
+                            
 
+                            
                         }
                         else
                         {

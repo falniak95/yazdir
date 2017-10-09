@@ -7,22 +7,28 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using yazdir.webSitesi.test.Libraries;
+using MySql.Data.MySqlClient;
+using MySql.Data;
+
 
 namespace yazdir.webSitesi.test
 {
     public partial class main : System.Web.UI.Page
     {
-        
+
         System.Web.UI.WebControls.Literal Literal1;
         databaseConnection dC = new databaseConnection();
         string[] dizi = new string[] { "furkan", "kahraman", "emre", "ali", "tuncer", "kadir", "nuri", "bahadır", "test", "deneme", "e ticaret", "ödevi" };
         private void seperateJobs()
         {
-           
-            
+
+
         }
+        MySqlConnection connection;
         protected void Page_Load(object sender, EventArgs e)
         {
+
+
             DataSet ds = dC.getJobs();
             //try
             //{
@@ -62,7 +68,7 @@ namespace yazdir.webSitesi.test
 
 
 
-           string[] allJobs = dC.getJobListID();
+            string[] allJobs = dC.getJobListID();
 
             for (int i = 0; i < dC.totalCount; i++)
             {
@@ -103,11 +109,64 @@ namespace yazdir.webSitesi.test
 
             DinamikPanel.Controls.Add(Literal1);
 
+            getInformation();
+
+        }
+        public void updateInformation(object sender, EventArgs e)
+        {
+            int k = 1;
+            MySqlCommand kmt = new MySqlCommand("update uye_Bireysel set mobileNo='" + mobileNo.Value + "' , tcKimlik='" + identityNo.Value + "' , accountNumber='" + accountNumber.Value + "' , gender='" + Request.Form["gender"].ToString() + "' , birthDate='" + birthDate.Value + "' where eMail='" + Session["on_eMail"].ToString()+"'", connection);
+            MySqlCommand updateFirstLogin = new MySqlCommand("UPDATE uye_Bireysel set (is="+k+") where eMail='" + Session["on_eMail"].ToString() + "'", connection);
+            connection.Open();
+            kmt.ExecuteNonQuery();           
+            updateFirstLogin.ExecuteNonQuery();
+            connection.Close();
+        }
+        public void getInformation()
+        {
+
+            string asd = Session["on_eMail"].ToString();
+
+            connection = new MySqlConnection("Server=furkanalniak.com;Database=furkanal_yazdir;Uid=furkanal_admin;Pwd='fk2017';");
+            try
+            {
+
+                connection.Open();
+                MySqlCommand command = new MySqlCommand();
+                command.Connection = connection;
+                command.CommandText = "select * from uye_Bireysel where eMail='" + Session["on_eMail"] + "'";
+                MySqlDataReader dataReader = command.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    if (dataReader[17].ToString() != "1")
+
+                    {
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
+
+
+                    }
 
 
 
 
+                }
 
+                connection.Close();
+
+
+            }
+            catch (Exception xe)
+            {
+                Response.Write("<script>alert('" + xe.Message + "')</script>");
+
+            }
+
+
+        }
+        public void onemli(object sender, EventArgs e)
+        {
+            
         }
 
 

@@ -381,7 +381,7 @@ return (key == 8 || key == 13);
                                   
 
                                     <input type="text" runat="server" id="kAdi" name="userName" placeholder="Kullanıcı Adı" class="kullaniciadi" required="">
-                                    <input type="email" runat="server" id="mail" name="email" placeholder="E-mail" class="email">
+                                    <input type="email" runat="server" id="mail" name="email" placeholder="E-mail" class="email" required="">
                                     <input type="text" runat="server" id="name" name="name" placeholder="İsim" required="">
                                     <input type="text" runat="server" id="surname" name="surname" placeholder="Soyisim" required="">
                                     <input type="password" runat="server" name="password" id="password1" placeholder="Şifre" required="">

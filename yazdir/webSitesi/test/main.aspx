@@ -34,7 +34,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     <script type ="text/jscript"  language="javascript">
 
-
+        function openModal() { $('#bnmModal').modal('show'); false }
     function shouldCancelbackspace(e) {
     var key;
     if(e){
@@ -208,21 +208,30 @@ return (key == 8 || key == 13);
                     <!-- Modal content-->
                     <div class="modal-content">
                         <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                           <%-- <button type="button" class="close" data-dismiss="modal">&times;</button>--%>
 
                             <div class="signin-form profile">
                                 <h3 class="agileinfo_sign">Hesap bilgileri</h3>
                                 <div class="login-form">
                                     </div>
 
-                                        <a style="padding-right:100%">Adı:</a>
-                                        <input type="text" id="userName" runat="server" name="userName" placeholder="" required="">
-                                        <a style="padding-right:100%">Soyadı:</a>
-                                        <input type="text" id="userLastName" runat="server" name="userLastName" placeholder="" required="">
+                                        
+                                        <input type="text" id="mobileNo" runat="server" name="mobileNo" placeholder="" required="">
+                                        <input type="text" id="identityNo" runat="server" name="identityNo" maxlength="11" placeholder="" required="">
+                                        <input type="text" id="accountNumber" runat="server" name="accountNumber" maxlength="20" placeholder="" required="">
                                         <a style="padding-right:100%"> TC Kimlik No: </a>
-                                        <input type="text" id="identityNo" runat="server" name="identityNo" placeholder="" required="">
-
+                                        <br />Cinsiyet
+                                        <input type="radio" id="g1" runat="server" name="gender" value="Erkek">Erkek</input>  
+                                        <input type="radio" id="g2" runat="server" name="gender" value="Kadın">Kadın</input>
+                                        <br />Doğum Tarihi
+                                        <input type="date" id="birthDate" runat="server" name="birthDate" min="01-01-1900" />
+                                        <asp:Button ID="submitChanges" runat="server" UseSubmitBehavior="false" OnClick="updateInformation" Text="Değişiklikleri Kaydet" />
                                     
+
+
+                               
+                              
+
                                 </div>
 
                            
