@@ -24,10 +24,14 @@ namespace yazdir.webSitesi.test
 
 
         }
-        MySqlConnection connection;
+
+
+        MySqlConnection connection = new MySqlConnection("Server=furkanalniak.com;Database=furkanal_yazdir;Uid=furkanal_admin;Pwd='fk2017';");
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+             
 
             DataSet ds = dC.getJobs();
             //try
@@ -109,23 +113,49 @@ namespace yazdir.webSitesi.test
 
             DinamikPanel.Controls.Add(Literal1);
 
+
+
+
             getInformation();
 
+            if (!IsPostBack)
+            {
+                bnmModal();
+            }
+        
         }
+        //*********************************************************************************
         public void updateInformation(object sender, EventArgs e)
         {
-            int k = 1;
-            MySqlCommand kmt = new MySqlCommand("update uye_Bireysel set mobileNo='" + mobileNo.Value + "' , tcKimlik='" + identityNo.Value + "' , accountNumber='" + accountNumber.Value + "' , gender='" + Request.Form["gender"].ToString() + "' , birthDate='" + birthDate.Value + "' where eMail='" + Session["on_eMail"].ToString()+"'", connection);
-            MySqlCommand updateFirstLogin = new MySqlCommand("UPDATE uye_Bireysel set (is="+k+") where eMail='" + Session["on_eMail"].ToString() + "'", connection);
+           
+            MySqlCommand kmt = new MySqlCommand("update uye_Bireysel set job='"+job.Value +"', mobileNo='" + mobileNo.Value + "' , tcKimlik='" + identityNo.Value + "' , accountNumber='" + accountNumber.Value + "' , gender='" + Request.Form["gender"].ToString() + "' , birthDate='" + birthDate.Value + "' where eMail='" + Session["on_eMail"].ToString()+"'", connection);
+            MySqlCommand updateFirstLogin = new MySqlCommand("UPDATE uye_Bireysel set firstTime=1 where eMail='" + Session["on_eMail"].ToString() + "'", connection);
             connection.Open();
             kmt.ExecuteNonQuery();           
             updateFirstLogin.ExecuteNonQuery();
             connection.Close();
         }
+        //*************************************************************************************
+
+
+
+        public void upd(object sender, EventArgs e)
+        {
+           // Response.Write("<script>alert('bu nerden geldi şimdi')</script>");
+
+            MySqlCommand komut = new MySqlCommand("update uye_Bireysel set job='"+jobInfo.Value+"', mobileNo='" + mobilPhone.Value + "' , accountNumber='" + account.Value + "'  where eMail='" + Session["on_eMail"].ToString() + "'", connection);
+            connection.Open();
+            komut.ExecuteNonQuery();
+            connection.Close();
+        }
+
+
+
+        //********************************************************************************************************************
         public void getInformation()
         {
 
-            string asd = Session["on_eMail"].ToString();
+          //  string asd = Session["on_eMail"].ToString();
 
             connection = new MySqlConnection("Server=furkanalniak.com;Database=furkanal_yazdir;Uid=furkanal_admin;Pwd='fk2017';");
             try
@@ -164,11 +194,79 @@ namespace yazdir.webSitesi.test
 
 
         }
-        public void onemli(object sender, EventArgs e)
+        //********************************************************************************************************
+        public void bnmModal()
         {
-            
+           
+            connection = new MySqlConnection("Server=furkanalniak.com;Database=furkanal_yazdir;Uid=furkanal_admin;Pwd='fk2017';");
+
+
+            connection.Open();
+            MySqlCommand command = new MySqlCommand();
+            command.Connection = connection;
+            command.CommandText = "select * from uye_Bireysel where eMail='" + Session["on_eMail"].ToString() + "'";
+            MySqlDataReader dataReader = command.ExecuteReader();
+            if (dataReader.Read())
+            {
+                name.Value = dataReader["name"].ToString();
+                surname.Value = dataReader["surname"].ToString();
+                username.Value = dataReader["userName"].ToString();
+                gender.Value = dataReader["gender"].ToString();
+                mobilPhone.Value = dataReader["mobileNo"].ToString();
+                eMail.Value = dataReader["eMail"].ToString();
+                account.Value = dataReader["accountNumber"].ToString();
+                //     birthDate.Value = dataReader["birthDate"].ToString();
+                jobInfo.Value = dataReader["job"].ToString();
+            }
+
+
+
+
+            connection.Close();
         }
 
+        //*************************************************************************************************************
+
+
+
+
+        public void changePassword(object sender, EventArgs e)
+        {
+            if (eskiSifre.Value.ToString() == Session["on_password"].ToString())
+            {
+                if (newPassword.Value.ToString()==newPasswordAgain.Value.ToString())
+                {
+
+                    MySqlCommand kmt = new MySqlCommand("update uye_Bireysel set password='"+newPassword.Value+"' where eMail='" + Session["on_eMail"].ToString() + "'", connection);
+                   
+                    connection.Open();
+                    kmt.ExecuteNonQuery();
+                   
+                    connection.Close();
+                   
+
+                }
+                else
+                {
+                    Response.Write("<script>alert('Yeni Şifre Tekrarı Hatalı Şifre Değiştirilemedi.')</script>");
+                    eskiSifre.Value = "";
+                    newPassword.Value = "";
+                    newPasswordAgain.Value = "";
+                }
+            }
+            else
+            {
+                Response.Write("<script>alert('Eski Şifre Yanlış Şifre Değiştirilemedi.')</script>");
+                eskiSifre.Value = "";
+                newPassword.Value = "";
+                newPasswordAgain.Value = "";
+            }
+
+           
+
+        }
+       
+//**********************************************************************************************************************
 
     }
 }

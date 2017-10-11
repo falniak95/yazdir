@@ -34,7 +34,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     <script type ="text/jscript"  language="javascript">
 
-        function openModal() { $('#bnmModal').modal('show'); false }
+        function openModal() { $('#ilkGirisModal').modal('show'); false }
     function shouldCancelbackspace(e) {
     var key;
     if(e){
@@ -169,8 +169,9 @@ return (key == 8 || key == 13);
 					<%--<li><a class="active" runat="server" id="ozluk" href="#" data-toggle="dropdown" data-target="#myModal2">profil</a> </li>
                    --%>
 
-
-                     <li><a class="active" href="#" data-toggle="modal" data-target="#bnmModal">profil </a></li>
+                   <%-- <li><a ID="changePassword" runat="server" data-toggle="modal" data-target="#changepass" Text="Şifre Değiştir" </a></li>--%>
+                     <li><a class="active" href="#" data-toggle="modal" data-target="#modalSifre">Şifre </a></li>
+                     <li><a class="active" href="#" data-toggle="modal" data-target="#bnmModal" >profil </a></li>
 
 					<li><a href="#" data-toggle="modal" data-target="#myModal3">Çıkış</a> </li>
 				</ul>
@@ -199,10 +200,8 @@ return (key == 8 || key == 13);
 			</nav>		
 	  <div class="clearfix"> </div> 
     </div> 
-
-               
-
-   <div class="modal fade" id="bnmModal" tabindex="-1" role="dialog">
+        <!------------------------------------------------------------------------------------------------------------------>
+         <div class="modal fade" id="modalSifre" tabindex="-1" role="dialog">
                  
                 <div class="modal-dialog">
                     <!-- Modal content-->
@@ -211,23 +210,21 @@ return (key == 8 || key == 13);
                            <%-- <button type="button" class="close" data-dismiss="modal">&times;</button>--%>
 
                             <div class="signin-form profile">
-                                <h3 class="agileinfo_sign">Hesap bilgileri</h3>
+                                <h3 class="agileinfo_sign">Şifre Değiştir</h3>
                                 <div class="login-form">
                                     </div>
 
+                                        <a style="padding-right:100%">Eski Şifre </a>
+                                        <input type="password" id="eskiSifre" runat="server" name="eskiSifre" placeholder="" required="">
+                                        <a style="padding-right:100%">Yeni Şifre </a>        
+                                        <input type="password" id="newPassword" runat="server" name="newPassword" placeholder="" required="">
+                                        <a style="padding-right:100%">Yeni Şifre Tekrar </a>
+                                        <input type="password" id="newPasswordAgain" runat="server" name="newPasswordAgain" placeholder="" required="">
                                         
-                                        <input type="text" id="mobileNo" runat="server" name="mobileNo" placeholder="" required="">
-                                        <input type="text" id="identityNo" runat="server" name="identityNo" maxlength="11" placeholder="" required="">
-                                        <input type="text" id="accountNumber" runat="server" name="accountNumber" maxlength="20" placeholder="" required="">
-                                        <a style="padding-right:100%"> TC Kimlik No: </a>
-                                        <br />Cinsiyet
-                                        <input type="radio" id="g1" runat="server" name="gender" value="Erkek">Erkek</input>  
-                                        <input type="radio" id="g2" runat="server" name="gender" value="Kadın">Kadın</input>
-                                        <br />Doğum Tarihi
-                                        <input type="date" id="birthDate" runat="server" name="birthDate" min="01-01-1900" />
-                                        <asp:Button ID="submitChanges" runat="server" UseSubmitBehavior="false" OnClick="updateInformation" Text="Değişiklikleri Kaydet" />
-                                    
+                                <asp:Button ID="changePasswordButton" runat="server" UseSubmitBehavior="false" OnClick="changePassword" Text="Değistir" />
+                              
 
+                               
 
                                
                               
@@ -240,11 +237,11 @@ return (key == 8 || key == 13);
 
                         </div>
 
-                    </div>
+                    </div> 
 
                 </div>
-                  <!--------------------------------------------------------------------------->
-        <div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
+        <!------------------------------------------------------------------------------------------------------------------>
+        <div class="modal fade" id="bnmModal" tabindex="-1" role="dialog">
                  
                 <div class="modal-dialog">
                     <!-- Modal content-->
@@ -253,25 +250,119 @@ return (key == 8 || key == 13);
                            <%-- <button type="button" class="close" data-dismiss="modal">&times;</button>--%>
 
                             <div class="signin-form profile">
-                                <h3 class="agileinfo_sign">GIRIS YAP VE ISE BASLA</h3>
+                                <h3 class="agileinfo_sign">Profil Bilgileri</h3>
                                 <div class="login-form">
                                     </div>
 
+                                <a style="padding-right:100%">Ad </a>
+                                        <input type="text" id="name" runat="server" name="name" placeholder="" required="" disabled >
 
-                                      <%--  <input type="email" id="Email1" runat="server" name="email" placeholder="Kullanıcı Adı" required="">
-                                        <input type="password" id="Password1" runat="server" name="password" placeholder="Şifre" required="">
-                                      --%>
-                                    
+
+                                <a style="padding-right:100%">Soyad </a>
+                                        <input type="text" id="surname" runat="server" name="Surname" placeholder="" required="" disabled>
+
+
+                                <a style="padding-right:100%">Kullanıcı Adı </a>
+                                        <input type="text" id="username" runat="server" name="username" placeholder="" required="" disabled>
+
+
+                                <a style="padding-right:100%">Cinsiyet </a>
+                                        <input type="text" id="gender" runat="server" name="gender" maxlength="11" placeholder="" required="" disabled>
+
+
+                                <a style="padding-right:100%">Telefon Numarası </a>
+                                        <input type="text" id="mobilPhone" runat="server" name="mobilPhone" maxlength="11" placeholder="" required="">
+
+
+                                <a style="padding-right:100%">Mail Adresi </a>
+                                        <input type="text" id="eMail" runat="server" name="eMail" placeholder="" required="" disabled>
+
+
+                                <a style="padding-right:100%">Hesap Numarası </a>
+                                        <input type="text" id="account" runat="server" name="account"  placeholder="" required="" maxlength="20">
+
+
+                                <a style="padding-right:100%">Doğum Tarihi </a>
+                                        <input type="text" id="birthDay" runat="server" name="birthDay"  placeholder="" required="" disabled>
+
+
+                                <a style="padding-right:100%">Meslek</a>
+                                        <input type="text" id="jobInfo" runat="server" name="jobInfo"  placeholder="" >
+
+
+                               
+                                       <asp:Button ID="updateInfo" runat="server" UseSubmitBehavior="false" onclick="upd" Text="Güncelle" />
+                                       
                                 </div>
 
                            
-                                 </div>
+                                
+                            </div>
 
                         </div>
 
-                    </div>
+                    </div> 
 
                 </div>
+        <!------------------------------------------------------------------------------------------------------------------>
+               
+
+   <div class="modal fade" id="ilkGirisModal" tabindex="-1" role="dialog">
+                 
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                           <%-- <button type="button" class="close" data-dismiss="modal">&times;</button>--%>
+
+                            <div class="signin-form profile">
+                                <h3 class="agileinfo_sign">Girilmesi Zorunlu Alanlar</h3>
+                                <div class="login-form">
+                                    </div>
+
+                                        <a style="padding-right:100%"> Telefon Numarası </a>
+                                        <input type="text" id="mobileNo" runat="server" name="mobileNo" placeholder="" required="">
+                                        <a style="padding-right:100%"> TC Kimlik No </a>        
+                                        <input type="text" id="identityNo" runat="server" name="identityNo" maxlength="11" placeholder="" required="">
+                                        <a style="padding-right:100%">Hesap Numarası </a>
+                                        <input type="text" id="accountNumber" runat="server" name="accountNumber" maxlength="20" placeholder="" required="">
+                                        <a style="padding-right:100%">Meslek </a>
+                                       <input type="text" id="job" runat="server" name="job" maxlength="20" placeholder="" required="">
+                                        <br />
+                                        <a>Cinsiyet: </a>
+                                        <input style="padding-right:100%" type="radio" id="g1" runat="server" name="gender" value="Erkek">Erkek</input>  
+                               
+                                        <input style="padding-right:100%" type="radio" id="g2" runat="server" name="gender" value="Kadın">Kadın</input>
+                                        <br />
+                                        <br />
+                                        <br />
+                                        <a>Doğum Tarihi:  </a>
+                                        <input type="date" id="birthDate" runat="server" name="birthDate" min="01-01-1900" />
+
+                                        <asp:Button ID="submitChanges" runat="server" UseSubmitBehavior="false" OnClick="updateInformation" Text="Değişiklikleri Kaydet" />
+                               
+                                
+                                
+
+                                 <%--<li><a href="#" id="kazanmayaBaslaTab" runat="server" >Kazanmaya Başla</a> </li>--%>
+
+                               
+                              
+
+                                </div>
+
+                           
+                                
+                            </div>
+
+                        </div>
+
+                    </div> 
+
+                </div>
+                  <!--------------------------------------------------------------------------->
+  
+
         <!---------------------------------------------------------------------------------------------->
         <div class="container">
 
@@ -332,6 +423,8 @@ return (key == 8 || key == 13);
     </div>
     
   </div>    -->
+                    <br />
+                    <br />
                     <asp:Panel ID="DinamikPanel" runat="server" style="width:100%">
               
 
@@ -457,6 +550,85 @@ return (key == 8 || key == 13);
   font-smoothing: antialiased;
   background: #f6f6f6;
 }
+     #changePasswordButton{
+            outline: none;
+    padding: 0.8em 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+    margin-top: 1em;
+    border: none;
+    color: #FFFFFF;
+	text-transform:uppercase;
+    cursor: pointer;
+    background: #a80057;
+    box-shadow: 0px 2px 1px rgba(28, 28, 29, 0.42);
+
+     }
+    #changePasswordButton:hover
+    {
+          color: #fff;
+       background: #000;
+    transition: .5s all;
+	-webkit-transition: .5s all;
+    -moz-transition: .5s all;
+    -o-transition: .5s all;
+    -ms-transition: .5s all;
+    }
+     #submitChanges{
+    outline: none;
+    padding: 0.8em 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+    margin-top: 1em;
+    border: none;
+    color: #FFFFFF;
+	text-transform:uppercase;
+    cursor: pointer;
+    background: #a80057;
+    box-shadow: 0px 2px 1px rgba(28, 28, 29, 0.42);
+
+}
+#submitChanges:hover{
+      color: #fff;
+       background: #000;
+    transition: .5s all;
+	-webkit-transition: .5s all;
+    -moz-transition: .5s all;
+    -o-transition: .5s all;
+    -ms-transition: .5s all;
+}
+#changePassword{
+    outline: none;
+    padding: 0.8em 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+    margin-top: 1em;
+    border: none;
+    color: #FFFFFF;
+	text-transform:uppercase;
+    cursor: pointer;
+    background: #a80057;
+    box-shadow: 0px 2px 1px rgba(28, 28, 29, 0.42);}
+
+#updateInfo{
+     outline: none;
+    padding: 0.8em 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+    margin-top: 1em;
+    border: none;
+    color: #FFFFFF;
+	text-transform:uppercase;
+    cursor: pointer;
+    background: #a80057;
+    box-shadow: 0px 2px 1px rgba(28, 28, 29, 0.42);}
+
+}
+
 
 .wrapper {
   margin: 0 auto;
@@ -483,7 +655,8 @@ return (key == 8 || key == 13);
 .satir.header {
   font-weight: 900;
   color: #ffffff;
-  background: #ea6153;
+  /*background: #ea6153;*/
+  background:#c60f0f;
 }
 
 .satir.green {
