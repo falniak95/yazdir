@@ -137,7 +137,11 @@ namespace yazdir.webSitesi.test
         }
         //*************************************************************************************
 
-
+        public void sessionSil(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("/websitesi/test/anaSayfa.aspx");
+        }
 
         public void upd(object sender, EventArgs e)
         {
@@ -238,7 +242,7 @@ namespace yazdir.webSitesi.test
                 {
 
                     MySqlCommand kmt = new MySqlCommand("update uye_Bireysel set password='"+newPassword.Value+"' where eMail='" + Session["on_eMail"].ToString() + "'", connection);
-                   
+                 //   MySqlCommand kmt2 = new MySqlCommand("update uye_Kurumsal set comPassword='" + newPassword.Value + "' where comEmail='" + Session["on_eMail"].ToString() + "'", connection);
                     connection.Open();
                     kmt.ExecuteNonQuery();
                    

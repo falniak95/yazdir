@@ -76,15 +76,6 @@ namespace yazdir.webSitesi.test {
         protected global::System.Web.UI.HtmlControls.HtmlAnchor oturumuKapatTab;
         
         /// <summary>
-        /// Button1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
-        
-        /// <summary>
         /// grsMail control.
         /// </summary>
         /// <remarks>
@@ -112,6 +103,15 @@ namespace yazdir.webSitesi.test {
         protected global::System.Web.UI.WebControls.Button grsButon;
         
         /// <summary>
+        /// grsKurumsal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button grsKurumsal;
+        
+        /// <summary>
         /// comName control.
         /// </summary>
         /// <remarks>
@@ -121,6 +121,15 @@ namespace yazdir.webSitesi.test {
         protected global::System.Web.UI.HtmlControls.HtmlInputText comName;
         
         /// <summary>
+        /// vergiNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText vergiNo;
+        
+        /// <summary>
         /// comUserName control.
         /// </summary>
         /// <remarks>
@@ -128,6 +137,24 @@ namespace yazdir.webSitesi.test {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText comUserName;
+        
+        /// <summary>
+        /// comAdres control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText comAdres;
+        
+        /// <summary>
+        /// comCity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText comCity;
         
         /// <summary>
         /// comMail control.
@@ -146,6 +173,15 @@ namespace yazdir.webSitesi.test {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText comNo;
+        
+        /// <summary>
+        /// comAccount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText comAccount;
         
         /// <summary>
         /// password3 control.

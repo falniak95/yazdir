@@ -1,9 +1,19 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="yeniSayfa.aspx.cs" Inherits="yazdir.webSitesi.test.yeniSayfa" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" enableEventValidation="false" CodeBehind="mainCom.aspx.cs" Inherits="yazdir.webSitesi.test.yeniSayfa" %>
 
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
-<title>Treasurer a Corporate Category Bootstrap Responsive Website Template | Contact :: w3layouts</title>
+
+    
+
+        
+
+
+
+
+
+
+<title>YAZZDIR-KURUMSAL</title>
 <!-- custom-theme -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -20,17 +30,32 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 <link href="//fonts.googleapis.com/css?family=Raleway:100i,200,200i,300,400,500,500i,600,700,700i,800,800i" rel="stylesheet">
 
+
+     <script type ="text/jscript"  language="javascript">
+
+         function openModal() { $('#myModal2').modal('show'); false }
+         </script>
+
+
 </head>
 	
 <body>
+      
+
+<form id="form1" runat="server">
+    <div>
+
+
+
+    
 <!-- banner -->
 <div class="agileits_top_menu">
    <div class="w3l_header_left">
-				<ul>
+<%--				<ul>
 					<li><i class="fa fa-map-marker" aria-hidden="true"></i> 1143 New York, USA</li>
 					<li><i class="fa fa-phone" aria-hidden="true"></i> +(010) 221 918 811</li>
 					<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">info@example.com</a></li>
-				</ul>
+				</ul>--%>
 			</div>
 			<div class="w3l_header_right">
 				<div class="w3ls-social-icons text-left">
@@ -51,29 +76,38 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-				<h1><a class="navbar-brand" href="index.html"><i class="fa fa-crosshairs" aria-hidden="true"></i> Treasurer</a></h1>
+				<h1><a class="navbar-brand" href="index.html"><i class="fa fa-crosshairs" aria-hidden="true"></i> YAZZDIR</a></h1>
 
 				</div>
 				<ul class="agile_forms">
-					<li><a class="active" href="#" data-toggle="modal" data-target="#myModal2">Giriş Yap</a> </li>
-					<li><a href="#" data-toggle="modal" data-target="#myModal3"> Sign Up</a> </li>
+
+                  
+                    <li><a class="active" href="#" data-toggle="modal" data-target="#myModal4">Mesajlar</a> </li>
+                    <li><a class="active" href="#" data-toggle="modal" data-target="#myModal5">Şifre</a> </li>
+
+					<li><a class="active" href="#" data-toggle="modal" data-target="#myModal2">Şirket Bilgileri</a> </li>
+
+					<%--<li><a href="#" data-toggle="modal" data-target="#myModal3" UseSubmitBehavior="false" onclick="sessionSil">Çıkış</a> </li>--%>
+                 <%-- <li> <asp:Button ID="Button1" href="#" data-toggle="modal" data-target="#myModal3" runat="server" OnClick="sessionSil" UseSubmitBehavior="false" Text="Çıkış" /> </li>--%>
+                    <asp:button  href="#" data-toggle="modal" data-target="#myModal3" runat="server" OnClick="sessionSil" UseSubmitBehavior="false" class="btn btn-danger" text="Çıkış"/>
 				</ul>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
 					<nav>
 						<ul class="nav navbar-nav">
-							<li><a href="index.html" class="hvr-underline-from-center">Home</a></li>
-							<li><a href="about.html" class="hvr-underline-from-center">About</a></li>
-							<li><a href="portfolio.html" class="hvr-underline-from-center">Portfolio</a></li>
+							<li><a href="index.html" class="hvr-underline-from-center">Anasayfa</a></li>
+							<li><a href="about.html" class="hvr-underline-from-center">Hakkımda</a></li>
 							<li><a href="blog.html" class="hvr-underline-from-center">Blog</a></li>
-							<li class="dropdown">
+						
+                            
+                           	<li class="dropdown">
 								<a href="#" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown">Short Codes <b class="fa fa-caret-down"></b></a>
 								<ul class="dropdown-menu agile_short_dropdown">
 									<li><a href="icons.html">Web Icons</a></li>
 									<li><a href="typography.html">Typography</a></li>
 								</ul>
 							</li>
-							<li class="active"><a href="contact.html" class="hvr-underline-from-center">Contact</a></li>
+							
 						</ul>
 					</nav>
 
@@ -82,41 +116,114 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			
 	<div class="clearfix"> </div> 
 </div> 
+    
+    <!------------------------------------------------------------------------------------------------------------------------------->
+    
+       <div class="modal fade" id="myModal5" tabindex="-1" role="dialog">
+                 
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                           <%-- <button type="button" class="close" data-dismiss="modal">&times;</button>--%>
+
+                            <div class="signin-form profile">
+                                <h3 class="agileinfo_sign">Şifre Değiştir</h3>
+                                <div class="login-form">
+                                    </div>
+          
+                                        <a style="padding-right:100%">Eski Şifre </a>
+                                        <input type="password" id="eski" runat="server" name="eskiSifre" placeholder="" required="">
+                                        <a style="padding-right:100%">Yeni Şifre </a>        
+                                        <input type="password" id="newPassword" runat="server" name="newPassword" placeholder="" required="">
+                                        <a style="padding-right:100%">Yeni Şifre Tekrar </a>
+                                        <input type="password" id="newPasswordAgain" runat="server" name="newPasswordAgain" placeholder="" required="">
+                                   
+                                <asp:Button ID="changePasswordButtonCom" runat="server" UseSubmitBehavior="false" OnClick="changePassCom" Text="Değistir" />
+                              
+          
+                       
+                                 
+                                
+
+                               
+                              
+
+                                </div>
+
+                           
+                                
+                            </div>
+
+                        </div>
+
+                    </div> 
+
+                </div>
+    <!------------------------------------------------------------------------------------------------------------------------------>
 <!-- Modal1 -->
-													<div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
-														<div class="modal-dialog">
-														<!-- Modal content-->
-															<div class="modal-content">
-																<div class="modal-header">
-																	<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
+								<div class="modal-dialog">
+								<!-- Modal content-->
+					<div class="modal-content">
+							<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
 																	
-																	<div class="signin-form profile">
-																	<h3 class="agileinfo_sign">Sign In</h3>	
-																			<div class="login-form">
-																				<form action="#" method="post">
-																					<input type="email" name="email" placeholder="E-mail" required="">
-																					<input type="password" name="password" placeholder="Password" required="">
-																					<div class="tp">
-																						<input type="submit" value="Sign In">
-																					</div>
-																				</form>
-																			</div>
-																			<div class="login-social-grids">
-																				<ul>
-																					<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-																					<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-																					<li><a href="#"><i class="fa fa-rss"></i></a></li>
-																				</ul>
-																			</div>
-																			<p><a href="#" data-toggle="modal" data-target="#myModal3" > Don't have an account?</a></p>
-																		</div>
-																</div>
+						<div class="signin-form profile">
+				        	<h3 class="agileinfo_sign">Bilgiler</h3>	
+						<div class="login-form">
+				        	<form action="#" method="post">
+
+
+								<a style="padding-right:100%">Vergi Numarası </a>
+                                         <input type="text" id="vergiNo" runat="server" name="vergiNo" placeholder="" required="" disabled >
+
+                                 <a style="padding-right:100%">Şirket Adı </a>
+                                        <input type="text" id="comName" runat="server" name="comNAme" placeholder="" required="" disabled>
+                                    
+                                 <a style="padding-right:100%">Kullanıcı Adı </a>
+                                        <input type="text" id="userName" runat="server" name="userName" placeholder="" required="" disabled>
+
+                                 <a style="padding-right:100%">Adres </a>
+                                        <input type="text" id="address" runat="server" name="address" placeholder="" required="" >
+
+
+                                <a style="padding-right:100%">Şehir </a>
+                                        <input type="text" id="city" runat="server" name="city" placeholder="" required="" disabled>
+
+
+                               
+                                <a style="padding-right:100%">Telefon Numarası </a>
+                                        <input type="text" id="mobilPhone" runat="server" name="mobilPhone" maxlength="11" placeholder="" required="">
+
+
+                                <a style="padding-right:100%">Mail Adresi </a>
+                                        <input type="email" id="eMail" runat="server" name="eMail" placeholder="" required="" disabled>
+
+
+                                <a style="padding-right:100%">Hesap Numarası </a>
+                                        <input type="text" id="account" runat="server" name="account"  placeholder="" required="" maxlength="20">
+
+
+                                	<div class="tp">
+                             
+
+                               
+                                       <asp:Button  ID="updateInfo" runat="server" UseSubmitBehavior="false" onclick="upd" Text="Güncelle" />
+
+                                	</div>
+									 </form>
+													</div>
+																			
+																			<%--<p><a href="#" data-toggle="modal" data-target="#myModal3" > Don't have an account?</a></p>--%>
 															</div>
 														</div>
 													</div>
-													<!-- //Modal1 -->	
+												</div>
+											</div>
+											<!-- //Modal1 -->	
 													<!-- Modal2 -->
-													<div class="modal fade" id="myModal3" tabindex="-1" role="dialog">
+													<%--<div class="modal fade" id="myModal3" tabindex="-1" role="dialog">
 														<div class="modal-dialog">
 														<!-- Modal content-->
 															<div class="modal-content">
@@ -127,6 +234,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																	<h3 class="agileinfo_sign">Sign Up</h3>	
 																			<div class="login-form">
 																				<form action="#" method="post">
+
 																				   <input type="text" name="name" placeholder="Username" required="">
 																					<input type="email" name="email" placeholder="Email" required="">
 																					<input type="password" name="password" id="password1" placeholder="Password" required="">
@@ -140,12 +248,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																</div>
 															</div>
 														</div>
-													</div>
+													</div>--%>
+        
 													<!-- //Modal2 -->
 					<!-- /agile_inner_banner_info -->													
 							<div class="agile_inner_banner_info">
-							   <h2>Contact </h2>
-							   <p>Add Some Short Description</p>
+							   <h2 id="sirket" runat="server">ŞIRKET ADI</h2>
+                               
+							   <p>BAZI GEREKLİ AÇIKLAMALAR</p>
 							</div>
 					<!-- //agile_inner_banner_info -->
 					<!-- contact -->
@@ -156,7 +266,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="wthree_footer_grid_left">
 						<i class="fa fa-map-marker" aria-hidden="true"></i>
 					</div>
-					<p>3481 Melrose Place, Beverly Hills, <span>New York City 90210.</span></p>
+					<p>3481 Melrose Place, Beverly Hills, <span>ELAZIĞ 23000.</span></p>
 				</div>
 				<div class="col-md-4 w3ls_footer_grid_left con">
 					<div class="wthree_footer_grid_left">
@@ -175,7 +285,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 	</div>
-	<div class="agileits_map">
+	<%--<div class="agileits_map">
 		<div class="container">
 			 <h3 class="tittle_agile_w3">Find Us</h3>
 		    <div class="heading-underline">
@@ -185,8 +295,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="w3_services_grids">
 			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387142.84010033106!2d-74.25819252532891!3d40.70583163828471!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sin!4v1475140387172" style="border:0"></iframe>
 		</div>
-	</div>
-	<div class="services">
+	</div>--%>
+	<%--<div class="services">
 		<div class="container">
 			 <h3 class="tittle_agile_w3">Send Us Message</h3>
 		    <div class="heading-underline">
@@ -217,7 +327,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</form>
 			</div>
 		</div>
-	</div>
+	</div>--%>
 <!-- //contact -->
 
 
@@ -306,6 +416,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 	</div>
+
+                
+
+
 <!-- //footer -->
 <!-- menu -->
 <!-- js -->
@@ -398,5 +512,78 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			});
 	</script>
 <!-- //here ends scrolling icon -->
+
+    </div>
+    </form>
+
+
+
+    <style>
+
+
+   #updateInfo{
+    outline: none;
+    padding: 0.8em 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+    margin-top: 1em;
+    border: none;
+    color: #FFFFFF;
+	text-transform:uppercase;
+    cursor: pointer;
+    background: #a80057;
+    box-shadow: 0px 2px 1px rgba(28, 28, 29, 0.42);
+
+}
+#updateInfo:hover{
+      color: #fff;
+       background: #000;
+    transition: .5s all;
+	-webkit-transition: .5s all;
+    -moz-transition: .5s all;
+    -o-transition: .5s all;
+    -ms-transition: .5s all;
+}
+
+#changePasswordButtonCom{
+     outline: none;
+    padding: 0.8em 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+    margin-top: 1em;
+    border: none;
+    color: #FFFFFF;
+	text-transform:uppercase;
+    cursor: pointer;
+    background: #a80057;
+    box-shadow: 0px 2px 1px rgba(28, 28, 29, 0.42);
+
+}
+
+#changePasswordButtonCom:hover{
+      color: #fff;
+       background: #000;
+    transition: .5s all;
+	-webkit-transition: .5s all;
+    -moz-transition: .5s all;
+    -o-transition: .5s all;
+    -ms-transition: .5s all;
+}
+
+
+
+    </style>
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>

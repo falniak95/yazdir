@@ -11,13 +11,13 @@
 
 
     <script language="C#" type="text/C#" runat="server">
-    public void kahraman(object s, EventArgs e) {
-	ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Merhaba ben çalıştım.')", true);
-
+        public void kahraman(object s, EventArgs e) {
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Merhaba ben çalıştım.')", true);
 
             
 
-}
+
+        }
 
 
 </script>
@@ -49,8 +49,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	    rel='stylesheet' type='text/css'>
 	<link href="//fonts.googleapis.com/css?family=Raleway:100i,200,200i,300,400,500,500i,600,700,700i,800,800i" rel="stylesheet">
 
-    <script type ="text/jscript"  language="javascript">
 
+    
+ 
+
+
+    <script type ="text/jscript"  language="javascript">
 
     function shouldCancelbackspace(e) {
     var key;
@@ -214,7 +218,7 @@ return (key == 8 || key == 13);
                         <li><a href="#" id="kazanmayaBaslaTab" runat="server" data-toggle="modal" data-target="#kazanmayaBasla">Kazanmaya Başla</a> </li>
                         <li><a href="/webSitesi/test/main.aspx" id="anaSayfaTab" visible="false" runat="server" data-toggle="modal">Ana Sayfa</a> </li>
                         <li><a href="#" id="oturumuKapatTab" visible="false" runat="server" data-toggle="modal" >Oturumu Kapat</a> </li>
-                        <asp:Button ID="Button1" runat="server" OnClick="sessionSifirla" UseSubmitBehavior="false" Text="Session Temizle" />
+                       <%-- <asp:Button ID="Button1" runat="server" OnClick="sessionSifirla" UseSubmitBehavior="false" Text="Session Temizle" />--%>
                         
                         
                         
@@ -267,18 +271,20 @@ return (key == 8 || key == 13);
                                 <div class="login-form">
                                     </div>
 
+                              
+                                      
+                               
 
-                                        <input type="email" id="grsMail" runat="server" name="email" placeholder="Kullanıcı Adı" required="">
+                                        <input type="email" id="grsMail" runat="server" name="email" placeholder="Mail" required="">
                                         <input type="password" id="grsPassword" runat="server" name="password" placeholder="Şifre" required="">
                                         <div class="tp">
 
 
-                                            <asp:Button ID="grsButon" runat="server" UseSubmitBehavior="false"   Text="OTURUM AÇ" OnClick="grsbuton" />
-
-                                            
-
+                                            <asp:Button ID="grsButon" runat="server" UseSubmitBehavior="false"   Text="BIREYSEL OTURUM AÇ" OnClick="grsbutonBireysel" />
+                                            <asp:Button ID="grsKurumsal" runat="server" UseSubmitBehavior="false" Text="KURUMSAL OTURUM AÇ" OnClick="grsbutonKurumsal"  />
+                                        
                                         </div>
-                                    
+                                             
                                 </div>
 
                             <%--<div class="login-social-grids">
@@ -338,9 +344,13 @@ return (key == 8 || key == 13);
                                 <div class="login-form">
 
                                     <input type="text" runat="server" id="comName" name="comName" placeholder="Şirket Adı" class="sirketAdi" required="">
+                                    <input type="text" runat="server" id="vergiNo" name="vergiNo" placeholder="Vergi No" class="vergiNo" required="">
                                     <input type="text" runat="server" id="comUserName" name="comUserName" placeholder="Kullanıcı Adı" class="kullaniciAdi" required="">
+                                    <input type="text" runat="server" id="comAdres" name="comAdres" placeholder="Şirket Adresi" class="comAdres" required="">
+                                    <input type="text" runat="server" id="comCity" name="comCity" placeholder="Şehir" class="comCity" required="">
                                     <input type="email" runat="server" id="comMail" name="comMail" placeholder="Mail" class="mail" required="">
                                      <input type="text" runat="server" id="comNo" name="comNo" placeholder="Telefon no" class="sirketNo" required="">
+                                    <input type="text" runat="server" id="comAccount" name="comAccount" placeholder="Hesap Numarası" class="ComAccount" required="">
                                      <input type="password" runat="server" name="password" id="password3" placeholder="Şifre" required="">
                                     <input type="password" runat="server" name="password" id="password4" placeholder="Şifre Tekrarı" required="">
                                
@@ -1374,6 +1384,14 @@ return (key == 8 || key == 13);
 		});
 	</script>
 	<!-- //here ends scrolling icon -->
+
+
+    <style>
+
+        
+    </style>
+
+
 </body>
 
 </html>
