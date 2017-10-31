@@ -31,9 +31,9 @@ namespace yazdir.webSitesi.test
             Response.Redirect("/websitesi/test/anaSayfa.aspx");
         }
 
-        public void upd (object sender,EventArgs e)
+        public void upd(object sender, EventArgs e)
         {
-            MySqlCommand komut = new MySqlCommand("update uye_Kurumsal set comAdress='"+address.Value+"',  comNo='" + mobilPhone.Value + "' , AccountNumber='" + account.Value + "'  where comEmail='" + Session["on_eMail"].ToString() + "'", connection);
+            MySqlCommand komut = new MySqlCommand("update uye_Kurumsal set comAdress='" + address.Value + "',  comNo='" + mobilPhone.Value + "' , AccountNumber='" + account.Value + "'  where comEmail='" + Session["on_eMail"].ToString() + "'", connection);
             connection.Open();
             komut.ExecuteNonQuery();
             connection.Close();
@@ -62,7 +62,7 @@ namespace yazdir.webSitesi.test
                 mobilPhone.Value = dataReader["comNo"].ToString();
                 eMail.Value = dataReader["comEmail"].ToString();
                 account.Value = dataReader["accountNumber"].ToString();
-               
+
             }
 
 
@@ -77,43 +77,43 @@ namespace yazdir.webSitesi.test
 
         public void changePassCom(object sender, EventArgs e)
         {
-            
 
-                if (eski.Value.ToString() == Session["on_password"].ToString())
+
+            if (eski.Value.ToString() == Session["on_password"].ToString())
+            {
+                if (newPassword.Value.ToString() == newPasswordAgain.Value.ToString())
                 {
-                    if (newPassword.Value.ToString() == newPasswordAgain.Value.ToString())
-                    {
-                        //  connection = new MySqlConnection("Server=furkanalniak.com;Database=furkanal_yazdir;Uid=furkanal_admin;Pwd='fk2017';");
-                        //  MySqlCommand kmt = new MySqlCommand("update uye_Bireysel set password='" + newPassword.Value + "' where eMail='" + Session["on_eMail"].ToString() + "'", connection);
-                        MySqlCommand kmt = new MySqlCommand("update uye_Kurumsal set comPassword='" + newPassword.Value + "' where comEmail='" + Session["on_eMail"].ToString() + "'", connection);
-                        connection.Open();
-                        kmt.ExecuteNonQuery();
+                    //  connection = new MySqlConnection("Server=furkanalniak.com;Database=furkanal_yazdir;Uid=furkanal_admin;Pwd='fk2017';");
+                    //  MySqlCommand kmt = new MySqlCommand("update uye_Bireysel set password='" + newPassword.Value + "' where eMail='" + Session["on_eMail"].ToString() + "'", connection);
+                    MySqlCommand kmt = new MySqlCommand("update uye_Kurumsal set comPassword='" + newPassword.Value + "' where comEmail='" + Session["on_eMail"].ToString() + "'", connection);
+                    connection.Open();
+                    kmt.ExecuteNonQuery();
 
-                        connection.Close();
+                    connection.Close();
 
 
-                    }
-                    else
-                    {
-                        Response.Write("<script>alert('Yeni Şifre Tekrarı Hatalı Şifre Değiştirilemedi.')</script>");
-                        eski.Value = "";
-                        newPassword.Value = "";
-                        newPasswordAgain.Value = "";
-                    }
                 }
                 else
                 {
-                    Response.Write("<script>alert('" + Session["on_password"] + " ve " + newPassword.Value.ToString() + "')</script>");
+                    Response.Write("<script>alert('Yeni Şifre Tekrarı Hatalı Şifre Değiştirilemedi.')</script>");
                     eski.Value = "";
                     newPassword.Value = "";
                     newPasswordAgain.Value = "";
                 }
-
-
-
             }
-        
+            else
+            {
+                Response.Write("<script>alert('" + Session["on_password"] + " ve " + newPassword.Value.ToString() + "')</script>");
+                eski.Value = "";
+                newPassword.Value = "";
+                newPasswordAgain.Value = "";
+            }
 
-       
+
+
+        }
+
+
+
     }
 }

@@ -270,6 +270,24 @@ namespace yazdir.webSitesi.test
 
         }
        
+        public void newMessage (object sender,EventArgs e)
+        {
+
+            connection.Open();
+            MySqlCommand command = new MySqlCommand();
+            command.Connection = connection;
+            command.CommandText = "insert into messages ()"
+            command.ExecuteNonQuery();
+            connection.Close();
+            //Session["on_eMail"] = comMail.Value;
+            //Session["on_password"] = password3.Value;
+            //Response.Redirect("/webSitesi/test/mainCom.aspx");
+
+
+
+        }
+
+
 //**********************************************************************************************************************
 
     }

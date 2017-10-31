@@ -148,6 +148,9 @@ namespace yazdir.webSitesi.test
                         if (dataReader[9].ToString() == grsPassword.Value)
                         {
                             Session["on_eMail"] = grsMail.Value;
+
+
+
                             Session["on_password"] = grsPassword.Value;
                             Response.Redirect("/webSitesi/test/mainCom.aspx");
 
@@ -156,7 +159,7 @@ namespace yazdir.webSitesi.test
                         }
                         else
                         {
-                            Response.Redirect("http://furkanalniak.com");
+                            Response.Write("<script>alert('Şifre ve mail adresinizi kontrol edin ve tekrar giriş yapmayı deneyin')</script>");
                         }
                     }
                     connection.Close();
@@ -206,7 +209,7 @@ namespace yazdir.webSitesi.test
                         }
                         else
                         {
-                            Response.Redirect("http://furkanalniak.com");
+                            Response.Write("<script>alert('Şifre ve mail adresinizi kontrol edin ve tekrar giriş yapmayı deneyin')</script>");
                         }
                     }
                     connection.Close();

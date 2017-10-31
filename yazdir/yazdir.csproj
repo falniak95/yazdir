@@ -165,6 +165,7 @@
     <Content Include="webSitesi\test\images\404.png" />
     <Content Include="webSitesi\test\main.aspx" />
     <Content Include="webSitesi\test\mainCom.aspx" />
+    <Content Include="webSitesi\test\message.aspx" />
     <Content Include="webSitesi\uyeEkle.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -246,6 +247,13 @@
     </Compile>
     <Compile Include="webSitesi\test\mainCom.aspx.designer.cs">
       <DependentUpon>mainCom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webSitesi\test\message.aspx.cs">
+      <DependentUpon>message.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webSitesi\test\message.aspx.designer.cs">
+      <DependentUpon>message.aspx</DependentUpon>
     </Compile>
     <Compile Include="webSitesi\uyeEkle.aspx.cs">
       <DependentUpon>uyeEkle.aspx</DependentUpon>
