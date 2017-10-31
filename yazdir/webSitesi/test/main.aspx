@@ -173,7 +173,7 @@ return (key == 8 || key == 13);
                      <li><a class="active" href="#" data-toggle="modal" data-target="#modalSifre">Şifre </a></li>
                      <li><a class="active" href="#" data-toggle="modal" data-target="#bnmModal" >profil </a></li>
 
-					<li><a href="#" data-toggle="modal" data-target="#editorEkle3">Çıkış</a> </li>
+					<li><a href="#" data-toggle="modal" data-target="#myModal3">Çıkış</a> </li>
 				</ul>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
@@ -256,7 +256,7 @@ return (key == 8 || key == 13);
 
                                 <a style="padding-right:100%">Ad </a>
                                         <input type="text" id="name" runat="server" name="name" placeholder="" required="" disabled >
-
+                                    
 
                                 <a style="padding-right:100%">Soyad </a>
                                         <input type="text" id="surname" runat="server" name="Surname" placeholder="" required="" disabled>

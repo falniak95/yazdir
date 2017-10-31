@@ -509,6 +509,34 @@ h3.agileinfo_sign  {
     -o-transition: .5s all;
     -ms-transition: .5s all;
 }
+
+#grsKurumsal{
+    outline: none;
+    padding: 0.8em 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+    margin-top: 1em;
+    border: none;
+    color: #FFFFFF;
+	text-transform:uppercase;
+    cursor: pointer;
+    background: #bd081c;
+    box-shadow: 0px 2px 1px rgba(28, 28, 29, 0.42);
+
+}
+
+#grsKurumsal:hover
+{
+       color: #fff;
+       background: #000;
+    transition: .5s all;
+	-webkit-transition: .5s all;
+    -moz-transition: .5s all;
+    -o-transition: .5s all;
+    -ms-transition: .5s all;
+}
+
 #grsButon  {
     outline: none;
     padding: 0.8em 0;
@@ -525,6 +553,21 @@ h3.agileinfo_sign  {
 	
 }
 
+#Button2{
+    outline: none;
+    padding: 0.8em 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+    margin-top: 1em;
+    border: none;
+    color: #FFFFFF;
+	text-transform:uppercase;
+    cursor: pointer;
+    background: #00a98f;
+    box-shadow: 0px 2px 1px rgba(28, 28, 29, 0.42);
+}
+
 #grsButon:hover{
     color: #fff;
        background: #000;
@@ -535,6 +578,7 @@ h3.agileinfo_sign  {
     -ms-transition: .5s all;
 
 }
+
 
 #registerPageButton  {
     outline: none;

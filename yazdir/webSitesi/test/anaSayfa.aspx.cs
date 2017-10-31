@@ -17,11 +17,11 @@ namespace yazdir.webSitesi.test
             // registerPageButton.Click += registerNow;
         }
 
-        public void sessionSifirla(object sender, EventArgs e)
-        {
-            Session.Clear();
-            Response.Redirect("/websitesi/test/anaSayfa.aspx");
-        }
+        //public void sessionSifirla(object sender, EventArgs e)
+        //{
+        //    Session.Clear();
+        //    Response.Redirect("/websitesi/test/anaSayfa.aspx");
+        //}
 
         public MySqlConnection connection;
 
@@ -36,12 +36,12 @@ namespace yazdir.webSitesi.test
                     connection.Open();
                     MySqlCommand command = new MySqlCommand();
                     command.Connection = connection;
-                    command.CommandText = "insert into uye_Kurumsal (comName,comUsername,comEmail,comNo,comPassword) values ('" + comName.Value + "','" + comUserName.Value + "','" + comMail.Value + "','" + comNo.Value + "','" + password3.Value + "')";
+                    command.CommandText = "insert into uye_Kurumsal (comName,vergiNo,comUsername,comAdress,comCity,comEmail,comNo,AccountNumber,comPassword) values ('" + comName.Value + "','" + vergiNo.Value + "','" + comUserName.Value + "','" + comAdres.Value + "','" + comCity.Value + "','" + comMail.Value + "','" + comNo.Value + "','" + comAccount.Value + "','" + password3.Value + "')";
                     command.ExecuteNonQuery();
                     connection.Close();
                     Session["on_eMail"] = comMail.Value;
-                  //  Session["on_password"] = password3.Value;
-                    Response.Redirect("/webSitesi/test/main.aspx");
+                    Session["on_password"] = password3.Value;
+                    Response.Redirect("/webSitesi/test/mainCom.aspx");
                 }
                 else
                 {
@@ -130,7 +130,56 @@ namespace yazdir.webSitesi.test
            
         }
 
-        public void grsbuton(object sender, EventArgs e)
+        public void grsbutonKurumsal(object sender,EventArgs e)
+        {
+            connection = new MySqlConnection("Server=furkanalniak.com;Database=furkanal_yazdir;Uid=furkanal_admin;Pwd='fk2017';");
+            try
+            {
+                if (grsMail.Value != "" && grsPassword.Value != "")
+                {
+
+                    connection.Open();
+                    MySqlCommand command = new MySqlCommand();
+                    command.Connection = connection;
+                    command.CommandText = "select * from uye_Kurumsal where comEmail='" + grsMail.Value + "'";
+                    MySqlDataReader dataReader = command.ExecuteReader();
+                    while (dataReader.Read())
+                    {
+                        if (dataReader[9].ToString() == grsPassword.Value)
+                        {
+                            Session["on_eMail"] = grsMail.Value;
+                            Session["on_password"] = grsPassword.Value;
+                            Response.Redirect("/webSitesi/test/mainCom.aspx");
+
+                            Response.Write("<script>alert('"+Session["on_eMail"]+"')</script>");
+
+                        }
+                        else
+                        {
+                            Response.Redirect("http://furkanalniak.com");
+                        }
+                    }
+                    connection.Close();
+                }
+                else
+                {
+                    Response.Write("<script>alert('Geçerli bir mail veya şifre girin.')</script>");
+                }
+            }
+            catch (Exception xe)
+            {
+                Response.Write("<script>alert('" + xe.Message + "')</script>");
+
+            }
+        }
+     
+        
+        
+
+
+
+
+        public void grsbutonBireysel(object sender, EventArgs e)
         {
 
             connection = new MySqlConnection("Server=furkanalniak.com;Database=furkanal_yazdir;Uid=furkanal_admin;Pwd='fk2017';");
