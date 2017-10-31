@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace yazdir.webSitesi {
+namespace yazdir.webSitesi.test.adminPanel {
     
     
-    public partial class uyeEkle {
+    public partial class confirmationAndReport {
         
         /// <summary>
         /// form1 control.
@@ -22,66 +22,75 @@ namespace yazdir.webSitesi {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// kAdi control.
+        /// welcomeMsg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText kAdi;
+        protected global::System.Web.UI.WebControls.Label welcomeMsg;
         
         /// <summary>
-        /// mail control.
+        /// script1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl mail;
+        protected global::System.Web.UI.ScriptManager script1;
         
         /// <summary>
-        /// name control.
+        /// UpdatePanel8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText name;
+        protected global::System.Web.UI.UpdatePanel UpdatePanel8;
         
         /// <summary>
-        /// surname control.
+        /// Panel4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText surname;
+        protected global::System.Web.UI.WebControls.Panel Panel4;
         
         /// <summary>
-        /// password1 control.
+        /// content control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword password1;
+        protected global::System.Web.UI.WebControls.Label content;
         
         /// <summary>
-        /// password2 control.
+        /// unConfirmedAdsBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword password2;
+        protected global::System.Web.UI.WebControls.Button unConfirmedAdsBtn;
         
         /// <summary>
-        /// registerPageButton control.
+        /// UpdatePanel2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button registerPageButton;
+        protected global::System.Web.UI.UpdatePanel UpdatePanel2;
+        
+        /// <summary>
+        /// unconfirmedJobs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel unconfirmedJobs;
     }
 }

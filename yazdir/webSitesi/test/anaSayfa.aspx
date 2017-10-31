@@ -200,8 +200,8 @@ return (key == 8 || key == 13);
 
 
 								<ul class="dropdown-menu agile_short_dropdown">
-                                    <li><a class="active" id="registerButtonTab" runat="server" href="#" data-toggle="modal" data-target="#myModal3">bireysel</a> </li>
-                                   <li><a class="active" id="registerButtonTab2" runat="server" href="#" data-toggle="modal" data-target="#myModal4">kurumsal</a> </li>
+                                    <li><a class="active" id="registerButtonTab" runat="server" href="#" data-toggle="modal" data-target="#editorEkle3">bireysel</a> </li>
+                                   <li><a class="active" id="registerButtonTab2" runat="server" href="#" data-toggle="modal" data-target="#editorEkle4">kurumsal</a> </li>
 
 								</ul>
 							</li>
@@ -209,7 +209,7 @@ return (key == 8 || key == 13);
 
 
 
-                        <li><a class="active" id="logInButtonTab" runat="server" href="#" data-toggle="modal" data-target="#myModal2">OTURUM AÇ </a></li>
+                        <li><a class="active" id="logInButtonTab" runat="server" href="#" data-toggle="modal" data-target="#editorEkle2">OTURUM AÇ </a></li>
                         
                         <li><a href="#" id="kazanmayaBaslaTab" runat="server" data-toggle="modal" data-target="#kazanmayaBasla">Kazanmaya Başla</a> </li>
                         <li><a href="/webSitesi/test/main.aspx" id="anaSayfaTab" visible="false" runat="server" data-toggle="modal">Ana Sayfa</a> </li>
@@ -254,7 +254,7 @@ return (key == 8 || key == 13);
 
             </div>
 
-                  <div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
+                  <div class="modal fade" id="editorEkle2" tabindex="-1" role="dialog">
                  
                 <div class="modal-dialog">
                     <!-- Modal content-->
@@ -288,7 +288,7 @@ return (key == 8 || key == 13);
 								<li><a href="#"><i class="fa fa-rss"></i></a></li>
 							</ul>
 						</div>--%>
-                                <p><a href="#" data-toggle="modal" data-target="#myModal3">Hesabın yok mu?</a></p>
+                                <p><a href="#" data-toggle="modal" data-target="#editorEkle3">Hesabın yok mu?</a></p>
                             </div>
 
                         </div>
@@ -324,7 +324,7 @@ return (key == 8 || key == 13);
                 </div>
             </div>
             <!------------------------------------------------------------------------------------------------------------------->
-            <div class="modal fade" id="myModal4" tabindex="-1" role="dialog">
+            <div class="modal fade" id="editorEkle4" tabindex="-1" role="dialog">
 
                 <div class="modal-dialog">
                     <!-- Modal content-->
@@ -365,7 +365,7 @@ return (key == 8 || key == 13);
 
 
             
-            <div class="modal fade" id="myModal3" tabindex="-1" role="dialog">
+            <div class="modal fade" id="editorEkle3" tabindex="-1" role="dialog">
 
                 <div class="modal-dialog">
                     <!-- Modal content-->
@@ -704,7 +704,7 @@ return (key == 8 || key == 13);
 						Integer sed rutrum lectus.Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit.</p>
 
 					<div class="read">
-						<a href="#" class="view resw3" data-toggle="modal" data-target="#myModal">Read More</a>
+						<a href="#" class="view resw3" data-toggle="modal" data-target="#editorEkle">Read More</a>
 					</div>
 				</div>
 				<div class="col-md-6 services_bottom_grid_right">
@@ -836,7 +836,7 @@ return (key == 8 || key == 13);
                         <div class="col-md-6 w3l-news">
                             <div class="media response-info">
                                 <div class="media-left response-text-left">
-                                    <a href="#" data-toggle="modal" data-target="#myModal">
+                                    <a href="#" data-toggle="modal" data-target="#editorEkle">
                                         <img class="media-object" src="images/n1.jpg" alt="">
                                     </a>
                                 </div>
@@ -855,7 +855,7 @@ return (key == 8 || key == 13);
                             </div>
                             <div class="media response-info">
                                 <div class="media-left response-text-left">
-                                    <a href="#" data-toggle="modal" data-target="#myModal">
+                                    <a href="#" data-toggle="modal" data-target="#editorEkle">
                                         <img class="media-object" src="images/n2.jpg" alt="">
                                     </a>
                                 </div>
@@ -874,7 +874,7 @@ return (key == 8 || key == 13);
                             </div>
                             <div class="media response-info">
                                 <div class="media-left response-text-left">
-                                    <a href="#" data-toggle="modal" data-target="#myModal">
+                                    <a href="#" data-toggle="modal" data-target="#editorEkle">
                                         <img class="media-object" src="images/n3.jpg" alt="">
                                     </a>
                                 </div>
@@ -907,7 +907,7 @@ return (key == 8 || key == 13);
                 </div>
             </div>
             <!-- Modal1 -->
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+            <div class="modal fade" id="editorEkle" tabindex="-1" role="dialog">
                 <div class="modal-dialog">
                     <!-- Modal content-->
                     <div class="modal-content">
@@ -1037,7 +1037,7 @@ return (key == 8 || key == 13);
 
 
             <!-- bootstrap-pop-up -->
-            <div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
+            <div class="modal video-modal fade" id="editorEkle" tabindex="-1" role="dialog" aria-labelledby="editorEkle">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -1100,32 +1100,32 @@ return (key == 8 || key == 13);
                         <div class="col-md-4 w3_agile_footer_grid">
                             <h3>Instagram Posts</h3>
                             <div class="w3_agileits_footer_grid_left">
-                                <a href="#" data-toggle="modal" data-target="#myModal">
+                                <a href="#" data-toggle="modal" data-target="#editorEkle">
                                     <img src="images/f1.jpg" alt=" " class="img-responsive" />
                                 </a>
                             </div>
                             <div class="w3_agileits_footer_grid_left">
-                                <a href="#" data-toggle="modal" data-target="#myModal">
+                                <a href="#" data-toggle="modal" data-target="#editorEkle">
                                     <img src="images/f2.jpg" alt=" " class="img-responsive" />
                                 </a>
                             </div>
                             <div class="w3_agileits_footer_grid_left">
-                                <a href="#" data-toggle="modal" data-target="#myModal">
+                                <a href="#" data-toggle="modal" data-target="#editorEkle">
                                     <img src="images/f4.jpg" alt=" " class="img-responsive" />
                                 </a>
                             </div>
                             <div class="w3_agileits_footer_grid_left">
-                                <a href="#" data-toggle="modal" data-target="#myModal">
+                                <a href="#" data-toggle="modal" data-target="#editorEkle">
                                     <img src="images/f3.jpg" alt=" " class="img-responsive" />
                                 </a>
                             </div>
                             <div class="w3_agileits_footer_grid_left">
-                                <a href="#" data-toggle="modal" data-target="#myModal">
+                                <a href="#" data-toggle="modal" data-target="#editorEkle">
                                     <img src="images/f1.jpg" alt=" " class="img-responsive" />
                                 </a>
                             </div>
                             <div class="w3_agileits_footer_grid_left">
-                                <a href="#" data-toggle="modal" data-target="#myModal">
+                                <a href="#" data-toggle="modal" data-target="#editorEkle">
                                     <img src="images/f2.jpg" alt=" " class="img-responsive" />
                                 </a>
                             </div>

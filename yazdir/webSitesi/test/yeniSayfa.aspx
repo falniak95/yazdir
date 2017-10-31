@@ -55,8 +55,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 				</div>
 				<ul class="agile_forms">
-					<li><a class="active" href="#" data-toggle="modal" data-target="#myModal2">Giriş Yap</a> </li>
-					<li><a href="#" data-toggle="modal" data-target="#myModal3"> Sign Up</a> </li>
+					<li><a class="active" href="#" data-toggle="modal" data-target="#editorEkle2">Giriş Yap</a> </li>
+					<li><a href="#" data-toggle="modal" data-target="#editorEkle3"> Sign Up</a> </li>
 				</ul>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
@@ -83,7 +83,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="clearfix"> </div> 
 </div> 
 <!-- Modal1 -->
-													<div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
+													<div class="modal fade" id="editorEkle2" tabindex="-1" role="dialog">
 														<div class="modal-dialog">
 														<!-- Modal content-->
 															<div class="modal-content">
@@ -108,7 +108,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																					<li><a href="#"><i class="fa fa-rss"></i></a></li>
 																				</ul>
 																			</div>
-																			<p><a href="#" data-toggle="modal" data-target="#myModal3" > Don't have an account?</a></p>
+																			<p><a href="#" data-toggle="modal" data-target="#editorEkle3" > Don't have an account?</a></p>
 																		</div>
 																</div>
 															</div>
@@ -116,7 +116,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 													</div>
 													<!-- //Modal1 -->	
 													<!-- Modal2 -->
-													<div class="modal fade" id="myModal3" tabindex="-1" role="dialog">
+													<div class="modal fade" id="editorEkle3" tabindex="-1" role="dialog">
 														<div class="modal-dialog">
 														<!-- Modal content-->
 															<div class="modal-content">
@@ -246,32 +246,32 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="col-md-4 w3_agile_footer_grid">
 					<h3>Instagram Posts</h3>
 					<div class="w3_agileits_footer_grid_left">
-						<a href="#" data-toggle="modal" data-target="#myModal">
+						<a href="#" data-toggle="modal" data-target="#editorEkle">
 							<img src="images/f1.jpg" alt=" " class="img-responsive" />
 						</a>
 					</div>
 					<div class="w3_agileits_footer_grid_left">
-						<a href="#" data-toggle="modal" data-target="#myModal">
+						<a href="#" data-toggle="modal" data-target="#editorEkle">
 							<img src="images/f2.jpg" alt=" " class="img-responsive" />
 						</a>
 					</div>
 					<div class="w3_agileits_footer_grid_left">
-						<a href="#" data-toggle="modal" data-target="#myModal">
+						<a href="#" data-toggle="modal" data-target="#editorEkle">
 							<img src="images/f4.jpg" alt=" " class="img-responsive" />
 						</a>
 					</div>
 					<div class="w3_agileits_footer_grid_left">
-						<a href="#" data-toggle="modal" data-target="#myModal">
+						<a href="#" data-toggle="modal" data-target="#editorEkle">
 							<img src="images/f3.jpg" alt=" " class="img-responsive" />
 						</a>
 					</div>
 					<div class="w3_agileits_footer_grid_left">
-						<a href="#" data-toggle="modal" data-target="#myModal">
+						<a href="#" data-toggle="modal" data-target="#editorEkle">
 							<img src="images/f1.jpg" alt=" " class="img-responsive" />
 						</a>
 					</div>
 					<div class="w3_agileits_footer_grid_left">
-						<a href="#" data-toggle="modal" data-target="#myModal">
+						<a href="#" data-toggle="modal" data-target="#editorEkle">
 							<img src="images/f2.jpg" alt=" " class="img-responsive" />
 						</a>
 					</div>

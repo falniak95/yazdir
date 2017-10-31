@@ -166,14 +166,14 @@ return (key == 8 || key == 13);
 									<li><a href="typography.html">Giden kutusu</a></li>
 								</ul>
 							</li>
-					<%--<li><a class="active" runat="server" id="ozluk" href="#" data-toggle="dropdown" data-target="#myModal2">profil</a> </li>
+					<%--<li><a class="active" runat="server" id="ozluk" href="#" data-toggle="dropdown" data-target="#editorEkle2">profil</a> </li>
                    --%>
 
                    <%-- <li><a ID="changePassword" runat="server" data-toggle="modal" data-target="#changepass" Text="Şifre Değiştir" </a></li>--%>
                      <li><a class="active" href="#" data-toggle="modal" data-target="#modalSifre">Şifre </a></li>
                      <li><a class="active" href="#" data-toggle="modal" data-target="#bnmModal" >profil </a></li>
 
-					<li><a href="#" data-toggle="modal" data-target="#myModal3">Çıkış</a> </li>
+					<li><a href="#" data-toggle="modal" data-target="#editorEkle3">Çıkış</a> </li>
 				</ul>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">

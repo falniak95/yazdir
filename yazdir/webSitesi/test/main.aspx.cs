@@ -25,9 +25,9 @@ namespace yazdir.webSitesi.test
 
         }
 
-
+        #region MySql Conn String
         MySqlConnection connection = new MySqlConnection("Server=furkanalniak.com;Database=furkanal_yazdir;Uid=furkanal_admin;Pwd='fk2017';");
-
+        #endregion
 
         protected void Page_Load(object sender, EventArgs e)
         {
