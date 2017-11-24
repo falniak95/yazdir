@@ -228,6 +228,7 @@
     <Content Include="webSitesi\test\adminPanel\js\valida.2.1.6.min.js" />
     <Content Include="webSitesi\test\adminPanel\js\validator.min.js" />
     <Content Include="webSitesi\test\adminPanel\js\xy.js" />
+    <Content Include="webSitesi\test\adminPanel\loglar.aspx" />
     <Content Include="webSitesi\test\adminPanel\main-page.html" />
     <Content Include="webSitesi\test\adminPanel\maps.html" />
     <Content Include="webSitesi\test\adminPanel\panel.aspx" />
@@ -238,6 +239,7 @@
     <Content Include="webSitesi\test\adminPanel\validation.html" />
     <Content Include="webSitesi\test\anaSayfa.aspx" />
     <Content Include="webSitesi\test\images\404.png" />
+    <Content Include="webSitesi\test\jobdetail.aspx" />
     <Content Include="webSitesi\test\main.aspx" />
     <Content Include="webSitesi\test\yeniSayfa.aspx" />
     <Content Include="webSitesi\uyeEkle.aspx" />
@@ -324,6 +326,13 @@
     <Compile Include="webSitesi\test\adminPanel\confirmationAndReport.aspx.designer.cs">
       <DependentUpon>confirmationAndReport.aspx</DependentUpon>
     </Compile>
+    <Compile Include="webSitesi\test\adminPanel\loglar.aspx.cs">
+      <DependentUpon>loglar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webSitesi\test\adminPanel\loglar.aspx.designer.cs">
+      <DependentUpon>loglar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="webSitesi\test\adminPanel\panel.aspx.cs">
       <DependentUpon>panel.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -337,6 +346,13 @@
     </Compile>
     <Compile Include="webSitesi\test\anaSayfa.aspx.designer.cs">
       <DependentUpon>anaSayfa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webSitesi\test\jobdetail.aspx.cs">
+      <DependentUpon>jobdetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webSitesi\test\jobdetail.aspx.designer.cs">
+      <DependentUpon>jobdetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="webSitesi\test\Libraries\databaseConnection.cs" />
     <Compile Include="webSitesi\test\main.aspx.cs">

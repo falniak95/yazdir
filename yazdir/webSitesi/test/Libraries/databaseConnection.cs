@@ -362,9 +362,29 @@ namespace yazdir.webSitesi.test.Libraries
             closeConnection();
             return total;
         }
+     
+        
+        public int[] getJobLinks()
+        {
+            MySqlCommand countCommand = new MySqlCommand("select COUNT(id) from isler", connection);
+            openConnection();
+            int jobCount = Convert.ToInt16(countCommand.ExecuteScalar());
+            closeConnection();
+            int[] _jobs = new int[jobCount];
+            int c = 0;
+            MySqlCommand command = new MySqlCommand("select id  from isler", connection);
+            openConnection();
+            MySqlDataReader dataRead = command.ExecuteReader();
+            while (dataRead.Read())
+            {
+                _jobs[c] = Convert.ToInt16(dataRead["id"]);
+                 c++;
+            }
+            dataRead.Close();
+            closeConnection();
+            return _jobs;
 
-
-
+        }
         public string[] getJobListID()
         {
             string[] idList;
@@ -539,6 +559,63 @@ namespace yazdir.webSitesi.test.Libraries
             closeConnection();
             return state;
         }
+        DateTime dt = DateTime.Now;
+        public void EditorEkleLog(string uName,string data)
+        {
+            dt = DateTime.Now;
+            string format = "yyyy-MM-dd HH:mm:ss";
+            var zamanim = dt.ToString(format);
+            MySqlCommand command = new MySqlCommand("insert into log (who,log,date,type) values ('"+uName+"','"+data+" kullanıcı adına sahip editör eklendi"+"','"+zamanim+"',0)", connection);
+            openConnection();
+            command.ExecuteNonQuery();
+            closeConnection();
+        }
+        public void EditorSilLog(string uName, string data)
+        {
+            dt = DateTime.Now;
+            string format = "yyyy-MM-dd HH:mm:ss";
+            var zamanim = dt.ToString(format);
+            MySqlCommand command = new MySqlCommand("insert into log (who,log,date,type) values ('" + uName + "','" + data+" kullanıcı adına sahip editor silindi." + "','" + zamanim + "',0)", connection);
+            openConnection();
+            command.ExecuteNonQuery();
+            closeConnection();
+        }
+        public void EditorDuzenlelLog(string uName, string data)
+        {
+            dt = DateTime.Now;
+            string format = "yyyy-MM-dd HH:mm:ss";
+            var zamanim = dt.ToString(format);
+            MySqlCommand command = new MySqlCommand("insert into log (who,log,date,type) values ('" + uName + "','" + data + " kullanıcı adına sahip editör düzenlendi."+"','" + zamanim + "',0)", connection);
+            openConnection();
+            command.ExecuteNonQuery();
+            closeConnection();
+        }
+        private int logAdet()
+        {
+            MySqlCommand command = new MySqlCommand("select count(*) from log", connection);
+             int sayi = Convert.ToInt16(command.ExecuteScalar());
+            return sayi;
 
+        }
+        public string[] logg, tarih;
+        //public string logCek()
+        //{
+        //    int sayi = logAdet();
+        //    logg = new string[sayi];tarih = new string[sayi];
+        //    string[] uNames;
+        //    uNames = new string[sayi];
+        //    int i = 0;
+        //    MySqlCommand command = new MySqlCommand("select * from log", connection);
+        //    openConnection();
+        //    MySqlDataReader dr = command.ExecuteReader();
+        //    while(dr.Read())
+        //    {
+        //        uNames[i] = dr[1].ToString();
+
+        //            i++;
+        //    }
+
+        //    return uNames;
+        //}
     }
 }

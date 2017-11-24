@@ -17,9 +17,10 @@ namespace yazdir.webSitesi.test.adminPanel
         databaseConnection dC = new databaseConnection();
         MySqlConnection connection = new MySqlConnection("Server=furkanalniak.com;Database=furkanal_yazdir;Convert Zero Datetime=True;Uid=furkanal_admin;Pwd='fk2017';");
 
-        String loggedName;
+        string loggedName;
         protected void Page_Load(object sender, EventArgs e)
         {
+            loggedName = "admin";
           
             if(!Page.IsPostBack)
             {
@@ -167,6 +168,7 @@ namespace yazdir.webSitesi.test.adminPanel
             connection.Open();
             command.ExecuteNonQuery();      
             connection.Close();
+            dC.EditorEkleLog(loggedName,userName.Text+" kullanıcı adlı editör eklendi.");
             Response.Write("<script>alert('Editör Eklendi.')</script>");
         }
 
@@ -269,6 +271,7 @@ namespace yazdir.webSitesi.test.adminPanel
         {
             if (dC.deleteUser(userDeleteUname.Text))
             {
+                dC.EditorSilLog(loggedName, userDeleteUname.Text);
                 Response.Write("<script>alert('Kullanıcı silindi..')</script>");
             }
             else
@@ -293,6 +296,12 @@ namespace yazdir.webSitesi.test.adminPanel
             editorDeleteuName.Enabled = false;
             silmeText.Text ="Kullanıcı Adı "+editorDeleteuName.Text+ " olan, "+ediInfo[1]+" mail adresli editör silinecektir. Onaylıyor musunuz?";
         }
+
+        protected void EditorGoruntuleBtn_Click(object sender, EventArgs e)
+        {
+            
+        }
+
         protected void deleteIt(object sender, EventArgs e)
         {
           if( dC.deleteEditor(editorDeleteuName.Text))
@@ -309,6 +318,7 @@ namespace yazdir.webSitesi.test.adminPanel
             bool state = dC.updateEditor(editorUname.Text, editorPwd.Text, editorMail.Text, editorName.Text, editorSurname.Text);
             if(state)
             {
+                dC.EditorDuzenlelLog(loggedName, editorUname.Text);
                 Session["isUpOk"] = 1;
                 Response.Redirect(Request.Url.AbsoluteUri);
 

@@ -594,7 +594,7 @@
                                     </asp:UpdatePanel>
                                 </div>
                                 <div class="modal-footer">
-                                    <asp:Button runat="server" class="btn btn-warning" ID="EditorGoruntuleBtn" data-dismiss="modal" Style="width: 100%" Text="Tamam"/>
+                                    <asp:Button runat="server" class="btn btn-warning" ID="EditorGoruntuleBtn" OnClick="EditorGoruntuleBtn_Click"  data-dismiss="modal" Style="width: 100%" Text="Tamam"/>
 
                                 </div>
                             </div>
@@ -763,8 +763,9 @@
                             <button type="button" class="btn btn-warning" style="width: 100%; margin-bottom: 5px;" data-toggle="modal" data-target="#editorEkle">Editör Ekle</button>
                             <button type="button" class="btn btn-warning" style="width: 100%; margin-bottom: 5px;" data-toggle="modal" data-target="#editorSil">Editör Sil</button>
                             <button type="button" class="btn btn-warning" style="width: 100%; margin-bottom: 5px;" data-toggle="modal" data-target="#editorDuzenle">Editör Düzenle</button>
-                            <button type="button" class="btn btn-warning" style="width: 100%; margin-bottom: 5px;" data-toggle="modal" data-target="#editorGoruntule">Editörleri Görüntüle</button>
-                            <button type="button" class="btn btn-warning" style="width: 100%; margin-bottom: 5px;">Editör İşlem Geçmişi</button>
+                            <button type="button" class="btn btn-warning" style="width: 100%; margin-bottom: 5px;" data-toggle="modal" data-target="#editorGoruntule">Editörleri Görüntüle
+                            </button>
+                        <a href="logEditors.aspx">    <button type="button" class="btn btn-warning" style="width: 100%; margin-bottom: 5px;">Editör İşlem Geçmişi</button></a>
                         </div>
                         <div class="col-md-6">
                             <p class="text-danger" style="padding: 0px 0px 0px 35%; margin-bottom: 5px;">Yönetici İşlemleri</p>
@@ -772,7 +773,7 @@
                             <button type="button" class="btn btn-danger" style="width: 100%; margin-bottom: 5px;" data-toggle="modal" data-target="#adminSil" >Yönetici Sil</button>
                             <button type="button" class="btn btn-danger" style="width: 100%; margin-bottom: 5px;" data-toggle="modal" data-target="#adminDuzenle">Yönetici Düzenle</button>
                             <button type="button" class="btn btn-danger" style="width: 100%; margin-bottom: 5px;" data-toggle="modal" data-target="#adminGoruntule">Yöneticileri Görüntüle</button>
-                            <button type="button" class="btn btn-danger" style="width: 100%; margin-bottom: 5px;">Yönetici İşlem Geçmişi</button>
+                           <a href="loglar.aspx"> <button type="button" class="btn btn-danger" style="width: 100%; margin-bottom: 5px;" >Yönetici İşlem Geçmişi</button></a>
                         </div>
 
                     </div>
@@ -782,7 +783,7 @@
                             <button type="button" class="btn btn-info" style="width: 50%; margin-left: 25%; margin-bottom: 5px;" data-toggle="modal" data-target="#uyeEkle">Üye Ekle</button>
                             <button type="button" class="btn btn-info" style="width: 50%; margin-left: 25%; margin-bottom: 5px;" data-toggle="modal" data-target="#uyeSil">Üye Sil</button>
                             <button type="button" class="btn btn-info" style="width: 50%; margin-left: 25%; margin-bottom: 5px;" data-toggle="modal" data-target="#uyeGoruntule">Üye Görüntüle</button>
-                            <button type="button" class="btn btn-info" style="width: 50%; margin-left: 25%; margin-bottom: 5px;">Üye İşlem Geçmişi</button>
+                         <a href="logUsers.aspx">   <button type="button" class="btn btn-info" style="width: 50%; margin-left: 25%; margin-bottom: 5px;">Üye İşlem Geçmişi</button></a>
                         </div>
                     </div>
                     <div class="row">

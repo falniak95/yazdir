@@ -91,7 +91,7 @@ namespace yazdir.webSitesi.test.adminPanel
             {
                 
                 myButton.ID = "Button" + i+"X";
-               
+                
 
                 Literal1.Text += "<tr><td>" + (i + 1) + "</td>";
                 Literal1.Text += "<td>" + adHeader[i] + "</td>";

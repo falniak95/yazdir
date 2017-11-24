@@ -309,7 +309,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                                         </ContentTemplate>
                                     </asp:UpdatePanel>
-                                                 </form>
+                                                
                                 </div>
                                 <div class="modal-footer">
                                     <asp:Button runat="server" class="btn btn-success" ID="unConfirmedAdsBtn" data-dismiss="modal" Style="width: 100%" Text="Tamam"/>
@@ -364,6 +364,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<!-- //inner_content_w3_agile_info-->
 				</div>
 		<!-- //inner_content-->
+     </form>
 	</div>
 <!-- banner -->
 <!--copy rights start here-->

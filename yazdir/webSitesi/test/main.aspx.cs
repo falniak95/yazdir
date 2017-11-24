@@ -47,7 +47,7 @@ namespace yazdir.webSitesi.test
             selamlama.InnerText = "Merhaba " + Session["on_eMail"];
             Literal1 = new Literal();
             Literal1.Text = "";
-            Literal1.Text += "<div class='wrapper' style='margin-top:-20px'>";
+            Literal1.Text += "<center><div class='wrapper' style='margin-top:-20px'>";
             Literal1.Text += " <div class='tablo' >";
             Literal1.Text += "<div class='satir header'>";
             Literal1.Text += "<div class='cell'>";
@@ -71,7 +71,7 @@ namespace yazdir.webSitesi.test
             Literal1.Text += "</div>";
 
 
-
+            int[] jobs = dC.getJobLinks();
             string[] allJobs = dC.getJobListID();
 
             for (int i = 0; i < dC.totalCount; i++)
@@ -79,28 +79,28 @@ namespace yazdir.webSitesi.test
                 string[] comingData = dC.getCompanyInfo(Convert.ToInt16(allJobs[i]));
                 Literal1.Text += "<div class='satir'>";
                 Literal1.Text += "<div class='cell'>";
-                Literal1.Text += "<img src=" + comingData[7] + " width='100' height='50'>";
+                Literal1.Text += "<a href=/websitesi/test/jobdetail.aspx?id=" + jobs[i] + "> <img src=" + comingData[7] + " width='100' height='50'></a>";
                 Literal1.Text += "</div>";
                 Literal1.Text += "<div class='cell'>";
-                Literal1.Text += dC.jobType[i];
+                Literal1.Text += "<a href=/websitesi/test/jobdetail.aspx?id=" + jobs[i] + ">"+dC.jobType[i]+"</a>";
                 Literal1.Text += "</div>";
                 Literal1.Text += "<div class='cell'>";
-                Literal1.Text += dC.jobHeader[i];
+                Literal1.Text += "<a href=/websitesi/test/jobdetail.aspx?id=" + jobs[i] + ">" + dC.jobHeader[i] + "</a>";
                 Literal1.Text += "</div>";
                 Literal1.Text += "<div class='cell'>";
-                Literal1.Text += dC.jobPrice[i];
+                Literal1.Text += "<a href=/websitesi/test/jobdetail.aspx?id=" + jobs[i] + ">" + dC.jobPrice[i]+"</a>";
                 Literal1.Text += "</div>";
                 Literal1.Text += "<div class='cell'>";
                 DateTime dt = Convert.ToDateTime(dC.jobDate[i]);
                 dC.jobDate[i] = string.Format("{0:d/M/yyyy}", dt);
-                Literal1.Text += dC.jobDate[i];
+                Literal1.Text += "<a href=/websitesi/test/jobdetail.aspx?id=" + jobs[i] + ">" + dC.jobDate[i]+"</a>";
                 Literal1.Text += "</div>";
                 Literal1.Text += "<div class='cell'>";
-                Literal1.Text += dC.jobLevel[i];
+                Literal1.Text += "<a href=/websitesi/test/jobdetail.aspx?id=" + jobs[i] + ">" + dC.jobLevel[i]+"</a>";
                 Literal1.Text += "</div>";
 
 
-                Literal1.Text += "</div>";
+                Literal1.Text += "</div> ";
 
                 /*<div class="col-md-3" style="width:20px">
                     buraya haber gelecek
@@ -108,7 +108,7 @@ namespace yazdir.webSitesi.test
                     </div>*/
             }
             Literal1.Text += "</div>";
-            Literal1.Text += "</div>";
+            Literal1.Text += "</div></center>";
 
 
             DinamikPanel.Controls.Add(Literal1);
@@ -201,9 +201,9 @@ namespace yazdir.webSitesi.test
         //********************************************************************************************************
         public void bnmModal()
         {
-           
+            #region Mysql Conn String
             connection = new MySqlConnection("Server=furkanalniak.com;Database=furkanal_yazdir;Uid=furkanal_admin;Pwd='fk2017';");
-
+            #endregion
 
             connection.Open();
             MySqlCommand command = new MySqlCommand();
