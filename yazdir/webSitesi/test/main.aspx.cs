@@ -29,6 +29,13 @@ namespace yazdir.webSitesi.test
         MySqlConnection connection = new MySqlConnection("Server=furkanalniak.com;Database=furkanal_yazdir;Uid=furkanal_admin;Pwd='fk2017';");
         #endregion
 
+
+        public void sessionSil(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("/websitesi/test/anaSayfa.aspx");
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
              
@@ -128,7 +135,7 @@ namespace yazdir.webSitesi.test
         public void updateInformation(object sender, EventArgs e)
         {
            
-            MySqlCommand kmt = new MySqlCommand("update uye_Bireysel set job='"+job.Value +"', mobileNo='" + mobileNo.Value + "' , tcKimlik='" + identityNo.Value + "' , accountNumber='" + accountNumber.Value + "' , gender='" + Request.Form["gender"].ToString() + "' , birthDate='" + birthDate.Value + "' where eMail='" + Session["on_eMail"].ToString()+"'", connection);
+            MySqlCommand kmt = new MySqlCommand("update uye_Bireysel set job='"+job.Value +"', mobileNo='" + mobileNo.Value + "' , tcKimlik='" + identityNo.Value + "' , accountNumber='" + accountNumber.Value + "' , gender='" + Request.Form["gender"].ToString() + "' , birthDate='" + birthDate.Value + "', gizliSoru='" + secretQ.Value + "',gizliCevap='"+ secretA.Value +"' where eMail='" + Session["on_eMail"].ToString()+"'", connection);
             MySqlCommand updateFirstLogin = new MySqlCommand("UPDATE uye_Bireysel set firstTime=1 where eMail='" + Session["on_eMail"].ToString() + "'", connection);
             connection.Open();
             kmt.ExecuteNonQuery();           
@@ -137,7 +144,7 @@ namespace yazdir.webSitesi.test
         }
         //*************************************************************************************
 
-        public void sessionSil(object sender, EventArgs e)
+        public void sessionDelete(object sender, EventArgs e)
         {
             Session.Clear();
             Response.Redirect("/websitesi/test/anaSayfa.aspx");
@@ -176,7 +183,7 @@ namespace yazdir.webSitesi.test
                     if (dataReader[17].ToString() != "1")
 
                     {
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
+                        ScriptManager.RegisterStartupScript(this, GetType(), "Pop", "openModal();", true);
 
 
                     }
@@ -276,7 +283,7 @@ namespace yazdir.webSitesi.test
             connection.Open();
             MySqlCommand command = new MySqlCommand();
             command.Connection = connection;
-            command.CommandText = "insert into messages ()"
+            command.CommandText = "insert into messages ()";
             command.ExecuteNonQuery();
             connection.Close();
             //Session["on_eMail"] = comMail.Value;

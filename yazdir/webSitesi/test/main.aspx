@@ -173,7 +173,8 @@ return (key == 8 || key == 13);
                      <li><a class="active" href="#" data-toggle="modal" data-target="#modalSifre">Şifre </a></li>
                      <li><a class="active" href="#" data-toggle="modal" data-target="#bnmModal" >profil </a></li>
 
-					<li><a href="#" data-toggle="modal" data-target="#myModal3">Çıkış</a> </li>
+					<asp:button  href="#" data-toggle="modal" data-target="#myModal3" runat="server" OnClick="sessionDelete" UseSubmitBehavior="false" class="btn btn-danger" text="Çıkış"/>
+
 				</ul>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
@@ -376,6 +377,14 @@ return (key == 8 || key == 13);
                                         <input type="text" id="accountNumber" runat="server" name="accountNumber" maxlength="20" placeholder="" required="">
                                         <a style="padding-right:100%">Meslek </a>
                                        <input type="text" id="job" runat="server" name="job" maxlength="20" placeholder="" required="">
+
+                                 <a style="padding-right:100%">Gizli Soru</a>
+                                       <input type="text" id="secretQ" runat="server" name="secretQ"  placeholder="" required="">
+                                 <a style="padding-right:100%">Cevap </a>
+                                       <input type="text" id="secretA" runat="server" name="secretA"  placeholder="" required="">
+
+
+
                                         <br />
                                         <a>Cinsiyet: </a>
                                         <input style="padding-right:100%" type="radio" id="g1" runat="server" name="gender" value="Erkek">Erkek</input>  
@@ -386,6 +395,7 @@ return (key == 8 || key == 13);
                                         <br />
                                         <a>Doğum Tarihi:  </a>
                                         <input type="date" id="birthDate" runat="server" name="birthDate" min="01-01-1900" />
+
 
                                         <asp:Button ID="submitChanges" runat="server" UseSubmitBehavior="false" OnClick="updateInformation" Text="Değişiklikleri Kaydet" />
                                

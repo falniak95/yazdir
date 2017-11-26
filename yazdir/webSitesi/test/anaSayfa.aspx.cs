@@ -7,6 +7,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using MySql.Data.MySqlClient;
 using MySql.Data;
+using System.Net.Mail;
+using System.Net;
 
 namespace yazdir.webSitesi.test
 {
@@ -24,6 +26,22 @@ namespace yazdir.webSitesi.test
         //}
 
         public MySqlConnection connection;
+
+        public void forget (object sender,EventArgs e)
+        {
+            if (grsMail.Value != "")
+            {
+                // Response.Write("<script>alert('İşlem tamamlanamadı.Gerekli alanları doldurun.')</script>");
+             
+                        Session["on_eMail"] = grsMail.Value;
+                Response.Redirect("/webSitesi/test/forgetpass.aspx");
+            }
+            else
+            {
+                Response.Write("<script>alert('Mail Adresini Yazmalısınız...')</script>");
+
+            }
+        }
 
         //*****************************************************************************
         public void registerNowKurumsal(object sender, EventArgs e)
@@ -121,14 +139,17 @@ namespace yazdir.webSitesi.test
         {
             
             checkLogIn();
+          
         }
-    
-        public  void tikladi(object sender,EventArgs e)
-        {
 
-            Response.Write("<script>alert('Furkan')</script>");
+        
+
+        //public void tikladi(object sender,EventArgs e)
+        //{
+
+        //    Response.Write("<script>alert('Furkan')</script>");
            
-        }
+        //}
 
         public void grsbutonKurumsal(object sender,EventArgs e)
         {
