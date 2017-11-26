@@ -149,6 +149,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -227,6 +228,7 @@
     <Content Include="webSitesi\test\adminPanel\js\valida.2.1.6.min.js" />
     <Content Include="webSitesi\test\adminPanel\js\validator.min.js" />
     <Content Include="webSitesi\test\adminPanel\js\xy.js" />
+    <Content Include="webSitesi\test\adminPanel\loglar.aspx" />
     <Content Include="webSitesi\test\adminPanel\main-page.html" />
     <Content Include="webSitesi\test\adminPanel\maps.html" />
     <Content Include="webSitesi\test\adminPanel\panel.aspx" />
@@ -236,10 +238,11 @@
     <Content Include="webSitesi\test\adminPanel\typo.html" />
     <Content Include="webSitesi\test\adminPanel\validation.html" />
     <Content Include="webSitesi\test\anaSayfa.aspx" />
-    <Content Include="webSitesi\test\forgetpass.aspx" />
     <Content Include="webSitesi\test\images\404.png" />
+    <Content Include="webSitesi\test\jobdetail.aspx" />
     <Content Include="webSitesi\test\main.aspx" />
-    <Content Include="webSitesi\test\mainCom.aspx" />
+    <Content Include="webSitesi\test\yeniSayfa.aspx" />
+    <Content Include="webSitesi\uyeEkle.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -301,6 +304,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service.asmx.cs">
       <DependentUpon>Service.asmx</DependentUpon>
@@ -320,6 +326,13 @@
     <Compile Include="webSitesi\test\adminPanel\confirmationAndReport.aspx.designer.cs">
       <DependentUpon>confirmationAndReport.aspx</DependentUpon>
     </Compile>
+    <Compile Include="webSitesi\test\adminPanel\loglar.aspx.cs">
+      <DependentUpon>loglar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webSitesi\test\adminPanel\loglar.aspx.designer.cs">
+      <DependentUpon>loglar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="webSitesi\test\adminPanel\panel.aspx.cs">
       <DependentUpon>panel.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -334,12 +347,12 @@
     <Compile Include="webSitesi\test\anaSayfa.aspx.designer.cs">
       <DependentUpon>anaSayfa.aspx</DependentUpon>
     </Compile>
-    <Compile Include="webSitesi\test\forgetpass.aspx.cs">
-      <DependentUpon>forgetpass.aspx</DependentUpon>
+    <Compile Include="webSitesi\test\jobdetail.aspx.cs">
+      <DependentUpon>jobdetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="webSitesi\test\forgetpass.aspx.designer.cs">
-      <DependentUpon>forgetpass.aspx</DependentUpon>
+    <Compile Include="webSitesi\test\jobdetail.aspx.designer.cs">
+      <DependentUpon>jobdetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="webSitesi\test\Libraries\databaseConnection.cs" />
     <Compile Include="webSitesi\test\main.aspx.cs">
