@@ -10,7 +10,9 @@ namespace yazdir.webSitesi.test.Libraries
 {
     public class databaseConnection
     {
+        #region Mysql Conn String
         MySqlConnection connection = new MySqlConnection("Server=furkanalniak.com;Database=furkanal_yazdir;Convert Zero Datetime=True;Uid=furkanal_admin;Pwd='fk2017';");
+        #endregion
 
         public databaseConnection()
         {
@@ -18,6 +20,351 @@ namespace yazdir.webSitesi.test.Libraries
         }
         public int totalCount;
         public string[] jobType, jobHeader, jobPrice, jobDate, jobLevel;
+        public bool logInAdmin(string uName,string pword)
+        {
+            bool logged = false;
+            MySqlCommand command = new MySqlCommand();
+            command.Connection = connection;
+            command.CommandText = "select * from managers where userName='"+uName+"'";
+            openConnection();
+            MySqlDataReader readLogIn = command.ExecuteReader();
+            while(readLogIn.Read())
+            {
+                if((readLogIn[2].ToString()==pword) && readLogIn[6].ToString()=="1")
+                {
+                    logged = true;
+                }
+            }
+            closeConnection();
+
+            return logged;
+        }
+        public bool updateEditor(string editorUname,string pwd, string mail,string name,string surname)
+        {
+            try
+            {
+                MySqlCommand command = new MySqlCommand();
+                command.Connection = connection;
+                command.CommandText = "update managers set password='" + pwd + "', eMail='" + mail + "', name='" + name + "' , surname='" + surname + "' where userName='" + editorUname + "'";
+                openConnection();
+                command.ExecuteNonQuery();
+                closeConnection();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public bool deleteEditor(string editorUname)
+        {
+            try
+            {
+                MySqlCommand command = new MySqlCommand();
+                command.Connection = connection;
+                command.CommandText = "delete from managers where userName='"+editorUname+"' and yetki='2'";
+                openConnection();
+                command.ExecuteNonQuery();
+                closeConnection();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public string[] editorMail,editors;
+        public int editorCount;
+        public string[] editorListesi()
+        {
+            int i = 0;
+            MySqlCommand countCommand = new MySqlCommand("select count(*) from managers where yetki='2'", connection);
+            openConnection();
+            editorCount = Convert.ToInt16(countCommand.ExecuteScalar());
+            closeConnection();
+            //
+            editors = new string[editorCount];
+            editorMail = new string[editorCount];
+            MySqlCommand command = new MySqlCommand();
+            command.Connection = connection;
+            command.CommandText = "select * from managers where yetki='2'";
+            openConnection();
+            MySqlDataReader readEditors = command.ExecuteReader();
+            while(readEditors.Read())
+            {
+                editors[i] = readEditors["userName"].ToString();
+                editorMail[i] = readEditors["eMail"].ToString();
+                i++;
+
+            }
+            closeConnection();
+
+            return editors;
+        }
+
+        public string[] adminMail, admins;
+        public int adminCount;
+        public string[] adminListesi()
+        {
+            int i = 0;
+            MySqlCommand countCommand = new MySqlCommand("select count(*) from managers where yetki='1'", connection);
+            openConnection();
+            adminCount = Convert.ToInt16(countCommand.ExecuteScalar());
+            closeConnection();
+            //
+            admins = new string[adminCount];
+            adminMail = new string[adminCount];
+            MySqlCommand command = new MySqlCommand();
+            command.Connection = connection;
+            command.CommandText = "select * from managers where yetki='1'";
+            openConnection();
+            MySqlDataReader readAdmins = command.ExecuteReader();
+            while (readAdmins.Read())
+            {
+                admins[i] = readAdmins["userName"].ToString();
+                adminMail[i] = readAdmins["eMail"].ToString();
+                i++;
+
+            }
+            closeConnection();
+
+            return admins;
+        }
+        public string[] userMail, users;
+        public int userCount;
+        public string[] userListesi()
+        {
+            int i = 0;
+            MySqlCommand countCommand = new MySqlCommand("select count(*) from uye_Bireysel", connection);
+            openConnection();
+            userCount = Convert.ToInt16(countCommand.ExecuteScalar());
+            closeConnection();
+            //
+            users = new string[userCount];
+            userMail = new string[userCount];
+            MySqlCommand command = new MySqlCommand();
+            command.Connection = connection;
+            command.CommandText = "select * from uye_Bireysel";
+            openConnection();
+            MySqlDataReader readUsers = command.ExecuteReader();
+            while (readUsers.Read())
+            {
+                users[i] = readUsers["userName"].ToString();
+                userMail[i] = readUsers["eMail"].ToString();
+                i++;
+
+            }
+            closeConnection();
+
+            return users;
+        }
+
+
+        public bool deleteUser(string userName)
+        {
+            try
+            {
+                MySqlCommand command = new MySqlCommand();
+                command.Connection = connection;
+                command.CommandText = "delete from uye_Bireysel where userName='" + userName + "'";
+                openConnection();
+                command.ExecuteNonQuery();
+                closeConnection();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public bool deleteAdmin(string adminUname)
+        {
+            try
+            {
+                MySqlCommand command = new MySqlCommand();
+                command.Connection = connection;
+                command.CommandText = "delete from managers where userName='" + adminUname + "' and yetki='1'";
+                openConnection();
+                command.ExecuteNonQuery();
+                closeConnection();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public string[] getEditorInformation(string editorUname)
+        {
+            string[] editor = new string[4];
+            MySqlCommand command = new MySqlCommand();
+            command.Connection = connection;
+            command.CommandText = "select * from managers where userName='" + editorUname + "' and yetki=2";
+            connection.Open();
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                editor[0] = reader[2].ToString();//password
+                editor[1] = reader[3].ToString();//eMail
+                editor[2] = reader[4].ToString();//İsim
+                editor[3] = reader[5].ToString();//Soyisim
+               
+            }
+            connection.Close();
+            reader.Close();
+
+            return editor;
+        }
+        public string[] getUserInformationForDelete(string userName)
+        {
+            string[] user = new string[4];
+            MySqlCommand command = new MySqlCommand();
+            command.Connection = connection;
+            command.CommandText = "select * from uye_Bireysel where userName='" + userName + "'";
+            connection.Open();
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                user[0] = reader[5].ToString();//password
+                user[1] = reader[7].ToString();//eMail
+                user[2] = reader[2].ToString();//İsim
+                user[3] = reader[3].ToString();//Soyisim
+
+            }
+            connection.Close();
+            reader.Close();
+
+            return user;
+        }
+        public string[] getAdminInformation(string adminUname)
+        {
+            string[] admin = new string[4];
+            MySqlCommand command = new MySqlCommand();
+            command.Connection = connection;
+            command.CommandText = "select * from managers where userName='" + adminUname + "' and yetki=1";
+            connection.Open();
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                admin[0] = reader[2].ToString();//password
+                admin[1] = reader[3].ToString();//eMail
+                admin[2] = reader[4].ToString();//İsim
+                admin[3] = reader[5].ToString();//Soyisim
+
+            }
+            connection.Close();
+            reader.Close();
+
+            return admin;
+        }
+        public string getUserCount()
+        {
+            MySqlCommand command = new MySqlCommand();
+            command.Connection = connection;
+            command.CommandText = "select count(id) from uye_Bireysel";
+            openConnection();
+            int total = Convert.ToInt16(command.ExecuteScalar());
+            closeConnection();
+
+            return total.ToString();
+        }
+        public string getCompany()
+        {
+            MySqlCommand command = new MySqlCommand();
+            command.Connection = connection;
+            command.CommandText = "select count(id) from uye_Kurumsal";
+            openConnection();
+            int total = Convert.ToInt16(command.ExecuteScalar());
+            closeConnection();
+
+            return total.ToString();
+        }
+        public string getConfirmedJobs()
+        {
+            MySqlCommand command = new MySqlCommand();
+            command.Connection = connection;
+            command.CommandText = "select count(id) from isler where confirm='1' and ad_state='0'";
+            openConnection();
+            int total = Convert.ToInt16(command.ExecuteScalar());
+            closeConnection();
+
+            return total.ToString();
+        }
+        public string getDoneJobs()
+        {
+            MySqlCommand command = new MySqlCommand();
+            command.Connection = connection;
+            command.CommandText = "select count(id) from doneJobs ";
+            openConnection();
+            int total = Convert.ToInt16(command.ExecuteScalar());
+            closeConnection();
+
+            return total.ToString();
+        }
+        public string getUnconfirmedJobs()
+        {
+            MySqlCommand command = new MySqlCommand();
+            command.Connection = connection;
+            command.CommandText = "select count(id) from isler where ad_state=0 and confirm=0";
+            openConnection();
+            int total = Convert.ToInt16(command.ExecuteScalar());
+            closeConnection();
+
+            return total.ToString();
+        }
+        public string[] adHeader, adOwner, adContent, adPrice, adLevel, adContract, adType;
+        public DataSet unConfirmedJobs()
+        {
+            DataSet _dataSet = new DataSet();
+            MySqlCommand command = new MySqlCommand();
+            command.CommandText = "select * from isler where confirm=0";
+            command.Connection = connection;
+            openConnection();
+            DataTable dataT = new DataTable();
+            _dataSet.Tables.Add(dataT);
+            MySqlDataAdapter link = new MySqlDataAdapter(command);
+            link.Fill(dataT);
+            closeConnection();
+
+            return _dataSet;
+        }
+        public int unConfirmedJobCount;
+        public string[] getUnconfirmedJobsDetail()
+        {
+            int limit = unConfirmedJobsCount(),i=0;
+            unConfirmedJobCount = limit;
+            adHeader = new string[limit];adOwner = new string[limit]; adContent = new string[limit]; adPrice = new string[limit]; adLevel = new string[limit]; adContract = new string[limit]; adType = new string[limit];
+
+            MySqlCommand command = new MySqlCommand("select * from isler where confirm=0",connection);
+            openConnection();
+            MySqlDataReader jobReader = command.ExecuteReader();
+            while(jobReader.Read())
+            {
+                adHeader[i] = jobReader["ad_header"].ToString();
+                adOwner[i] = jobReader["ad_ownerCompany"].ToString();
+                adContent[i] = jobReader["ad_content"].ToString();
+                adPrice[i] = jobReader["ad_price"].ToString();
+                adLevel[i] = jobReader["ad_level"].ToString();
+                adContract[i] = jobReader["ad_contract"].ToString();
+                adType[i] = jobReader["ad_jobType"].ToString();
+
+                i++;
+
+            }
+            closeConnection();
+            return adHeader;
+        }
+        private int unConfirmedJobsCount()
+        {
+            MySqlCommand command = new MySqlCommand("select count(*) from isler where confirm=0",connection);
+            openConnection();
+            int total = Convert.ToInt16(command.ExecuteScalar());
+            closeConnection();
+            return total;
+        }
+
+
+
         public string[] getJobListID()
         {
             string[] idList;

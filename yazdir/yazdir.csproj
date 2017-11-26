@@ -161,11 +161,85 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Service.asmx" />
     <Content Include="webSitesi\test\404.html" />
+    <Content Include="webSitesi\test\adminPanel\404.html" />
+    <Content Include="webSitesi\test\adminPanel\apanel.aspx" />
+    <Content Include="webSitesi\test\adminPanel\blank.html" />
+    <Content Include="webSitesi\test\adminPanel\buttons.html" />
+    <Content Include="webSitesi\test\adminPanel\calendar.html" />
+    <Content Include="webSitesi\test\adminPanel\charts.html" />
+    <Content Include="webSitesi\test\adminPanel\confirmationAndReport.aspx" />
+    <Content Include="webSitesi\test\adminPanel\css\basictable.css" />
+    <Content Include="webSitesi\test\adminPanel\css\bootstrap.css" />
+    <Content Include="webSitesi\test\adminPanel\css\circles.css" />
+    <Content Include="webSitesi\test\adminPanel\css\component.css" />
+    <Content Include="webSitesi\test\adminPanel\css\export.css" />
+    <Content Include="webSitesi\test\adminPanel\css\flipclock.css" />
+    <Content Include="webSitesi\test\adminPanel\css\font-awesome.css" />
+    <Content Include="webSitesi\test\adminPanel\css\jQuery-plugin-progressbar1.css" />
+    <Content Include="webSitesi\test\adminPanel\css\monthly.css" />
+    <Content Include="webSitesi\test\adminPanel\css\style.css" />
+    <Content Include="webSitesi\test\adminPanel\css\style_grid.css" />
+    <Content Include="webSitesi\test\adminPanel\css\table-style.css" />
+    <Content Include="webSitesi\test\adminPanel\faq.html" />
+    <Content Include="webSitesi\test\adminPanel\fonts\fontawesome-webfont.svg" />
+    <Content Include="webSitesi\test\adminPanel\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="webSitesi\test\adminPanel\grids.html" />
+    <Content Include="webSitesi\test\adminPanel\icons.html" />
+    <Content Include="webSitesi\test\adminPanel\images\a1.jpg" />
+    <Content Include="webSitesi\test\adminPanel\images\a2.jpg" />
+    <Content Include="webSitesi\test\adminPanel\images\a3.jpg" />
+    <Content Include="webSitesi\test\adminPanel\images\a4.jpg" />
+    <Content Include="webSitesi\test\adminPanel\images\admin.jpg" />
+    <Content Include="webSitesi\test\adminPanel\images\bottom.jpg" />
+    <Content Include="webSitesi\test\adminPanel\images\overlay.png" />
+    <Content Include="webSitesi\test\adminPanel\images\pic.jpg" />
+    <Content Include="webSitesi\test\adminPanel\images\pic1.jpg" />
+    <Content Include="webSitesi\test\adminPanel\images\profile.jpg" />
+    <Content Include="webSitesi\test\adminPanel\images\profile_bg.jpg" />
+    <Content Include="webSitesi\test\adminPanel\images\progress.jpg" />
+    <Content Include="webSitesi\test\adminPanel\index.html" />
+    <Content Include="webSitesi\test\adminPanel\input.html" />
+    <Content Include="webSitesi\test\adminPanel\js\amcharts.js" />
+    <Content Include="webSitesi\test\adminPanel\js\bars.js" />
+    <Content Include="webSitesi\test\adminPanel\js\bootstrap-3.1.1.min.js" />
+    <Content Include="webSitesi\test\adminPanel\js\Chart.min.js" />
+    <Content Include="webSitesi\test\adminPanel\js\circles.js" />
+    <Content Include="webSitesi\test\adminPanel\js\classie.js" />
+    <Content Include="webSitesi\test\adminPanel\js\contact_me.js" />
+    <Content Include="webSitesi\test\adminPanel\js\export.js" />
+    <Content Include="webSitesi\test\adminPanel\js\flipclock.js" />
+    <Content Include="webSitesi\test\adminPanel\js\gauge.js" />
+    <Content Include="webSitesi\test\adminPanel\js\gnmenu.js" />
+    <Content Include="webSitesi\test\adminPanel\js\jqBootstrapValidation.js" />
+    <Content Include="webSitesi\test\adminPanel\js\jquery-2.1.4.min.js" />
+    <Content Include="webSitesi\test\adminPanel\js\jQuery-plugin-progressbar.js" />
+    <Content Include="webSitesi\test\adminPanel\js\jquery.basictable.min.js" />
+    <Content Include="webSitesi\test\adminPanel\js\jquery.nicescroll.js" />
+    <Content Include="webSitesi\test\adminPanel\js\light.js" />
+    <Content Include="webSitesi\test\adminPanel\js\modernizr.custom.js" />
+    <Content Include="webSitesi\test\adminPanel\js\monthly.js" />
+    <Content Include="webSitesi\test\adminPanel\js\pie.js" />
+    <Content Include="webSitesi\test\adminPanel\js\prettymaps.js" />
+    <Content Include="webSitesi\test\adminPanel\js\radar.js" />
+    <Content Include="webSitesi\test\adminPanel\js\screenfull.js" />
+    <Content Include="webSitesi\test\adminPanel\js\scripts.js" />
+    <Content Include="webSitesi\test\adminPanel\js\serial.js" />
+    <Content Include="webSitesi\test\adminPanel\js\skycons.js" />
+    <Content Include="webSitesi\test\adminPanel\js\valida.2.1.6.min.js" />
+    <Content Include="webSitesi\test\adminPanel\js\validator.min.js" />
+    <Content Include="webSitesi\test\adminPanel\js\xy.js" />
+    <Content Include="webSitesi\test\adminPanel\main-page.html" />
+    <Content Include="webSitesi\test\adminPanel\maps.html" />
+    <Content Include="webSitesi\test\adminPanel\panel.aspx" />
+    <Content Include="webSitesi\test\adminPanel\signin.html" />
+    <Content Include="webSitesi\test\adminPanel\signup.html" />
+    <Content Include="webSitesi\test\adminPanel\table.html" />
+    <Content Include="webSitesi\test\adminPanel\typo.html" />
+    <Content Include="webSitesi\test\adminPanel\validation.html" />
     <Content Include="webSitesi\test\anaSayfa.aspx" />
     <Content Include="webSitesi\test\images\404.png" />
     <Content Include="webSitesi\test\main.aspx" />
     <Content Include="webSitesi\test\mainCom.aspx" />
-    <Content Include="webSitesi\test\message.aspx" />
     <Content Include="webSitesi\uyeEkle.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -210,6 +284,16 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="webSitesi\test\adminPanel\fonts\fontawesome-webfont.eot" />
+    <Content Include="webSitesi\test\adminPanel\fonts\fontawesome-webfont.ttf" />
+    <Content Include="webSitesi\test\adminPanel\fonts\fontawesome-webfont.woff" />
+    <Content Include="webSitesi\test\adminPanel\fonts\fontawesome-webfont.woff2" />
+    <Content Include="webSitesi\test\adminPanel\fonts\FontAwesome.otf" />
+    <Content Include="webSitesi\test\adminPanel\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="webSitesi\test\adminPanel\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="webSitesi\test\adminPanel\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="webSitesi\test\adminPanel\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="webSitesi\test\adminPanel\js\js" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />
@@ -225,6 +309,27 @@
     <Compile Include="Service.asmx.cs">
       <DependentUpon>Service.asmx</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="webSitesi\test\adminPanel\apanel.aspx.cs">
+      <DependentUpon>apanel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webSitesi\test\adminPanel\apanel.aspx.designer.cs">
+      <DependentUpon>apanel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webSitesi\test\adminPanel\confirmationAndReport.aspx.cs">
+      <DependentUpon>confirmationAndReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webSitesi\test\adminPanel\confirmationAndReport.aspx.designer.cs">
+      <DependentUpon>confirmationAndReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webSitesi\test\adminPanel\panel.aspx.cs">
+      <DependentUpon>panel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webSitesi\test\adminPanel\panel.aspx.designer.cs">
+      <DependentUpon>panel.aspx</DependentUpon>
     </Compile>
     <Compile Include="webSitesi\test\anaSayfa.aspx.cs">
       <DependentUpon>anaSayfa.aspx</DependentUpon>
@@ -247,13 +352,6 @@
     </Compile>
     <Compile Include="webSitesi\test\mainCom.aspx.designer.cs">
       <DependentUpon>mainCom.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="webSitesi\test\message.aspx.cs">
-      <DependentUpon>message.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="webSitesi\test\message.aspx.designer.cs">
-      <DependentUpon>message.aspx</DependentUpon>
     </Compile>
     <Compile Include="webSitesi\uyeEkle.aspx.cs">
       <DependentUpon>uyeEkle.aspx</DependentUpon>
