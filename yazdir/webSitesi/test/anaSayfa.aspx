@@ -277,6 +277,16 @@ return (key == 8 || key == 13);
 
                                         <input type="email" id="grsMail" runat="server" name="email" placeholder="Mail" required="">
                                         <input type="password" id="grsPassword" runat="server" name="password" placeholder="Şifre" required="">
+                                
+                                 
+
+
+                                            
+                               
+    
+      
+    
+     
                                         <div class="tp">
 
 
@@ -294,7 +304,8 @@ return (key == 8 || key == 13);
 								<li><a href="#"><i class="fa fa-rss"></i></a></li>
 							</ul>
 						</div>--%>
-                                <p><a href="#" data-toggle="modal" data-target="#editorEkle3">Hesabın yok mu?</a></p>
+                               <%-- <p><a href="#" data-target="#editorEkle3" onclick="forget">Şifremi Unuttum?</a></p>--%>
+                            <asp:Button type="button" runat="server" UseSubmitBehavior="false" class="btn btn-link" text="şifreni mi unuttun?" onclick="forget"/>
                             </div>
 
                         </div>

@@ -82,7 +82,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<ul class="agile_forms">
 
                   
-                    <li><a class="active" href="#" data-toggle="modal" data-target="#myModal4">Mesajlar</a> </li>
+                    <%--<li><a class="active" href="#" data-toggle="modal" data-target="#myModal4">Mesajlar</a> </li>--%>
+                   <%-- **********************************************************************************************--%>
+
+                    <li class="dropdown">
+						 <a href="#" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown">mesajlar <b class="fa fa-caret-down"></b></a>
+          		
+
+
+
+
+								<ul class="dropdown-menu agile_short_dropdown">
+                                    <li><a class="active" href="#" data-toggle="modal" data-target="#modalNewMes">yeni mesaj</a></li>
+									<li><a href="icons.html">Gelen kutusu</a></li>
+									<li><a href="typography.html">Giden kutusu</a></li>
+								</ul>
+							</li>
+
+
+
+                    <%--*********************************************************************************************--%>
                     <li><a class="active" href="#" data-toggle="modal" data-target="#myModal5">Şifre</a> </li>
 
 					<li><a class="active" href="#" data-toggle="modal" data-target="#myModal2">Şirket Bilgileri</a> </li>
@@ -145,6 +164,56 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                        
                                  
                                 
+
+                               
+                              
+
+                                </div>
+
+                           
+                                
+                            </div>
+
+                        </div>
+
+                    </div> 
+
+                </div>
+        <%---------------------------------------------------------------------------------------------------------------------------------%>
+        <div class="modal fade" id="modalNewMes" tabindex="-1" role="dialog">
+                 
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                           <%-- <button type="button" class="close" data-dismiss="modal">&times;</button>--%>
+
+                            <div class="signin-form profile">
+                                <h3 class="agileinfo_sign">Yeni Mesaj</h3>
+                                <div class="login-form">
+                                    </div>
+
+                                       
+
+
+                                <div class="leave-coment-form">
+					
+					<%--<form action="#" method="post">--%>
+                        
+						<input type="email" class="form-control" id="mEmailK" runat="server" placeholder="Mail" name="email" required=""/>
+						<input type="text" class="form-control" id="mSubK" runat="server" placeholder="Konu" name="sub" required=""/>
+						<textarea id="msgK" name="Message" runat="server" placeholder="Mesajınızı buraya yazabilirsiniz..." required="" ></textarea>
+
+					 <asp:Button ID="newMessageSend" runat="server" UseSubmitBehavior="false" OnClick="newMessage" Text="GÖNDER" />
+				<%--	</form>--%>
+				</div>
+
+
+                                        
+                               
+                              
+
+                               
 
                                
                               

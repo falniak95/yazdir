@@ -1,5 +1,6 @@
 ﻿        <%@ Page Language="C#" AutoEventWireup="true" enableEventValidation="false" CodeBehind="main.aspx.cs" Inherits="yazdir.webSitesi.test.main" %>
 
+        
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -161,7 +162,7 @@ return (key == 8 || key == 13);
 
 
 								<ul class="dropdown-menu agile_short_dropdown">
-                                    <li><a style="" href="icons.html">yeni mesaj</a></li>
+                                    <li><a class="active" href="#" data-toggle="modal" data-target="#modalNewMes">yeni mesaj</a></li>
 									<li><a href="icons.html">Gelen kutusu</a></li>
 									<li><a href="typography.html">Giden kutusu</a></li>
 								</ul>
@@ -173,7 +174,8 @@ return (key == 8 || key == 13);
                      <li><a class="active" href="#" data-toggle="modal" data-target="#modalSifre">Şifre </a></li>
                      <li><a class="active" href="#" data-toggle="modal" data-target="#bnmModal" >profil </a></li>
 
-					<li><a href="#" data-toggle="modal" data-target="#myModal3">Çıkış</a> </li>
+					<asp:button  href="#" data-toggle="modal" data-target="#myModal3" runat="server" OnClick="sessionDelete" UseSubmitBehavior="false" class="btn btn-danger" text="Çıkış"/>
+
 				</ul>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
@@ -222,6 +224,56 @@ return (key == 8 || key == 13);
                                         <input type="password" id="newPasswordAgain" runat="server" name="newPasswordAgain" placeholder="" required="">
                                         
                                 <asp:Button ID="changePasswordButton" runat="server" UseSubmitBehavior="false" OnClick="changePassword" Text="Değistir" />
+                              
+                                <%--<button class="btn btn-default" data-toggle="modal" href="#modalNewMes">Launch modal</button>--%>
+                               
+
+                               
+                              
+
+                                </div>
+
+                           
+                                
+                            </div>
+
+                        </div>
+
+                    </div> 
+
+                </div>
+        <!------------------------------------------------------------------------------------------------------------------>
+         <div class="modal fade" id="modalNewMes" tabindex="-1" role="dialog">
+                 
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                           <%-- <button type="button" class="close" data-dismiss="modal">&times;</button>--%>
+
+                            <div class="signin-form profile">
+                                <h3 class="agileinfo_sign">Yeni Mesaj</h3>
+                                <div class="login-form">
+                                    </div>
+
+                                       
+
+
+                                <div class="leave-coment-form">
+					
+					<%--<form action="#" method="post">--%>
+                        
+						<input type="email" class="form-control" id="mEmail" runat="server" placeholder="Mail" name="email" required=""/>
+						<input type="text" class="form-control" id="mSub" runat="server" placeholder="Konu" name="sub" required=""/>
+						<textarea id="msg" name="Message" runat="server" placeholder="Mesajınızı buraya yazabilirsiniz..." required="" ></textarea>
+
+					 <asp:Button ID="newMessageSend" runat="server" UseSubmitBehavior="false" OnClick="newMessage" Text="GÖNDER" />
+				<%--	</form>--%>
+				</div>
+
+
+                                        
+                               
                               
 
                                
@@ -328,6 +380,14 @@ return (key == 8 || key == 13);
                                         <input type="text" id="accountNumber" runat="server" name="accountNumber" maxlength="20" placeholder="" required="">
                                         <a style="padding-right:100%">Meslek </a>
                                        <input type="text" id="job" runat="server" name="job" maxlength="20" placeholder="" required="">
+
+                                 <a style="padding-right:100%">Gizli Soru</a>
+                                       <input type="text" id="secretQ" runat="server" name="secretQ"  placeholder="" required="">
+                                 <a style="padding-right:100%">Cevap </a>
+                                       <input type="text" id="secretA" runat="server" name="secretA"  placeholder="" required="">
+
+
+
                                         <br />
                                         <a>Cinsiyet: </a>
                                         <input style="padding-right:100%" type="radio" id="g1" runat="server" name="gender" value="Erkek">Erkek</input>  
@@ -338,6 +398,7 @@ return (key == 8 || key == 13);
                                         <br />
                                         <a>Doğum Tarihi:  </a>
                                         <input type="date" id="birthDate" runat="server" name="birthDate" min="01-01-1900" />
+
 
                                         <asp:Button ID="submitChanges" runat="server" UseSubmitBehavior="false" OnClick="updateInformation" Text="Değişiklikleri Kaydet" />
                                
