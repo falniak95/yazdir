@@ -58,6 +58,33 @@ namespace yazdir.webSitesi.test {
         protected global::System.Web.UI.WebControls.Button changePasswordButton;
         
         /// <summary>
+        /// mEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl mEmail;
+        
+        /// <summary>
+        /// mSub control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText mSub;
+        
+        /// <summary>
+        /// msg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea msg;
+        
+        /// <summary>
         /// newMessageSend control.
         /// </summary>
         /// <remarks>

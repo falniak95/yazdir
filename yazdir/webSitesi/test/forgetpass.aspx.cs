@@ -20,7 +20,7 @@ namespace yazdir.webSitesi.test
         {
             if (!IsPostBack)
             {
-                eMail.Value = Session["on_eMail"].ToString();
+             //   eMail.Value = Session["on_eMail"].ToString();
                 gizliSoru();
                 //modal();
             }

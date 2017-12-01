@@ -2,9 +2,10 @@
 
 
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<%--xmlns="http://www.w3.org/1999/xhtml"--%>
+<html >
 <head runat="server">
     <title>YAZZDIR E-Ticaret</title>
 

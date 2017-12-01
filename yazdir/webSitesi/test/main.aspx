@@ -1,5 +1,6 @@
 ﻿        <%@ Page Language="C#" AutoEventWireup="true" enableEventValidation="false" CodeBehind="main.aspx.cs" Inherits="yazdir.webSitesi.test.main" %>
 
+        
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -224,7 +225,7 @@ return (key == 8 || key == 13);
                                         
                                 <asp:Button ID="changePasswordButton" runat="server" UseSubmitBehavior="false" OnClick="changePassword" Text="Değistir" />
                               
-
+                                <%--<button class="btn btn-default" data-toggle="modal" href="#modalNewMes">Launch modal</button>--%>
                                
 
                                
@@ -260,12 +261,14 @@ return (key == 8 || key == 13);
 
                                 <div class="leave-coment-form">
 					
-					<form action="#" method="post">
-						<input type="email" class="form-control" id="email" placeholder="Mail" name="email"/>
-						<input type="text" class="form-control" id="sub" placeholder="Konu" name="pwd"/>
-						<textarea name="Message" placeholder="Mesajınızı buraya yazabilirsiniz..." required=""></textarea>
+					<%--<form action="#" method="post">--%>
+                        
+						<input type="email" class="form-control" id="mEmail" runat="server" placeholder="Mail" name="email" required=""/>
+						<input type="text" class="form-control" id="mSub" runat="server" placeholder="Konu" name="sub" required=""/>
+						<textarea id="msg" name="Message" runat="server" placeholder="Mesajınızı buraya yazabilirsiniz..." required="" ></textarea>
+
 					 <asp:Button ID="newMessageSend" runat="server" UseSubmitBehavior="false" OnClick="newMessage" Text="GÖNDER" />
-					</form>
+				<%--	</form>--%>
 				</div>
 
 

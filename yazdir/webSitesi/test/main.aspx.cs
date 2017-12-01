@@ -27,6 +27,7 @@ namespace yazdir.webSitesi.test
 
         #region MySql Conn String
         MySqlConnection connection = new MySqlConnection("Server=furkanalniak.com;Database=furkanal_yazdir;Uid=furkanal_admin;Pwd='fk2017';");
+        
         #endregion
 
 
@@ -141,6 +142,101 @@ namespace yazdir.webSitesi.test
             kmt.ExecuteNonQuery();           
             updateFirstLogin.ExecuteNonQuery();
             connection.Close();
+        }
+        //*************************************************************************************
+        public void newMessage(object sender, EventArgs e)
+        {
+           
+            try
+            {
+                //****************************************************************************
+                connection.Open();
+                MySqlCommand comman = new MySqlCommand();
+                MySqlCommand commanK = new MySqlCommand();
+                comman.Connection = connection;
+                commanK.Connection = connection;
+                commanK.Connection = connection;
+                commanK.CommandText= "select count(*) from uye_Kurumsal where comUsername='" + mEmail.Value + "'";
+                comman.CommandText = "select count(*) from uye_Bireysel where userName='" + mEmail.Value + "'";
+                //MySqlDataReader dataReader = comman.ExecuteReader();
+                int sayK= Convert.ToInt32(commanK.ExecuteScalar());
+                int say = Convert.ToInt32(comman.ExecuteScalar());
+               connection.Close();
+                if (say > 0 || sayK > 0)
+                {
+
+                    //Response.Write("<script>alert('Bu kişi var ')</script>");
+
+                    //****************************************************************************
+
+
+                    if (mEmail.Value != "")
+                    {
+                        if (mSub.Value != "")
+                        {
+                            if (msg.Value != "")
+                            {
+                                //**********************************************************************************************
+                                int gorulmedi = 0;
+                                int kurumsal = 0;
+                                int bireysel = 1;
+                                connection.Open();
+                                MySqlCommand command = new MySqlCommand();
+                                command.Connection = connection;
+                                if (say > 0)
+                                {
+                                    command.CommandText = "insert into messages (receiverID,senderID,header,content,seenReceiver,receiverColumn) values ((select id from uye_Bireysel where userName='" + mEmail.Value + "'),(select id from uye_Bireysel where eMail='" + Session["on_eMail"] + "'),'" + mSub.Value + "','" + msg.Value + "','" + gorulmedi + "','" + bireysel + "' )";
+                                }
+                                if (sayK > 0)
+                                {
+                                    command.CommandText = "insert into messages (receiverID,senderID,header,content,seenReceiver,receiverColumn) values ((select id from uye_Kurumsal where comUsername='" + mEmail.Value + "'),(select id from uye_Bireysel where eMail='" + Session["on_eMail"] + "'),'" + mSub.Value + "','" + msg.Value + "','" + gorulmedi + "','" + kurumsal + "')";
+                                }
+                                command.ExecuteNonQuery();
+                                connection.Close();
+                                mEmail.Value = "";
+                                mSub.Value = "";
+                                msg.Value = "";
+
+                                //**********************************************************************************************
+
+
+
+
+                            }
+                            else
+                            {
+                                Response.Write("<script>alert('Gönderilecek Mesajı Girmelisiniz.')</script>");
+                            }
+
+
+
+
+
+                        }
+                        else
+                        {
+                            Response.Write("<script>alert('Mesaj Konusunu Girmelisiniz.')</script>");
+                        }
+
+                    }
+                    else
+                    {
+                        Response.Write("<script>alert('Alıcı Mail adresi Girilmesi Zorunludur.')</script>");
+                    }
+                }
+                else
+                {
+                    Response.Write("<script>alert('geçersiz kullanıcı adı')</script>");
+                }
+            }
+                
+            catch (Exception xe)
+            {
+                Response.Write("<script>alert('" + xe.Message + "')</script>");
+
+            }
+
+
         }
         //*************************************************************************************
 
@@ -277,22 +373,7 @@ namespace yazdir.webSitesi.test
 
         }
        
-        public void newMessage (object sender,EventArgs e)
-        {
 
-            connection.Open();
-            MySqlCommand command = new MySqlCommand();
-            command.Connection = connection;
-            command.CommandText = "insert into messages ()";
-            command.ExecuteNonQuery();
-            connection.Close();
-            //Session["on_eMail"] = comMail.Value;
-            //Session["on_password"] = password3.Value;
-            //Response.Redirect("/webSitesi/test/mainCom.aspx");
-
-
-
-        }
 
 
 //**********************************************************************************************************************

@@ -149,7 +149,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Global.asax" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -238,11 +237,12 @@
     <Content Include="webSitesi\test\adminPanel\typo.html" />
     <Content Include="webSitesi\test\adminPanel\validation.html" />
     <Content Include="webSitesi\test\anaSayfa.aspx" />
+    <Content Include="webSitesi\test\forgetpass.aspx" />
     <Content Include="webSitesi\test\images\404.png" />
     <Content Include="webSitesi\test\jobdetail.aspx" />
     <Content Include="webSitesi\test\main.aspx" />
+    <Content Include="webSitesi\test\mainCom.aspx" />
     <Content Include="webSitesi\test\yeniSayfa.aspx" />
-    <Content Include="webSitesi\uyeEkle.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -304,9 +304,6 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service.asmx.cs">
       <DependentUpon>Service.asmx</DependentUpon>
@@ -346,6 +343,13 @@
     </Compile>
     <Compile Include="webSitesi\test\anaSayfa.aspx.designer.cs">
       <DependentUpon>anaSayfa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webSitesi\test\forgetpass.aspx.cs">
+      <DependentUpon>forgetpass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webSitesi\test\forgetpass.aspx.designer.cs">
+      <DependentUpon>forgetpass.aspx</DependentUpon>
     </Compile>
     <Compile Include="webSitesi\test\jobdetail.aspx.cs">
       <DependentUpon>jobdetail.aspx</DependentUpon>

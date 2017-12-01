@@ -24,6 +24,101 @@ namespace yazdir.webSitesi.test
             }
 
         }
+        //*************************************************************************
+        public void newMessage(object sender, EventArgs e)
+        {
+
+            try
+            {
+                //****************************************************************************
+                connection.Open();
+                MySqlCommand comman = new MySqlCommand();
+                MySqlCommand commanK = new MySqlCommand();
+                comman.Connection = connection;
+                commanK.Connection = connection;
+                commanK.Connection = connection;
+                commanK.CommandText = "select count(*) from uye_Kurumsal where comUsername='" + mEmailK.Value + "'";
+                comman.CommandText = "select count(*) from uye_Bireysel where userName='" + mEmailK.Value + "'";
+                //MySqlDataReader dataReader = comman.ExecuteReader();
+                int sayK = Convert.ToInt32(commanK.ExecuteScalar());
+                int say = Convert.ToInt32(comman.ExecuteScalar());
+                connection.Close();
+                if (say > 0 || sayK > 0)
+                {
+
+                    //Response.Write("<script>alert('Bu kişi var ')</script>");
+
+                    //****************************************************************************
+
+
+                    if (mEmailK.Value != "")
+                    {
+                        if (mSubK.Value != "")
+                        {
+                            if (msgK.Value != "")
+                            {
+                                //**********************************************************************************************
+                                int gorulmedi = 0;
+                                int kurumsal = 0;
+                                int bireysel = 1;
+                                connection.Open();
+                                MySqlCommand command = new MySqlCommand();
+                                command.Connection = connection;
+                                if (say > 0)
+                                {
+                                    command.CommandText = "insert into messages (receiverID,senderID,header,content,seenReceiver,receiverColumn) values ((select id from uye_Bireysel where userName='" + mEmailK.Value + "'),(select id from uye_Kurumsal where comEmail='" + Session["on_eMail"] + "'),'" + mSubK.Value + "','" + msgK.Value + "','" + gorulmedi + "','" + bireysel + "' )";
+                                }
+                                if (sayK > 0)
+                                {
+                                    command.CommandText = "insert into messages (receiverID,senderID,header,content,seenReceiver,receiverColumn) values ((select id from uye_Kurumsal where comUsername='" + mEmailK.Value + "'),(select id from uye_Kurumsal where comEmail='" + Session["on_eMail"] + "'),'" + mSubK.Value + "','" + msgK.Value + "','" + gorulmedi + "','" + kurumsal + "')";
+                                }
+                                command.ExecuteNonQuery();
+                                connection.Close();
+                                mEmailK.Value = "";
+                                mSubK.Value = "";
+                                msgK.Value = "";
+                                //**********************************************************************************************
+
+
+
+
+                            }
+                            else
+                            {
+                                Response.Write("<script>alert('Gönderilecek Mesajı Girmelisiniz.')</script>");
+                            }
+
+
+
+
+
+                        }
+                        else
+                        {
+                            Response.Write("<script>alert('Mesaj Konusunu Girmelisiniz.')</script>");
+                        }
+
+                    }
+                    else
+                    {
+                        Response.Write("<script>alert('Alıcı Mail adresi Girilmesi Zorunludur.')</script>");
+                    }
+                }
+                else
+                {
+                    Response.Write("<script>alert('geçersiz kullanıcı adı')</script>");
+                }
+            }
+
+            catch (Exception xe)
+            {
+                Response.Write("<script>alert('" + xe.Message + "')</script>");
+
+            }
+
+
+        }
+        //*************************************************************************
 
         public void sessionSil(object sender, EventArgs e)
         {
