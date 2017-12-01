@@ -386,14 +386,15 @@ return (key == 8 || key == 13);
 
             <div class="row">
                 <div class="col-md-5">
-        <div class="categories w3ls-categories" >
+        <div class="categories w3ls-categories"  style="width:100%" >
 						<h3 id="selamlama" runat="server">Merhaba! </h3>
 						<ul>
-                            <li><i aria-hidden="true"></i>At vero eos et accusamus iusto</li>
+                            <li><i aria-hidden="true"></i>Sisteme Hoşgeldin!</li>
 						</ul>
+          <br />  <asp:Button ID="AlinmisIsler" OnClick="AlinmisIsler_Click" UseSubmitBehavior="false" CssClass="btn bg-primary" runat="server" Text="Alınmış İşleri Görüntüle" />
 		</div>
        </div>
-                     <div class="col-md-7" style="align-content:initial">
+                   <div class="col-md-5" style="align-content:initial">
               <div class="categories w3ls-categories" style="height:100%" > <!-- Burayı istediğin kadar büyüt içeriği koyduktan sonra.-->
 						Slayt buraya gelecek
 		</div>

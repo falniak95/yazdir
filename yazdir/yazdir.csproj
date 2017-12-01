@@ -238,11 +238,12 @@
     <Content Include="webSitesi\test\adminPanel\typo.html" />
     <Content Include="webSitesi\test\adminPanel\validation.html" />
     <Content Include="webSitesi\test\anaSayfa.aspx" />
+    <Content Include="webSitesi\test\assignedApps.aspx" />
+    <Content Include="webSitesi\test\assignedJobdetails.aspx" />
     <Content Include="webSitesi\test\images\404.png" />
     <Content Include="webSitesi\test\jobdetail.aspx" />
     <Content Include="webSitesi\test\main.aspx" />
     <Content Include="webSitesi\test\yeniSayfa.aspx" />
-    <Content Include="webSitesi\uyeEkle.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -346,6 +347,20 @@
     </Compile>
     <Compile Include="webSitesi\test\anaSayfa.aspx.designer.cs">
       <DependentUpon>anaSayfa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webSitesi\test\assignedApps.aspx.cs">
+      <DependentUpon>assignedApps.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webSitesi\test\assignedApps.aspx.designer.cs">
+      <DependentUpon>assignedApps.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webSitesi\test\assignedJobdetails.aspx.cs">
+      <DependentUpon>assignedJobdetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webSitesi\test\assignedJobdetails.aspx.designer.cs">
+      <DependentUpon>assignedJobdetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="webSitesi\test\jobdetail.aspx.cs">
       <DependentUpon>jobdetail.aspx</DependentUpon>

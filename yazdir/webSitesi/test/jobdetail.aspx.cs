@@ -128,6 +128,16 @@ namespace yazdir.webSitesi.test
 
             connection.Close();
         }
+        private void joinAppFunc()
+        {
+           
+            string _personid = findPersonId();
+            MySqlCommand _command = new MySqlCommand("insert into doneJobs ( contractUrl,fileUrl,jobOwnerID,jobWorkerID,OwnerOK,workerPoint,JobId,jobProgress) values ('" + contract + "','-1'," + adOwner + "," + _personid + ",-1,-1," + adId + ",0)", connection);
+            if (connection.State == ConnectionState.Closed)
+                connection.Open();
+
+            _command.ExecuteNonQuery();
+        }
         protected void basvuruButtonClick(object sender, EventArgs e)
         {
             if (connection.State == ConnectionState.Closed)
@@ -147,6 +157,8 @@ namespace yazdir.webSitesi.test
                 connection.Open();
             updateCommand.ExecuteNonQuery();
             connection.Close();
+            joinAppFunc();
+            Response.Write("<script>alert('Başvuru tamamlandı.')</script>");
         }
     }
 }

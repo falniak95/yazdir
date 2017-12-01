@@ -269,8 +269,13 @@ namespace yazdir.webSitesi.test
            
 
         }
-       
-//**********************************************************************************************************************
+
+        protected void AlinmisIsler_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/websitesi/test/assignedApps.aspx");
+        }
+
+        //**********************************************************************************************************************
 
     }
 }

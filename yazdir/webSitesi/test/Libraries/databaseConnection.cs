@@ -18,6 +18,76 @@ namespace yazdir.webSitesi.test.Libraries
         {
 
         }
+        public string findUserId(string eMai)
+        {
+            MySqlCommand findIdCommand = new MySqlCommand("select id,eMail from uye_Bireysel where eMail='"+eMai+"'", connection);
+            openConnection();
+            MySqlDataReader dataRead = findIdCommand.ExecuteReader();
+            string _userId="";
+            while (dataRead.Read())
+            {
+                _userId = (dataRead["id"].ToString());
+               
+            }
+            dataRead.Close();
+            closeConnection();
+            return _userId;
+        }
+        public int[] getAssignedJobLinks(string userId)
+        {
+
+            MySqlCommand countCommand = new MySqlCommand("select COUNT(id),ad_appPersonid from isler where ad_appPersonid LIKE '%." + userId + ".%'", connection);
+            openConnection();
+            int jobCount = Convert.ToInt16(countCommand.ExecuteScalar());
+            closeConnection();
+            int[] _jobs = new int[jobCount];
+            int c = 0;
+            MySqlCommand command = new MySqlCommand("select id  from isler where ad_appPersonid LIKE '%." + userId + ".%'", connection);
+            openConnection();
+            MySqlDataReader dataRead = command.ExecuteReader();
+            while (dataRead.Read())
+            {
+                _jobs[c] = Convert.ToInt16(dataRead["id"]);
+                c++;
+            }
+            dataRead.Close();
+            closeConnection();
+            return _jobs;
+        }
+        
+        public string[] getAssignedJobList(string userId)
+        {
+
+            string[] idList;
+            MySqlCommand countCommand = new MySqlCommand("select COUNT(ad_ownerCompany) from isler where ad_appPersonid LIKE '%."+userId+".%'", connection);
+            openConnection();
+            totalCount = Convert.ToInt16(countCommand.ExecuteScalar());
+            idList = new string[totalCount];
+            jobType = new string[totalCount];
+            jobHeader = new string[totalCount];
+            jobPrice = new string[totalCount];
+            jobDate = new string[totalCount];
+            jobLevel = new string[totalCount];
+            MySqlCommand command = new MySqlCommand();
+            command.CommandText = "select * from isler where ad_appPersonid LIKE '%." + userId + ".%'";
+            command.Connection = connection;
+            MySqlDataReader dataRead = command.ExecuteReader();
+            int count = 0;
+            while (dataRead.Read())
+            {
+                idList[count] = dataRead["ad_ownerCompany"].ToString();
+                jobType[count] = dataRead["ad_jobType"].ToString();
+                jobHeader[count] = dataRead["ad_header"].ToString();
+                jobPrice[count] = dataRead["ad_price"].ToString();
+                jobDate[count] = dataRead["ad_date"].ToString();
+                jobLevel[count] = dataRead["ad_level"].ToString();
+                count++;
+            }
+            closeConnection();
+
+            return idList;
+        }
+
         public int totalCount;
         public string[] jobType, jobHeader, jobPrice, jobDate, jobLevel;
         public bool logInAdmin(string uName,string pword)

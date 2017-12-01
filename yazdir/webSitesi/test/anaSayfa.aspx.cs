@@ -151,8 +151,7 @@ namespace yazdir.webSitesi.test
                             Session["on_password"] = grsPassword.Value;
                             Response.Redirect("/webSitesi/test/mainCom.aspx");
 
-                            Response.Write("<script>alert('"+Session["on_eMail"]+"')</script>");
-
+                           
                         }
                         else
                         {
