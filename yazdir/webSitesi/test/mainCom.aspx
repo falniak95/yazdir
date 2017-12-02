@@ -120,10 +120,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						
                             
                            	<li class="dropdown">
-								<a href="#" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown">Short Codes <b class="fa fa-caret-down"></b></a>
+								<a href="#" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown">İlan İşlemleri <b class="fa fa-caret-down"></b></a>
 								<ul class="dropdown-menu agile_short_dropdown">
-									<li><a href="icons.html">Web Icons</a></li>
-									<li><a href="typography.html">Typography</a></li>
+									<li><a href="createAd.aspx">İlan Oluştur</a></li>
+									<li><a href="typography.html">İlanlarımı İncele</a></li>
 								</ul>
 							</li>
 							

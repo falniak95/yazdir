@@ -240,6 +240,7 @@
     <Content Include="webSitesi\test\anaSayfa.aspx" />
     <Content Include="webSitesi\test\assignedApps.aspx" />
     <Content Include="webSitesi\test\assignedJobdetails.aspx" />
+    <Content Include="webSitesi\test\createAd.aspx" />
     <Content Include="webSitesi\test\forgetpass.aspx" />
     <Content Include="webSitesi\test\images\404.png" />
     <Content Include="webSitesi\test\jobdetail.aspx" />
@@ -271,7 +272,6 @@
     <Content Include="webSitesi\test\css\style.css" />
     <Content Include="webSitesi\test\images\logocuk.png" />
     <Content Include="webSitesi\test\index.html" />
-    <Content Include="webSitesi\test\portfolio.html" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -361,6 +361,13 @@
     </Compile>
     <Compile Include="webSitesi\test\assignedJobdetails.aspx.designer.cs">
       <DependentUpon>assignedJobdetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webSitesi\test\createAd.aspx.cs">
+      <DependentUpon>createAd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webSitesi\test\createAd.aspx.designer.cs">
+      <DependentUpon>createAd.aspx</DependentUpon>
     </Compile>
     <Compile Include="webSitesi\test\forgetpass.aspx.cs">
       <DependentUpon>forgetpass.aspx</DependentUpon>
