@@ -18,7 +18,7 @@ namespace yazdir.webSitesi.test
 
         System.Web.UI.WebControls.Literal Literal1;
         databaseConnection dC = new databaseConnection();
-        string[] dizi = new string[] { "furkan", "kahraman", "emre", "ali", "tuncer", "kadir", "nuri", "bahadır", "test", "deneme", "e ticaret", "ödevi" };
+       
         private void seperateJobs()
         {
 
@@ -36,7 +36,10 @@ namespace yazdir.webSitesi.test
             Session.Clear();
             Response.Redirect("/websitesi/test/anaSayfa.aspx");
         }
-
+        protected void AlinmisIsler_Click(object sender,EventArgs e)
+        {
+            Response.Redirect("/websitesi/test/assignedApps.aspx");
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
              

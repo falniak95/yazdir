@@ -167,6 +167,7 @@
     <Content Include="webSitesi\test\adminPanel\calendar.html" />
     <Content Include="webSitesi\test\adminPanel\charts.html" />
     <Content Include="webSitesi\test\adminPanel\confirmationAndReport.aspx" />
+    <Content Include="webSitesi\test\adminPanel\confirmDetail.aspx" />
     <Content Include="webSitesi\test\adminPanel\css\basictable.css" />
     <Content Include="webSitesi\test\adminPanel\css\bootstrap.css" />
     <Content Include="webSitesi\test\adminPanel\css\circles.css" />
@@ -237,6 +238,8 @@
     <Content Include="webSitesi\test\adminPanel\typo.html" />
     <Content Include="webSitesi\test\adminPanel\validation.html" />
     <Content Include="webSitesi\test\anaSayfa.aspx" />
+    <Content Include="webSitesi\test\assignedApps.aspx" />
+    <Content Include="webSitesi\test\assignedJobdetails.aspx" />
     <Content Include="webSitesi\test\forgetpass.aspx" />
     <Content Include="webSitesi\test\images\404.png" />
     <Content Include="webSitesi\test\jobdetail.aspx" />
@@ -258,9 +261,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="webSitesi\test\about.html" />
-    <Content Include="webSitesi\test\blog.html" />
-    <Content Include="webSitesi\test\contact.html" />
     <Content Include="webSitesi\test\css\blog.css" />
     <Content Include="webSitesi\test\css\bootstrap.css" />
     <Content Include="webSitesi\test\css\chocolat.css" />
@@ -269,12 +269,9 @@
     <Content Include="webSitesi\test\css\single.css" />
     <Content Include="webSitesi\test\css\slicebox.css" />
     <Content Include="webSitesi\test\css\style.css" />
-    <Content Include="webSitesi\test\icons.html" />
     <Content Include="webSitesi\test\images\logocuk.png" />
     <Content Include="webSitesi\test\index.html" />
     <Content Include="webSitesi\test\portfolio.html" />
-    <Content Include="webSitesi\test\single.html" />
-    <Content Include="webSitesi\test\typography.html" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -323,6 +320,13 @@
     <Compile Include="webSitesi\test\adminPanel\confirmationAndReport.aspx.designer.cs">
       <DependentUpon>confirmationAndReport.aspx</DependentUpon>
     </Compile>
+    <Compile Include="webSitesi\test\adminPanel\confirmDetail.aspx.cs">
+      <DependentUpon>confirmDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webSitesi\test\adminPanel\confirmDetail.aspx.designer.cs">
+      <DependentUpon>confirmDetail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="webSitesi\test\adminPanel\loglar.aspx.cs">
       <DependentUpon>loglar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -343,6 +347,20 @@
     </Compile>
     <Compile Include="webSitesi\test\anaSayfa.aspx.designer.cs">
       <DependentUpon>anaSayfa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webSitesi\test\assignedApps.aspx.cs">
+      <DependentUpon>assignedApps.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webSitesi\test\assignedApps.aspx.designer.cs">
+      <DependentUpon>assignedApps.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webSitesi\test\assignedJobdetails.aspx.cs">
+      <DependentUpon>assignedJobdetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webSitesi\test\assignedJobdetails.aspx.designer.cs">
+      <DependentUpon>assignedJobdetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="webSitesi\test\forgetpass.aspx.cs">
       <DependentUpon>forgetpass.aspx</DependentUpon>

@@ -399,17 +399,19 @@ namespace yazdir.webSitesi.test.Libraries
             return _dataSet;
         }
         public int unConfirmedJobCount;
+        public string[] adID;
         public string[] getUnconfirmedJobsDetail()
         {
             int limit = unConfirmedJobsCount(),i=0;
             unConfirmedJobCount = limit;
             adHeader = new string[limit];adOwner = new string[limit]; adContent = new string[limit]; adPrice = new string[limit]; adLevel = new string[limit]; adContract = new string[limit]; adType = new string[limit];
-
+            adID = new string[limit];
             MySqlCommand command = new MySqlCommand("select * from isler where confirm=0",connection);
             openConnection();
             MySqlDataReader jobReader = command.ExecuteReader();
             while(jobReader.Read())
             {
+                adID[i]= jobReader["id"].ToString();
                 adHeader[i] = jobReader["ad_header"].ToString();
                 adOwner[i] = jobReader["ad_ownerCompany"].ToString();
                 adContent[i] = jobReader["ad_content"].ToString();
@@ -458,7 +460,7 @@ namespace yazdir.webSitesi.test.Libraries
         public string[] getJobListID()
         {
             string[] idList;
-            MySqlCommand countCommand = new MySqlCommand("select COUNT(ad_ownerCompany) from isler", connection);
+            MySqlCommand countCommand = new MySqlCommand("select COUNT(ad_ownerCompany) from isler where confirm=1", connection);
             openConnection();
             totalCount = Convert.ToInt16(countCommand.ExecuteScalar());
             idList = new string[totalCount];
@@ -468,7 +470,7 @@ namespace yazdir.webSitesi.test.Libraries
             jobDate= new string[totalCount];
             jobLevel= new string[totalCount];
             MySqlCommand command = new MySqlCommand();
-            command.CommandText = "select * from isler";
+            command.CommandText = "select * from isler where confirm=1";
             command.Connection = connection;
             MySqlDataReader dataRead = command.ExecuteReader();
             int count = 0;
