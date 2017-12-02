@@ -153,15 +153,22 @@ namespace yazdir.webSitesi.test
                 connection.Open();
                 MySqlCommand comman = new MySqlCommand();
                 MySqlCommand commanK = new MySqlCommand();
+                MySqlCommand commanSession = new MySqlCommand();
+                
                 comman.Connection = connection;
                 commanK.Connection = connection;
-                commanK.Connection = connection;
+                commanSession.Connection = connection;
+                
+
+               commanSession.CommandText="select count(*) from uye_Bireysel where eMail='"+ Session["on_eMail"]+"'";
                 commanK.CommandText= "select count(*) from uye_Kurumsal where comUsername='" + mEmail.Value + "'";
                 comman.CommandText = "select count(*) from uye_Bireysel where userName='" + mEmail.Value + "'";
+
                 //MySqlDataReader dataReader = comman.ExecuteReader();
                 int sayK= Convert.ToInt32(commanK.ExecuteScalar());
                 int say = Convert.ToInt32(comman.ExecuteScalar());
-               connection.Close();
+                int saySession= Convert.ToInt32(commanSession.ExecuteScalar());
+                connection.Close();
                 if (say > 0 || sayK > 0)
                 {
 
@@ -183,13 +190,27 @@ namespace yazdir.webSitesi.test
                                 connection.Open();
                                 MySqlCommand command = new MySqlCommand();
                                 command.Connection = connection;
-                                if (say > 0)
+                                if (saySession > 0)
                                 {
-                                    command.CommandText = "insert into messages (receiverID,senderID,header,content,seenReceiver,receiverColumn) values ((select id from uye_Bireysel where userName='" + mEmail.Value + "'),(select id from uye_Bireysel where eMail='" + Session["on_eMail"] + "'),'" + mSub.Value + "','" + msg.Value + "','" + gorulmedi + "','" + bireysel + "' )";
+                                    if (say > 0)
+                                    {
+                                        command.CommandText = "insert into messages (receiverID,senderID,header,content,seenReceiver,receiverColumn,senderColumn,date) values ((select id from uye_Bireysel where userName='" + mEmail.Value + "'),(select id from uye_Bireysel where eMail='" + Session["on_eMail"] + "'),'" + mSub.Value + "','" + msg.Value + "','" + gorulmedi + "','" + bireysel + "','" + bireysel + "',CURRENT_TIMESTAMP)";
+                                    }
+                                    if (sayK > 0)
+                                    {
+                                        command.CommandText = "insert into messages (receiverID,senderID,header,content,seenReceiver,receiverColumn,senderColumn,date) values ((select id from uye_Kurumsal where comUsername='" + mEmail.Value + "'),(select id from uye_Bireysel where eMail='" + Session["on_eMail"] + "'),'" + mSub.Value + "','" + msg.Value + "','" + gorulmedi + "','" + kurumsal + "','" + bireysel + "',CURRENT_TIMESTAMP)";
+                                    }
                                 }
-                                if (sayK > 0)
+                                if(saySession<1)
                                 {
-                                    command.CommandText = "insert into messages (receiverID,senderID,header,content,seenReceiver,receiverColumn) values ((select id from uye_Kurumsal where comUsername='" + mEmail.Value + "'),(select id from uye_Bireysel where eMail='" + Session["on_eMail"] + "'),'" + mSub.Value + "','" + msg.Value + "','" + gorulmedi + "','" + kurumsal + "')";
+                                    if (say > 0)
+                                    {
+                                        command.CommandText = "insert into messages (receiverID,senderID,header,content,seenReceiver,receiverColumn,senderColumn,date) values ((select id from uye_Bireysel where userName='" + mEmail.Value + "'),(select id from uye_Bireysel where eMail='" + Session["on_eMail"] + "'),'" + mSub.Value + "','" + msg.Value + "','" + gorulmedi + "','" + bireysel + "','" + kurumsal + "',CURRENT_TIMESTAMP)";
+                                    }
+                                    if (sayK > 0)
+                                    {
+                                        command.CommandText = "insert into messages (receiverID,senderID,header,content,seenReceiver,receiverColumn,senderColumn,date) values ((select id from uye_Kurumsal where comUsername='" + mEmail.Value + "'),(select id from uye_Bireysel where eMail='" + Session["on_eMail"] + "'),'" + mSub.Value + "','" + msg.Value + "','" + gorulmedi + "','" + kurumsal + "','" + kurumsal+ "',CURRENT_TIMESTAMP)";
+                                    }
                                 }
                                 command.ExecuteNonQuery();
                                 connection.Close();
