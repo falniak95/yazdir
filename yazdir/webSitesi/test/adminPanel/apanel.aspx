@@ -93,7 +93,7 @@
                     </li>
                     <!-- //nav_agile_w3l -->
                     <li class="second logo">
-                        <h1><a href="main-page.html"><i class="fa fa-graduation-cap" aria-hidden="true"></i>YAZZDIR </a></h1>
+                        <h1><a href="apanel.aspx"><i class="fa fa-graduation-cap" aria-hidden="true"></i>YAZZDIR </a></h1>
                     </li>
                     <li class="second admin-pic">
                         <ul class="top_dp_agile">

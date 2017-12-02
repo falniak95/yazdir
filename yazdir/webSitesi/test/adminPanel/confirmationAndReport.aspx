@@ -4,6 +4,14 @@
 <html lang="zxx">
 <head>
 <title>YAZZDIR | E-Ticaret / Admin Paneli</title>   
+      
+       <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
 <!-- custom-theme -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -287,6 +295,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
      <!-- Onaylanmamış İlanları Görüntüle -->
    
+
+    SELAM MERHABA
+
                     <div class="modal fade" id="detayGoruntule" role="dialog">
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
@@ -476,7 +487,157 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
 
+    <style>
+        body {
+  font-family: "Helvetica Neue", Helvetica, Arial;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #3b3b3b;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  background: #f6f6f6;
+}
+     #changePasswordButton{
+            outline: none;
+    padding: 0.8em 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+    margin-top: 1em;
+    border: none;
+    color: #FFFFFF;
+	text-transform:uppercase;
+    cursor: pointer;
+    background: #a80057;
+    box-shadow: 0px 2px 1px rgba(28, 28, 29, 0.42);
 
+     }
+    #changePasswordButton:hover
+    {
+          color: #fff;
+       background: #000;
+    transition: .5s all;
+	-webkit-transition: .5s all;
+    -moz-transition: .5s all;
+    -o-transition: .5s all;
+    -ms-transition: .5s all;
+    }
+     #submitChanges{
+    outline: none;
+    padding: 0.8em 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+    margin-top: 1em;
+    border: none;
+    color: #FFFFFF;
+	text-transform:uppercase;
+    cursor: pointer;
+    background: #a80057;
+    box-shadow: 0px 2px 1px rgba(28, 28, 29, 0.42);
+
+}
+#submitChanges:hover{
+      color: #fff;
+       background: #000;
+    transition: .5s all;
+	-webkit-transition: .5s all;
+    -moz-transition: .5s all;
+    -o-transition: .5s all;
+    -ms-transition: .5s all;
+}
+#changePassword{
+    outline: none;
+    padding: 0.8em 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+    margin-top: 1em;
+    border: none;
+    color: #FFFFFF;
+	text-transform:uppercase;
+    cursor: pointer;
+    background: #a80057;
+    box-shadow: 0px 2px 1px rgba(28, 28, 29, 0.42);}
+
+#updateInfo{
+     outline: none;
+    padding: 0.8em 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+    margin-top: 1em;
+    border: none;
+    color: #FFFFFF;
+	text-transform:uppercase;
+    cursor: pointer;
+    background: #a80057;
+    box-shadow: 0px 2px 1px rgba(28, 28, 29, 0.42);}
+
+}
+
+
+.wrapper {
+  margin: 0 auto;
+  padding: 40px;
+  max-width: 800px;
+}
+
+.table {
+  margin: 0 0 40px 0;
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  display: table;
+}
+
+.satir {
+  display: table-row;
+  background: #f6f6f6;
+}
+
+.row:nth-of-type(odd) {
+  background: #e9e9e9;
+}
+
+.satir.header {
+  font-weight: 900;
+  color: #ffffff;
+  /*background: #ea6153;*/
+  background:#c60f0f;
+}
+
+.satir.green {
+  background: #27ae60;
+}
+
+.satir.blue {
+  background: #2980b9;
+}
+
+.cell {
+  padding: 6px 12px;
+  display: table-cell;
+}
+@media screen and (max-width: 580px) {
+  .cell {
+    padding: 2px 12px;
+    display: block;
+  }
+  @media screen and (max-width: 580px) {
+  .row {
+    padding: 8px 0;
+    display: block;
+  }
+}
+  
+@media screen and (max-width: 580px) {
+  .table {
+    display: block;
+  }
+}
+
+    </style>
 
 
 

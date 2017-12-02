@@ -13,7 +13,9 @@ namespace yazdir.webSitesi.test
 {
     public partial class yeniSayfa : System.Web.UI.Page
     {
+        #region MysqlConnection
         MySqlConnection connection = new MySqlConnection("Server=furkanalniak.com;Database=furkanal_yazdir;Uid=furkanal_admin;Pwd='fk2017';");
+#endregion
         protected void Page_Load(object sender, EventArgs e)
         {
             sirket.InnerText = "Merhaba " + Session["on_eMail"];
