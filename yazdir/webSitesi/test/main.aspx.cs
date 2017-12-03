@@ -147,6 +147,29 @@ namespace yazdir.webSitesi.test
             connection.Close();
         }
         //*************************************************************************************
+       public void hsb(object sender,EventArgs e)
+        {
+           if(Password1.Value==Password2.Value)
+            {
+                MySqlCommand kmt = new MySqlCommand("select password FROM uye_Bireysel WHERE eMail='"+ Session["on_eMail"].ToString() + "'", connection);
+                connection.Open();
+                kmt.ExecuteNonQuery();
+                int sifre= Convert.ToInt32(kmt.ExecuteScalar());
+                connection.Close();
+                if (sifre== Convert.ToInt32(Password1.Value))
+                {
+                    MySqlCommand kmt2 = new MySqlCommand("delete from uye_Bireysel where eMail='" + Session["on_eMail"] + "'",connection);
+                    connection.Open();
+                   // kmt2.CommandText=
+                    kmt2.ExecuteNonQuery();
+                    connection.Close();
+                    Session.Clear();
+                    Response.Redirect("/webSitesi/test/anaSayfa.aspx");
+                    
+
+                }
+            }
+        }
         public void newMessage(object sender, EventArgs e)
         {
            

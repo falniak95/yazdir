@@ -409,7 +409,7 @@ return (key == 8 || key == 13);
                                     <input type="password" runat="server" name="password" id="password2" placeholder="Şifre Tekrarı" required="">
                                        
                                     <div class="btnKayit">
-                                      <asp:Button ID="registerPageButton" runat="server" UseSubmitBehavior="false"    Text="Tamamla!" OnClick="registerNow"  />
+                                      <asp:Button ID="registerPageButton" runat="server" UseSubmitBehavior="false" Text="Tamamla!" OnClick="registerNow"  />
                                     </div>
                                  
                                     <%--<input type="submit" value="Gönder" id="signUpButton" onclick=""">--%>
