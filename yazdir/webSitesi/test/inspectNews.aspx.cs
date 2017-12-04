@@ -111,7 +111,7 @@ namespace yazdir.webSitesi.test
 
                 string gidecekID = UpdateBtn;
              
-                MySqlCommand command = new MySqlCommand("update news set  header='" + baslikTxt + "', content='" + icerikTxt + "', confirm=0  where id=" + gidecekID, connection);
+                MySqlCommand command = new MySqlCommand("update news set  header='" + baslikTxt + "', content='" + icerikTxt + "', confirm=0  where id='" + gidecekID+"'", connection);
                 command.ExecuteNonQuery();
                 connection.Close();
                 System.Diagnostics.Debug.WriteLine("Bu buton calisti.");
