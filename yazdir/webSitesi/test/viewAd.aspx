@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>GELEN KUTUSU</title>
+    <title>İlan Görüntüle</title>
 
     <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -89,31 +89,46 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <div class="col-md-9">
       <div class="w3-panel w3-blue w3-round-xlarge">
-                                 <asp:Label ID="Label5" runat="server" Text="İLANLAR">
+                                 <asp:Label ID="ilan" runat="server" Text="İLANLAR">
                           </asp:Label>
                              </div>
-                  <asp:ListView  ID="list" runat="server">
+                 <asp:Repeater ID="liste" runat="server" OnItemCommand="liste_ItemCommand" >
                       <ItemTemplate>
                          <div class="col-md-11">
 
-                            
+                             <asp:LinkButton ID="Duzenle" CommandName="duzenle" ToolTip='<%# Eval("id") %>' runat="server" Text="Güncelle"></asp:LinkButton>
 
 
                              <div class="w3-panel w3-red">
-                                      <asp:Label ID="Label2" runat="server" Text='<%#Eval("ad_header")%>'>
-                          </asp:Label>
-                                 <br />
-                           <asp:Label ID="lblad" runat="server" Text='<%#Eval("ad_content")%>'>
+                                  <asp:Label ID="konu" runat="server"  Text="KONU:">
                         </asp:Label>
                                  <br />
-                             <asp:Label ID="Label1" runat="server" Text='<%#Eval("ad_price")%>'>
-                          </asp:Label>tl
+                                      <asp:textbox ID="konuT" runat="server"  style="color:red" Text='<%#Eval("ad_header")%>'>
+                          </asp:textbox>
                                  <br />
-                                 <asp:Label ID="Label3" runat="server" Text='<%#Eval("ad_jobType")%>'>
-                          </asp:Label>
+                                 <asp:Label ID="acıklama" runat="server"  Text="Açıklama:">
+                        </asp:Label>
                                  <br />
-                                 <asp:Label ID="Label4" runat="server" Text='<%#Eval("ad_date")%>'>
-                          </asp:Label>
+                           <asp:textbox ID="acıklamaT" runat="server" style="color:red" Text='<%#Eval("ad_content")%>'>
+                        </asp:textbox>
+                                 <br />
+                                 <asp:Label ID="fiyat" runat="server"  Text="Fiyat:">
+                        </asp:Label>
+                                 <br />
+                             <asp:textbox ID="fiyatT" runat="server" style="color:red" Text='<%#Eval("ad_price")%>'>
+                          </asp:textbox>tl
+                                 <br />
+                                 <asp:Label ID="isTürü" runat="server"  Text="iş Türü:">
+                        </asp:Label>
+                                 <br />
+                                 <asp:textbox ID="isTürüT" runat="server" style="color:red" Text='<%#Eval("ad_jobType")%>'>
+                          </asp:textbox>
+                                 <br />
+                                 <asp:Label ID="Tarih" runat="server"  Text="Tarih:">
+                        </asp:Label>
+                                 <br />
+                                 <asp:label ID="TarihT" runat="server" style="color:black" Text='<%#Eval("ad_date")%>'>
+                          </asp:label>
 
                                       <%-- <asp:Label ID="Label4" runat="server" Text='<%#Eval("ad_date")%>'>
                           </asp:Label>--%>
@@ -125,7 +140,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                           
                       </ItemTemplate>
 
-                  </asp:ListView>
+                  </asp:Repeater>
                     
                     
                  <%--   <asp:Panel ID="DinamikPanel" runat="server" style="width:100%"></asp:Panel>
