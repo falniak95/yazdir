@@ -34,7 +34,7 @@ namespace yazdir.webSitesi.test
         }
 protected void createAdButton_Click(object sender, EventArgs e)
 {
-    MySqlCommand command = new MySqlCommand("insert into isler (ad_ownerCompany,ad_header,ad_content,ad_price,ad_level,ad_jobType,ad_date,ad_deadLineLimit) values ('"+findUserID()+"','" + ilanBaslik.Text+"','"+ilanIcerik.Text+"','"+ilanUcret.Text+"','"+ilanZorluk.SelectedItem.Text+"','"+ilanTuru.SelectedItem.Text+"','"+DateTime.Now+"','"+ilanLimit.Text+"')", connection);
+    MySqlCommand command = new MySqlCommand("insert into isler (ad_ownerCompany,ad_header,ad_content,ad_price,ad_level,ad_jobType,ad_date,ad_deadLineLimit) values ('"+findUserID()+"','" + ilanBaslik.Text+"','"+ilanIcerik.Text+"','"+ilanUcret.Text+"','"+ilanZorluk.SelectedItem.Text+"','"+ilanTuru.SelectedItem.Text+ "',CURRENT_TIMESTAMP,'" + ilanLimit.Text+"')", connection);
     if (connection.State == ConnectionState.Closed)
         connection.Open();
             command.ExecuteNonQuery();

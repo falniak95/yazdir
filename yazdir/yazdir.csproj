@@ -251,6 +251,7 @@
     <Content Include="webSitesi\test\jobdetail.aspx" />
     <Content Include="webSitesi\test\main.aspx" />
     <Content Include="webSitesi\test\mainCom.aspx" />
+    <Content Include="webSitesi\test\viewAd.aspx" />
     <Content Include="webSitesi\test\yeniSayfa.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -439,6 +440,13 @@
     </Compile>
     <Compile Include="webSitesi\test\mainCom.aspx.designer.cs">
       <DependentUpon>mainCom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webSitesi\test\viewAd.aspx.cs">
+      <DependentUpon>viewAd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webSitesi\test\viewAd.aspx.designer.cs">
+      <DependentUpon>viewAd.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

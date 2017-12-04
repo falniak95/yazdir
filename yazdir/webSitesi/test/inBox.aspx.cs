@@ -13,7 +13,7 @@ namespace yazdir.webSitesi.test
 {
     public partial class inBox : System.Web.UI.Page
     {
-        System.Web.UI.WebControls.Literal Literal2;
+        //System.Web.UI.WebControls.Literal Literal2;
         MySqlConnection connection = new MySqlConnection("Server=furkanalniak.com;Database=furkanal_yazdir;Uid=furkanal_admin;Pwd='fk2017';");
         public int Count;
         public int[] countID;
@@ -21,80 +21,92 @@ namespace yazdir.webSitesi.test
         public string ses = "test@test";
         protected void Page_Load(object sender, EventArgs e)
         {
-            Literal2 = new Literal();
-            Literal2.Text = "";
-            Literal2.Text += "<center><div class='wrapper' style='margin-top:-20px'>";
-            Literal2.Text += " <div class='tablo' >";
-            Literal2.Text += "<div class='satir header'>";
-            Literal2.Text += "<div class='cell'>";
-            Literal2.Text += "Kullanıcı Adı";
-            Literal2.Text += "</div>";
-            Literal2.Text += "<div class='cell'>";
-            Literal2.Text += "Konu";
-            Literal2.Text += "</div>";
-            Literal2.Text += " <div class='cell'>";
-            Literal2.Text += "         ";
-            Literal2.Text += "</div>";
-            Literal2.Text += " <div class='cell'>";
-            Literal2.Text += "         ";
-            Literal2.Text += "</div>";
-            Literal2.Text += " <div class='cell'>";
-            Literal2.Text += "Tarihi";
-            Literal2.Text += "</div>";
-            Literal2.Text += " <div class='cell'>";
-            Literal2.Text += "      ";
-            Literal2.Text += "</div>";
-            Literal2.Text += " <div class='cell'>";
-            Literal2.Text += "      ";
-            Literal2.Text += "</div>";
-            Literal2.Text += "<div class='cell'>";
-            Literal2.Text += "Mesaj içeriği";
-            Literal2.Text += "</div>";
-            Literal2.Text += "</div>";
+
+            getir();
+
+            //Literal2 = new Literal();
+            //Literal2.Text = "";
+            //Literal2.Text += "<center><div class='wrapper' style='margin-top:-20px'>";
+            //Literal2.Text += " <div class='tablo' >";
+            //Literal2.Text += "<div class='satir header'>";
+            //Literal2.Text += "<div class='cell'>";
+            //Literal2.Text += "Kullanıcı Adı";
+            //Literal2.Text += "</div>";
+            //Literal2.Text += "<div class='cell'>";
+            //Literal2.Text += "Konu";
+            //Literal2.Text += "</div>";
+            //Literal2.Text += " <div class='cell'>";
+            //Literal2.Text += "         ";
+            //Literal2.Text += "</div>";
+            //Literal2.Text += " <div class='cell'>";
+            //Literal2.Text += "         ";
+            //Literal2.Text += "</div>";
+            //Literal2.Text += " <div class='cell'>";
+            //Literal2.Text += "Tarihi";
+            //Literal2.Text += "</div>";
+            //Literal2.Text += " <div class='cell'>";
+            //Literal2.Text += "      ";
+            //Literal2.Text += "</div>";
+            //Literal2.Text += " <div class='cell'>";
+            //Literal2.Text += "      ";
+            //Literal2.Text += "</div>";
+            //Literal2.Text += "<div class='cell'>";
+            //Literal2.Text += "Mesaj içeriği";
+            //Literal2.Text += "</div>";
+            //Literal2.Text += "</div>";
 
 
-        
-            Literal2.Text += "</div>";
-            Literal2.Text += "</div></center>";
 
-            DinamikPanel.Controls.Add(Literal2);
+            //Literal2.Text += "</div>";
+            //Literal2.Text += "</div></center>";
+
+            //DinamikPanel.Controls.Add(Literal2);
         }
-
-        public int[] _gonderenID()
+        public void getir ()
         {
-
-
-
-            MySqlCommand countCommand = new MySqlCommand("select COUNT(reveiverID) from messages where receiverID=(select id from uye_Bireysel where eMail='" + ses + "')", connection);
-            connection.Open();
-            Count = Convert.ToInt16(countCommand.ExecuteScalar());
-            connection.Close();
-            countID = new int[Count];
-
-            int c = 0;
-            MySqlCommand command = new MySqlCommand("select senderID from messages where receiverID=(select id from uye_Bireysel where eMail='" + ses + "')", connection);
+            MySqlCommand command = new MySqlCommand("select senderID,header,content from messages", connection);
             connection.Open();
             MySqlDataReader dataRead = command.ExecuteReader();
-            while (dataRead.Read())
-            {
-                countID[c] = Convert.ToInt16(dataRead["senderID"]);
-                c++;
-            }
-            dataRead.Close();
+            list.DataSource = dataRead;
+            list.DataBind();
             connection.Close();
-
-
-            return countID;
         }
-        public string _gonderenAdi()
-        {
-            string asd = "";
-            MySqlCommand command = new MySqlCommand("select userName from uye_Bireysel where id='" + countID[9] + "'", connection);
-            connection.Open();
+
+        //public int[] _gonderenID()
+        //{
 
 
-            return asd;
-        }
+
+        //    MySqlCommand countCommand = new MySqlCommand("select COUNT(reveiverID) from messages where receiverID=(select id from uye_Bireysel where eMail='" + ses + "')", connection);
+        //    connection.Open();
+        //    Count = Convert.ToInt16(countCommand.ExecuteScalar());
+        //    connection.Close();
+        //    countID = new int[Count];
+
+        //    int c = 0;
+        //    MySqlCommand command = new MySqlCommand("select senderID from messages where receiverID=(select id from uye_Bireysel where eMail='" + ses + "')", connection);
+        //    connection.Open();
+        //    MySqlDataReader dataRead = command.ExecuteReader();
+        //    while (dataRead.Read())
+        //    {
+        //        countID[c] = Convert.ToInt16(dataRead["senderID"]);
+        //        c++;
+        //    }
+        //    dataRead.Close();
+        //    connection.Close();
+
+
+        //    return countID;
+        //}
+        //public string _gonderenAdi()
+        //{
+        //    string asd = "";
+        //    MySqlCommand command = new MySqlCommand("select userName from uye_Bireysel where id='" + countID[9] + "'", connection);
+        //    connection.Open();
+
+
+        //    return asd;
+        //}
 
 
     }

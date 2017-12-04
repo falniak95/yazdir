@@ -1,7 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" enableEventValidation="false" CodeBehind="inBox.aspx.cs" Inherits="yazdir.webSitesi.test.inBox" %>
-
-
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="viewAd.aspx.cs" Inherits="yazdir.webSitesi.test.viewAd" %>
 
 <!DOCTYPE html>
 
@@ -40,31 +37,40 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="vendors/easypiechart/jquery.easy-pie-chart.js"></script>
 <script src="assets/scripts.js"></script>
+   <form id="form1" runat="server">
 
-    <form id="form1" runat="server">
-    <div>
-        <%--******************************************************************************************--%>
-          <div class="agileits_top_menu">
-   <div class="w3l_header_left">
-<%--				<ul>
-					<li><i class="fa fa-map-marker" aria-hidden="true"></i> 1143 New York, USA</li>
-					<li><i class="fa fa-phone" aria-hidden="true"></i> +(010) 221 918 811</li>
-					<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">info@example.com</a></li>
-				</ul>--%>
-         <b>GELEN MESAJLAR</b>  
-			</div>
-			<div class="w3l_header_right">
-				<div class="w3ls-social-icons text-left">
-					<%--<a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
-					<a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
-					<a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a>
-					<a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>--%>
+
+   <div class="agileits_w3layouts_banner_nav">
+			<nav class="navbar navbar-default">
+				<div class="navbar-header navbar-left">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<h1><a class="navbar-brand" href="anaSayfa.aspx"><img src="images/logocuk.png" /></a></h1>
+
+
 				</div>
-			</div>
-			<div class="clearfix"> </div>
-		</div>
-        <%--*****************************************************************************************--%>
-    <div class="container">
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+
+			</nav>	
+			
+	<div class="clearfix"> </div> 
+</div> 
+													
+	<!-- /agile_inner_banner_info -->													
+							<div class="agile_inner_banner_info">
+							   <h2>YAZZDIR </h2>
+
+</div>
+
+<br />
+<br />
+<br />
+ <div class="container">
 
 
      <div class="row">
@@ -82,19 +88,35 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                 </div>
                 <div class="col-md-9">
-     
+      <div class="w3-panel w3-blue w3-round-xlarge">
+                                 <asp:Label ID="Label5" runat="server" Text="İLANLAR">
+                          </asp:Label>
+                             </div>
                   <asp:ListView  ID="list" runat="server">
                       <ItemTemplate>
-                         <div class="col-md-9">
-                            <div class="w3-panel w3-blue w3-round-xlarge">
+                         <div class="col-md-11">
 
-                                <asp:Label ID="Label2" runat="server" Text='<%#Eval("senderID")%>'>
-                          </asp:Label>     :
+                            
 
-                           <asp:Label ID="lblad" runat="server" Text='<%#Eval("header")%>'>
-                          </asp:Label>     :
-                                <asp:Label ID="Label1" runat="server" Text='<%#Eval("content")%>'>
+
+                             <div class="w3-panel w3-red">
+                                      <asp:Label ID="Label2" runat="server" Text='<%#Eval("ad_header")%>'>
                           </asp:Label>
+                                 <br />
+                           <asp:Label ID="lblad" runat="server" Text='<%#Eval("ad_content")%>'>
+                        </asp:Label>
+                                 <br />
+                             <asp:Label ID="Label1" runat="server" Text='<%#Eval("ad_price")%>'>
+                          </asp:Label>tl
+                                 <br />
+                                 <asp:Label ID="Label3" runat="server" Text='<%#Eval("ad_jobType")%>'>
+                          </asp:Label>
+                                 <br />
+                                 <asp:Label ID="Label4" runat="server" Text='<%#Eval("ad_date")%>'>
+                          </asp:Label>
+
+                                      <%-- <asp:Label ID="Label4" runat="server" Text='<%#Eval("ad_date")%>'>
+                          </asp:Label>--%>
                           </div>
                           </div>
                            <%--<asp:Label ID="Label1" runat="server" Text=" kahramansssssssssssssssssssssssssssssss">
@@ -108,9 +130,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     
                  <%--   <asp:Panel ID="DinamikPanel" runat="server" style="width:100%"></asp:Panel>
                     </div>--%>
-                <div class="col-md-2" style="width:20px">
-                   
-                    </div>
+               
 
             </div>
                 <div class="col-md-2">
@@ -124,69 +144,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
     </div>
+
+
+<%--*************************************************************************************************************--%>
+
+<%--***********************************************************************************************************--%>
+<div class="footer" style="color:white">
+	<center>	FURKAN ALNIAK 14545548 <br />
+        KAHRAMAN ÇINAR 13542524<br />
+        E-TİCARET<br />
+        YAZZDIR<br />
+        </center>
+	</div>
+
     </form>
-    <style>
-
-        .wrapper {
-  margin: 0 auto;
-  padding: 40px;
-  max-width: 800px;
-}
-
-.table {
-  margin: 0 0 40px 0;
-  width: 100%;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  display: table;
-}
-
-.satir {
-  display: table-row;
-  background: #f6f6f6;
-}
-
-.row:nth-of-type(odd) {
-  background: #e9e9e9;
-}
-
-.satir.header {
-  font-weight: 900;
-  color: #ffffff;
-  /*background: #ea6153;*/
-  background:#c60f0f;
-}
-
-.satir.green {
-  background: #27ae60;
-}
-
-.satir.blue {
-  background: #2980b9;
-}
-
-.cell {
-  padding: 6px 12px;
-  display: table-cell;
-}
-@media screen and (max-width: 580px) {
-  .cell {
-    padding: 2px 12px;
-    display: block;
-  }
-  @media screen and (max-width: 580px) {
-  .row {
-    padding: 8px 0;
-    display: block;
-  }
-}
-  
-@media screen and (max-width: 580px) {
-  .table {
-    display: block;
-  }
-}
-
-    </style>
-
 </body>
 </html>
