@@ -36,6 +36,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script type ="text/jscript"  language="javascript">
 
         function openModal() { $('#ilkGirisModal').modal('show'); false }
+        
     function shouldCancelbackspace(e) {
     var key;
     if(e){
@@ -327,6 +328,7 @@ return (key == 8 || key == 13);
 
                                
                                        <asp:Button ID="updateInfo" runat="server" UseSubmitBehavior="false" onclick="upd" Text="Güncelle" />
+                                
                                        
                                 </div>
 
@@ -340,6 +342,46 @@ return (key == 8 || key == 13);
 
                 </div>
         <!------------------------------------------------------------------------------------------------------------------>
+         <div class="modal fade" id="hesapSil" tabindex="-1" role="dialog">
+                 
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                           <%-- <button type="button" class="close" data-dismiss="modal">&times;</button>--%>
+
+                            <div class="signin-form profile">
+                                <h3 class="agileinfo_sign" >HESABI SİLMEK İSTEDİĞİNİZE EMİN MİSİNİZ ?</h3>
+                                <div class="login-form">
+                                    </div>
+                                
+                                        <a style="padding-right:100%">Şifre </a>
+                                        <input type="password" id="Password1" runat="server" name="eskiSifre" placeholder="" required=""/>
+                                        <br />       
+                                        <a style="padding-right:100%">ŞifreTekrar</a>        
+                                        <input type="password" id="Password2" runat="server" name="newPassword" placeholder="" required=""/>
+                                        
+                                        
+                                <asp:Button id="deleteAccount" class="btn btn-danger" runat="server" UseSubmitBehavior="false" OnClick="hsb" Text="* Sil *" />
+                              
+                                <%--<button class="btn btn-default" >Launch modal</button>--%>
+                               
+
+                               
+                              
+
+                                </div>
+
+                           
+                                
+                            </div>
+
+                        </div>
+
+                    </div> 
+
+                </div>
+        <%-------------------------------------------------------------------------------------------------------------------------%>
                
 
    <div class="modal fade" id="ilkGirisModal" tabindex="-1" role="dialog">
@@ -498,6 +540,15 @@ return (key == 8 || key == 13);
 
 
     </div>
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <footer id="fot" class="navbar navbar-inverse">
+    <%--<asp:Button  type="button" runat="server" UseSubmitBehavior="false" href="#" data-toggle="modal" data-target="#hesabıSil" class="btn btn-link" text="Hesabı Sil" />--%>
+            <a class="btn btn-link" href="#" data-toggle="modal" data-target="#hesapSil">Hesabı Sil </a>
+</footer>
     </form>
 
     <style>
@@ -511,6 +562,8 @@ return (key == 8 || key == 13);
   font-smoothing: antialiased;
   background: #f6f6f6;
 }
+    
+    
      #changePasswordButton{
             outline: none;
     padding: 0.8em 0;

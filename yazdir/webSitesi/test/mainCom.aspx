@@ -229,6 +229,46 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div> 
 
                 </div>
+      <%--  --------------------------------------------------------------------------------------------------------------------%>
+             <div class="modal fade" id="hesapSil" tabindex="-1" role="dialog">
+                 
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                           <%-- <button type="button" class="close" data-dismiss="modal">&times;</button>--%>
+
+                            <div class="signin-form profile">
+                                <h3 class="agileinfo_sign" >HESABI SİLMEK İSTEDİĞİNİZE EMİN MİSİNİZ ?</h3>
+                                <div class="login-form">
+                                    </div>
+                                
+                                        <a style="padding-right:100%">Şifre </a>
+                                        <input type="password" id="Password1" runat="server" name="eskiSifre" placeholder="" required=""/>
+                                        <br />       
+                                        <a style="padding-right:100%">ŞifreTekrar</a>        
+                                        <input type="password" id="Password2" runat="server" name="newPassword" placeholder="" required=""/>
+                                        
+                                        
+                                <asp:Button id="deleteAccount" class="btn btn-danger" runat="server" UseSubmitBehavior="false" OnClick="hsbSil" Text="* Sil *" />
+                              
+                                <%--<button class="btn btn-default" >Launch modal</button>--%>
+                               
+
+                               
+                              
+
+                                </div>
+
+                           
+                                
+                            </div>
+
+                        </div>
+
+                    </div> 
+
+                </div>
     <!------------------------------------------------------------------------------------------------------------------------------>
 <!-- Modal1 -->
 							<div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
@@ -481,10 +521,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="clearfix"> </div>
 			</div>
 			<div class="agileinfo_copyright">
-				<p>© 2017 Treasurer. All Rights Reserved | Design by <a href="https://w3layouts.com/">W3layouts</a></p>
+                 <a class="btn btn-link" href="#" data-toggle="modal" data-target="#hesapSil">Hesabı Sil </a>
+				<p>© 2017 Treasurer. All Rights Reserved | Design by <a href="https://Furkanalniak.com/">Studio0634</a></p>
 			</div>
 		</div>
+
 	</div>
+
 
                 
 
