@@ -120,7 +120,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<a href="#" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown">Haber İşlemleri <b class="fa fa-caret-down"></b></a>
 								<ul class="dropdown-menu agile_short_dropdown">
 									<li><a href="createNewsCom.aspx">Haber Oluştur</a></li>
-									<li><a href="typography.html">Haberlerimi İncele</a></li>
+									<li><a href="inspectNews.aspx">Haberlerimi İncele</a></li>
 								</ul>
 							</li>
 						
