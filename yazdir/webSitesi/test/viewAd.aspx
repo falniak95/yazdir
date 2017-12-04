@@ -96,9 +96,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                       <ItemTemplate>
                          <div class="col-md-11">
 
-                             <asp:LinkButton ID="Duzenle" CommandName="duzenle" ToolTip='<%# Eval("id") %>' runat="server" Text="Güncelle"></asp:LinkButton>
-
-
+                             <asp:LinkButton ID="Duzenle" CommandName="duzenle" ToolTip='<%# Eval("id") %>'  runat="server" Text="Güncelle    "></asp:LinkButton>
+                            <br />
+                              <asp:Button class="w3-button w3-black" ID="deleteAd" ToolTip='<%# Eval("id") %>' runat="server" Text="SİL"  OnClick="  deleteAd"></asp:Button>
+                                 
                              <div class="w3-panel w3-red">
                                   <asp:Label ID="konu" runat="server"  Text="KONU:">
                         </asp:Label>

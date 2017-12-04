@@ -22,6 +22,19 @@ namespace yazdir.webSitesi.test
              getir();
         }
 
+        public void deleteAd(object sender,EventArgs e)
+        {
+            Button clickedButton = (Button)sender;
+            string gidecekID = clickedButton.ToolTip;
+
+            if (connection.State == ConnectionState.Closed)
+                connection.Open();
+            MySqlCommand command = new MySqlCommand("delete from isler where id=" + gidecekID, connection);
+            command.ExecuteNonQuery();
+            connection.Close();
+            Response.Redirect("/webSitesi/test/viewAd.aspx");
+        }
+
             
         public void getir()
         {
