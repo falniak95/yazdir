@@ -553,7 +553,7 @@
                         </div>
                         <div class="col-md-6">
                             <p class="text-primary" style="padding: 0px 0px 0px 35%; margin-bottom: 5px;">Haber İşlemleri</p>
-                          <a href="confirmationAndReport.aspx"  <button type="button" class="btn btn-primary" style="width: 100%; margin-bottom: 5px;" >Onaylanmamış Haberleri Görüntüle</button></a>
+                          <a href="confirmNews.aspx"  <button type="button" class="btn btn-primary" style="width: 100%; margin-bottom: 5px;" >Onaylanmamış Haberleri Görüntüle</button></a>
                             <button type="button" class="btn btn-primary" style="width: 100%; margin-bottom: 5px;">Yayındaki Haberleri Görüntüle</button>
                         </div>
                     </div>

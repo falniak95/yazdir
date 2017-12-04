@@ -508,7 +508,6 @@ return (key == 8 || key == 13);
                     <asp:Repeater ID="duvarRepeater" runat="server" >
                         <ItemTemplate>
                             <asp:Panel ID="haberArkasi" BackColor="Cornsilk" style="padding-top:10px"  runat="server">
-                                
                       <b>  <asp:Label ID="haberBaslikTxt" runat="server" Text='<%# Eval("haberBaslik") %>'></asp:Label></b><br />
                           <i>    <p><asp:Label ID="haberSahipIsimTxt" runat="server" Text='<%# Eval("haberSahipIsim") %>'></asp:Label></p></i><br />
                              <p><asp:Label ID="haberIcerikTxt" runat="server" Text='<%# Eval("haberIcerik") %>'></asp:Label></p><br />

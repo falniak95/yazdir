@@ -1,7 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="confirmationAndReport.aspx.cs" Inherits="yazdir.webSitesi.test.adminPanel.confirmationAndReport" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="confirmNews.aspx.cs" EnableEventValidation="false" Inherits="yazdir.webSitesi.test.adminPanel.confirmNews" %>
 
 <!DOCTYPE html>
-<html lang="zxx">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>YAZZDIR | E-Ticaret / Admin Paneli</title>   
       
@@ -29,7 +30,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //font-awesome-icons -->
 <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
 </head>
-
 <body>
     <form id="form1" runat="server">
   
@@ -142,15 +142,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<!-- /blank -->
 							<div class="agile3-grids agile_info_shadow">	
 							<!-- grids -->
-							  <asp:UpdatePanel ID="UpdatePanel2" runat="server">
-                                        <ContentTemplate>
-                                         
-                                            <asp:Panel ID="unconfirmedJobs" runat="server"  style="width:100%">
-
-                                             </asp:Panel>
-                                              
-                                        </ContentTemplate>
-                                    </asp:UpdatePanel>
+							  <asp:Repeater ID="ilanListesi" runat="server">
+                                  <ItemTemplate>
+                                      <center>
+                                      <b>İlanı Gönderen Kurum:</b><asp:Label ID="ilanSahip" runat="server" Text='<%# Eval("haberSahipIsim") %>'></asp:Label><br />
+                                 <b>İlan Başlığı:</b><asp:Label ID="ilanBaslik" runat="server" Text='<%# Eval("haberBaslik") %>'></asp:Label><br />
+                                      <b>İlan İçeriği</b><asp:Label ID="ilanIcerik" runat="server" Text='<%# Eval("haberIcerik") %>'></asp:Label><br />
+                                      <asp:Button ID="ilanOnayla" runat="server" ToolTip='<%# Eval("haberID") %>' onClick="clicked" Text="İlan Onayla" /><br />
+                                      
+                                          <p>------------------------------------------------------------</p><br />
+                                      </center>
+                                  </ItemTemplate>
+							  </asp:Repeater>
 							</div>
 					<!-- //grids -->
 						
