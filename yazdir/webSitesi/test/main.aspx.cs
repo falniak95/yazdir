@@ -40,22 +40,8 @@ namespace yazdir.webSitesi.test
         {
             Response.Redirect("/websitesi/test/assignedApps.aspx");
         }
-        protected void Page_Load(object sender, EventArgs e)
+        private void isListesiniGetir()
         {
-             
-
-            DataSet ds = dC.getJobs();
-            //try
-            //{
-            //    if (Session["on_eMail"].ToString() == "" || Session["on_eMail"].ToString() == null)
-            //        Response.Redirect("/websitesi/test/404.html");
-            //}
-            //catch
-            //{
-            //    Response.Redirect("/websitesi/test/404.html");
-            //}
-
-            selamlama.InnerText = "Merhaba " + Session["on_eMail"];
             Literal1 = new Literal();
             Literal1.Text = "";
             Literal1.Text += "<center><div class='wrapper' style='margin-top:-20px'>";
@@ -93,21 +79,21 @@ namespace yazdir.webSitesi.test
                 Literal1.Text += "<a href=/websitesi/test/jobdetail.aspx?id=" + jobs[i] + "> <img src=" + comingData[7] + " width='100' height='50'></a>";
                 Literal1.Text += "</div>";
                 Literal1.Text += "<div class='cell'>";
-                Literal1.Text += "<a href=/websitesi/test/jobdetail.aspx?id=" + jobs[i] + ">"+dC.jobType[i]+"</a>";
+                Literal1.Text += "<a href=/websitesi/test/jobdetail.aspx?id=" + jobs[i] + ">" + dC.jobType[i] + "</a>";
                 Literal1.Text += "</div>";
                 Literal1.Text += "<div class='cell'>";
                 Literal1.Text += "<a href=/websitesi/test/jobdetail.aspx?id=" + jobs[i] + ">" + dC.jobHeader[i] + "</a>";
                 Literal1.Text += "</div>";
                 Literal1.Text += "<div class='cell'>";
-                Literal1.Text += "<a href=/websitesi/test/jobdetail.aspx?id=" + jobs[i] + ">" + dC.jobPrice[i]+"</a>";
+                Literal1.Text += "<a href=/websitesi/test/jobdetail.aspx?id=" + jobs[i] + ">" + dC.jobPrice[i] + "</a>";
                 Literal1.Text += "</div>";
                 Literal1.Text += "<div class='cell'>";
                 DateTime dt = Convert.ToDateTime(dC.jobDate[i]);
                 dC.jobDate[i] = string.Format("{0:d/M/yyyy}", dt);
-                Literal1.Text += "<a href=/websitesi/test/jobdetail.aspx?id=" + jobs[i] + ">" + dC.jobDate[i]+"</a>";
+                Literal1.Text += "<a href=/websitesi/test/jobdetail.aspx?id=" + jobs[i] + ">" + dC.jobDate[i] + "</a>";
                 Literal1.Text += "</div>";
                 Literal1.Text += "<div class='cell'>";
-                Literal1.Text += "<a href=/websitesi/test/jobdetail.aspx?id=" + jobs[i] + ">" + dC.jobLevel[i]+"</a>";
+                Literal1.Text += "<a href=/websitesi/test/jobdetail.aspx?id=" + jobs[i] + ">" + dC.jobLevel[i] + "</a>";
                 Literal1.Text += "</div>";
 
 
@@ -120,10 +106,74 @@ namespace yazdir.webSitesi.test
             }
             Literal1.Text += "</div>";
             Literal1.Text += "</div></center>";
+        }
+        private List<haber> changeWithUserName(List<haber> haber)
+        {
+            foreach (haber haber_ in haber)
+            {
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
+                MySqlCommand command = new MySqlCommand("select comName from uye_Kurumsal where id="+haber_.haberSahip, connection);
+                MySqlDataReader reader = command.ExecuteReader();
+                while(reader.Read())
+                {
+                    haber_.haberSahipIsim = reader["comName"].ToString();
+
+                }
+                reader.Close();
+                connection.Close();
+            }
+            return haber;
+        }
+        private haber _haber = new haber();
+        private void duvarGetir()
+        {
+            if (connection.State == ConnectionState.Closed)
+                connection.Open();
+            MySqlCommand command = new MySqlCommand("select * from news where confirm=1 order by date desc",connection);
+            MySqlDataReader reader = command.ExecuteReader();
+            List<haber> newsList = new List<haber>();
+            while(reader.Read())
+            {
+                _haber = new haber();
+                _haber.haberID = reader["id"].ToString();
+                _haber.haberBaslik = reader["header"].ToString();
+                _haber.haberIcerik= reader["content"].ToString();
+                _haber.haberOnay= reader["confirm"].ToString();
+                _haber.haberZaman= reader["date"].ToString();
+                _haber.haberSahip= reader["ownerID"].ToString();
+                newsList.Add(_haber);
+                
+            }
+            reader.Close();
+            connection.Close();
+            newsList = changeWithUserName(newsList);
+            duvarRepeater.DataSource = newsList;
+            duvarRepeater.DataBind();
+
+        }
+        protected void Page_Load(object sender, EventArgs e)
+        {
+             
+
+            DataSet ds = dC.getJobs();
+            //try
+            //{
+            //    if (Session["on_eMail"].ToString() == "" || Session["on_eMail"].ToString() == null)
+            //        Response.Redirect("/websitesi/test/404.html");
+            //}
+            //catch
+            //{
+            //    Response.Redirect("/websitesi/test/404.html");
+            //}
+
+            selamlama.InnerText = "Merhaba " + Session["on_eMail"];
+            isListesiniGetir();
 
 
             DinamikPanel.Controls.Add(Literal1);
-
+            duvarGetir();
+            
 
 
 

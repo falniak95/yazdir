@@ -179,24 +179,7 @@ return (key == 8 || key == 13);
 				</ul>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
-					<%--<nav>
-                        gereksiz
 
-						<ul class="nav navbar-nav">
-							<li><a href="index.html" class="hvr-underline-from-center">Home</a></li>
-							<li><a href="about.html" class="hvr-underline-from-center">About</a></li>
-							<li><a href="portfolio.html" class="hvr-underline-from-center">Portfolio</a></li>
-							<li><a href="blog.html" class="hvr-underline-from-center">Blog</a></li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle hvr-underline-from-center" data-toggle="">Short Codes <b class="fa fa-caret-down"></b></a>
-								<ul class="dropdown-menu agile_short_dropdown">
-									<li><a href="icons.html">Web Icons</a></li>
-									<li><a href="typography.html">Typography</a></li>
-								</ul>
-							</li>
-							<li><a href="contact.html" class="hvr-underline-from-center">Contact</a></li>
-						</ul>
-					</nav>--%>
 
 				</div>
 			</nav>		
@@ -463,120 +446,36 @@ return (key == 8 || key == 13);
                 </div>
       
             <div class="row" id="duvarVeHaber">
-                <div class="col-md-1">
+<%--                <div class="col-md-1">
                     <!-- Arama Kriterleri -->
 
-                </div>
+                </div>--%>
                 <div class="col-md-9">
-                    <!-- Duvar burada yer alacak. -->
-                    
-            <!--Tablo dursun         <div class="row">
-   
-    <div class="col-md-4">
-      One of three columns
-    </div>
-    
-    <div class="col-md-4">
-      One of three columns
-    </div>
-    
-    <div class="col-md-4">
-      One of three columns
-    </div>
-    
-  </div>    -->
+
                     <br />
                     <br />
                     <asp:Panel ID="DinamikPanel" runat="server" style="width:100%">
               
 
-                   <%-- <div class="wrapper">
-  
-  <div class="tablo">
-    
-    <div class="satir header">
-      <div class="cell">
-        Name
-      </div>
-      <div class="cell">
-        Age
-      </div>
-      <div class="cell">
-        Occupation
-      </div>
-      <div class="cell">
-        Location
-      </div>
-    </div>
-    
-    <div class="satir">
-      <div class="cell">
-        Luke Peters
-      </div>
-      <div class="cell">
-        25
-      </div>
-      <div class="cell">
-        Freelance Web Developer
-      </div>
-      <div class="cell">
-        Brookline, MA
-      </div>
-    </div>
-    
-    <div class="satir">
-      <div class="cell">
-        Joseph Smith
-      </div>
-      <div class="cell">
-        27
-      </div>
-      <div class="cell">
-        Project Manager
-      </div>
-      <div class="cell">
-        Somerville, MA
-      </div>
-    </div>
-    
-    <div class="satir">
-      <div class="cell">
-        Maxwell Johnson
-      </div>
-      <div class="cell">
-        26
-      </div>
-      <div class="cell">
-        UX Architect & Designer
-      </div>
-      <div class="cell">
-        Arlington, MA
-      </div>
-    </div>
-    
-    <div class="satir">
-      <div class="cell">
-        Harry Harrison
-      </div>
-      <div class="cell">
-        25
-      </div>
-      <div class="cell">
-        Front-End Developer
-      </div>
-      <div class="cell">
-        Boston, MA
-      </div>
-    </div>
-    
-  </div>
-  </div>--%>
 
-  </asp:Panel>
+                </asp:Panel>
                     </div>
-                <div class="col-md-2" style="width:20px">
-                    buraya haber gelecek
-                    <!-- Haberler burada yer alacak -->
+
+                <div class="col-md-3" style="align-content:initial;">
+                     <br />
+                    <asp:Repeater ID="duvarRepeater" runat="server" >
+                        <ItemTemplate>
+                            <asp:Panel ID="haberArkasi" BackColor="Cornsilk" style="padding-top:10px"  runat="server">
+                                
+                      <b>  <asp:Label ID="haberBaslikTxt" runat="server" Text='<%# Eval("haberBaslik") %>'></asp:Label></b><br />
+                          <i>    <p><asp:Label ID="haberSahipIsimTxt" runat="server" Text='<%# Eval("haberSahipIsim") %>'></asp:Label></p></i><br />
+                             <p><asp:Label ID="haberIcerikTxt" runat="server" Text='<%# Eval("haberIcerik") %>'></asp:Label></p><br />
+                                <asp:Label ID="haberZaman" Font-Size="X-Small" runat="server" Text='<%# Eval("haberZaman") %>'></asp:Label><br />
+                          <a id="yorumYonlendirme" runat="server" href=<%#"/webSitesi/test/comments.aspx?id="+ Eval("haberID") %> > <asp:Label ID="yorumlarText" Font-Size="Small" runat="server" Text="Yorumlar.."></asp:Label></a>
+                                <asp:Label ID="Label1" runat="server" Text="<center><p>----------------------------------</p></center>"></asp:Label>
+                            </asp:Panel>
+                            </ItemTemplate>
+                    </asp:Repeater>
                     </div>
 
             </div>

@@ -159,6 +159,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Service.asmx" />
+    <Content Include="webSitesi\test\comments.aspx" />
     <Content Include="webSitesi\test\404.html" />
     <Content Include="webSitesi\test\adminPanel\404.html" />
     <Content Include="webSitesi\test\adminPanel\apanel.aspx" />
@@ -302,10 +303,19 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="commentsClass.cs" />
+    <Compile Include="haber.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service.asmx.cs">
       <DependentUpon>Service.asmx</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="webSitesi\test\comments.aspx.cs">
+      <DependentUpon>comments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webSitesi\test\comments.aspx.designer.cs">
+      <DependentUpon>comments.aspx</DependentUpon>
     </Compile>
     <Compile Include="webSitesi\test\adminPanel\apanel.aspx.cs">
       <DependentUpon>apanel.aspx</DependentUpon>
