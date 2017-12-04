@@ -116,7 +116,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<ul class="nav navbar-nav">
 							<li><a href="index.html" class="hvr-underline-from-center">Anasayfa</a></li>
 							<li><a href="about.html" class="hvr-underline-from-center">Hakkımda</a></li>
-							<li><a href="blog.html" class="hvr-underline-from-center">Blog</a></li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown">Haber İşlemleri <b class="fa fa-caret-down"></b></a>
+								<ul class="dropdown-menu agile_short_dropdown">
+									<li><a href="createNewsCom.aspx">Haber Oluştur</a></li>
+									<li><a href="typography.html">Haberlerimi İncele</a></li>
+								</ul>
+							</li>
 						
                             
                            	<li class="dropdown">

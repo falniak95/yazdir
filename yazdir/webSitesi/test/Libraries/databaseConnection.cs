@@ -18,6 +18,21 @@ namespace yazdir.webSitesi.test.Libraries
         {
 
         }
+        public string findCompanyId(string eMai)
+        {
+            MySqlCommand findIdCommand = new MySqlCommand("select id,comEmail from uye_Kurumsal where comEmail='" + eMai + "'", connection);
+            openConnection();
+            MySqlDataReader dataRead = findIdCommand.ExecuteReader();
+            string _userId = "";
+            while (dataRead.Read())
+            {
+                _userId = (dataRead["id"].ToString());
+
+            }
+            dataRead.Close();
+            closeConnection();
+            return _userId;
+        }
         public string findUserId(string eMai)
         {
             MySqlCommand findIdCommand = new MySqlCommand("select id,eMail from uye_Bireysel where eMail='"+eMai+"'", connection);

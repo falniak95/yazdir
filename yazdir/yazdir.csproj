@@ -242,6 +242,7 @@
     <Content Include="webSitesi\test\assignedApps.aspx" />
     <Content Include="webSitesi\test\assignedJobdetails.aspx" />
     <Content Include="webSitesi\test\createAd.aspx" />
+    <Content Include="webSitesi\test\createNewsCom.aspx" />
     <Content Include="webSitesi\test\forgetpass.aspx" />
     <Content Include="webSitesi\test\images\404.png" />
     <Content Include="webSitesi\test\inBox.aspx" />
@@ -379,6 +380,13 @@
     </Compile>
     <Compile Include="webSitesi\test\createAd.aspx.designer.cs">
       <DependentUpon>createAd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webSitesi\test\createNewsCom.aspx.cs">
+      <DependentUpon>createNewsCom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webSitesi\test\createNewsCom.aspx.designer.cs">
+      <DependentUpon>createNewsCom.aspx</DependentUpon>
     </Compile>
     <Compile Include="webSitesi\test\forgetpass.aspx.cs">
       <DependentUpon>forgetpass.aspx</DependentUpon>
