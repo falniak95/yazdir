@@ -40,7 +40,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 	
 <body>
-      
+      <script src="vendors/jquery-1.9.1.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="vendors/easypiechart/jquery.easy-pie-chart.js"></script>
+<script src="assets/scripts.js"></script>
 
 <form id="form1" runat="server">
     <div>
@@ -377,6 +380,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<!-- contact -->
 	<div class="services">
 		<div class="container">
+
+            <div class="row">
+                <div class="col-md-12">
+
+                    <br />
+                    <br />
+                    <asp:Panel ID="DinamikPanel" runat="server" style="width:100%">
+              
+                        
+
+                </asp:Panel>
+                    </div>
+            </div>
+
+
+
 				<div class="w3ls_address_mail_footer_grids">
 				<div class="col-md-4 w3ls_footer_grid_left con">
 					<div class="wthree_footer_grid_left">
@@ -692,6 +711,64 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 }
 
 
+.wrapper {
+  margin: 0 auto;
+  padding: 40px;
+  max-width: 800px;
+}
+
+.table {
+  margin: 0 0 40px 0;
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  display: table;
+}
+
+.satir {
+  display: table-row;
+  background: #f6f6f6;
+}
+
+.row:nth-of-type(odd) {
+  background: #e9e9e9;
+}
+
+.satir.header {
+  font-weight: 900;
+  color: #ffffff;
+  /*background: #ea6153;*/
+  background:#c60f0f;
+}
+
+.satir.green {
+  background: #27ae60;
+}
+
+.satir.blue {
+  background: #2980b9;
+}
+
+.cell {
+  padding: 6px 12px;
+  display: table-cell;
+}
+@media screen and (max-width: 580px) {
+  .cell {
+    padding: 2px 12px;
+    display: block;
+  }
+  @media screen and (max-width: 580px) {
+  .row {
+    padding: 8px 0;
+    display: block;
+  }
+}
+  
+@media screen and (max-width: 580px) {
+  .table {
+    display: block;
+  }
+}
 
     </style>
 

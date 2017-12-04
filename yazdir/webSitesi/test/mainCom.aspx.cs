@@ -15,16 +15,89 @@ namespace yazdir.webSitesi.test
     {
         #region MysqlConnection
         MySqlConnection connection = new MySqlConnection("Server=furkanalniak.com;Database=furkanal_yazdir;Uid=furkanal_admin;Pwd='fk2017';");
-#endregion
+        #endregion
+        System.Web.UI.WebControls.Literal Literal1;
+        databaseConnection dC = new databaseConnection();
         protected void Page_Load(object sender, EventArgs e)
         {
             sirket.InnerText = "Merhaba " + Session["on_eMail"];
+            isListesiniGetir();
 
+
+            DinamikPanel.Controls.Add(Literal1);
             if (!IsPostBack)
             {
                 myModal2();
             }
 
+        }
+        //*************************************************************************
+        private void isListesiniGetir()
+        {
+            Literal1 = new Literal();
+            Literal1.Text = "";
+            Literal1.Text += "<center><div class='wrapper' style='margin-top:-20px'>";
+            Literal1.Text += " <div class='tablo' >";
+            Literal1.Text += "<div class='satir header'>";
+            Literal1.Text += "<div class='cell'>";
+            Literal1.Text += "Kurum";
+            Literal1.Text += "</div>";
+            Literal1.Text += "<div class='cell'>";
+            Literal1.Text += "İlan Türü";
+            Literal1.Text += "</div>";
+            Literal1.Text += "<div class='cell'>";
+            Literal1.Text += "İlan Başlığı";
+            Literal1.Text += "</div>";
+            Literal1.Text += "<div class='cell'>";
+            Literal1.Text += "Fiyat";
+            Literal1.Text += "</div>";
+            Literal1.Text += " <div class='cell'>";
+            Literal1.Text += "İlan Tarihi";
+            Literal1.Text += "</div>";
+            Literal1.Text += "<div class='cell'>";
+            Literal1.Text += "İlan Detayı";
+            Literal1.Text += "</div>";
+            Literal1.Text += "</div>";
+
+
+            int[] jobs = dC.getJobLinks();
+            string[] allJobs = dC.getJobListID();
+
+            for (int i = 0; i < dC.totalCount; i++)
+            {
+                string[] comingData = dC.getCompanyInfo(Convert.ToInt16(allJobs[i]));
+                Literal1.Text += "<div class='satir'>";
+                Literal1.Text += "<div class='cell'>";
+                Literal1.Text += "<a href=/websitesi/test/jobdetail.aspx?id=" + jobs[i] + "> <img src=" + comingData[7] + " width='100' height='50'></a>";
+                Literal1.Text += "</div>";
+                Literal1.Text += "<div class='cell'>";
+                Literal1.Text += "<a href=/websitesi/test/jobdetail.aspx?id=" + jobs[i] + ">" + dC.jobType[i] + "</a>";
+                Literal1.Text += "</div>";
+                Literal1.Text += "<div class='cell'>";
+                Literal1.Text += "<a href=/websitesi/test/jobdetail.aspx?id=" + jobs[i] + ">" + dC.jobHeader[i] + "</a>";
+                Literal1.Text += "</div>";
+                Literal1.Text += "<div class='cell'>";
+                Literal1.Text += "<a href=/websitesi/test/jobdetail.aspx?id=" + jobs[i] + ">" + dC.jobPrice[i] + "</a>";
+                Literal1.Text += "</div>";
+                Literal1.Text += "<div class='cell'>";
+                DateTime dt = Convert.ToDateTime(dC.jobDate[i]);
+                dC.jobDate[i] = string.Format("{0:d/M/yyyy}", dt);
+                Literal1.Text += "<a href=/websitesi/test/jobdetail.aspx?id=" + jobs[i] + ">" + dC.jobDate[i] + "</a>";
+                Literal1.Text += "</div>";
+                Literal1.Text += "<div class='cell'>";
+                Literal1.Text += "<a href=/websitesi/test/jobdetail.aspx?id=" + jobs[i] + ">" + dC.jobLevel[i] + "</a>";
+                Literal1.Text += "</div>";
+
+
+                Literal1.Text += "</div> ";
+
+                /*<div class="col-md-3" style="width:20px">
+                    buraya haber gelecek
+                    <!-- Haberler burada yer alacak -->
+                    </div>*/
+            }
+            Literal1.Text += "</div>";
+            Literal1.Text += "</div></center>";
         }
         //*************************************************************************
         public void newMessage(object sender, EventArgs e)
