@@ -242,6 +242,7 @@
     <Content Include="webSitesi\test\anaSayfa.aspx" />
     <Content Include="webSitesi\test\assignedApps.aspx" />
     <Content Include="webSitesi\test\assignedJobdetails.aspx" />
+    <Content Include="webSitesi\test\completedJobs.aspx" />
     <Content Include="webSitesi\test\createAd.aspx" />
     <Content Include="webSitesi\test\createNewsCom.aspx" />
     <Content Include="webSitesi\test\forgetpass.aspx" />
@@ -308,6 +309,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="commentsClass.cs" />
+    <Compile Include="completedJobsClass.cs" />
     <Compile Include="haber.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service.asmx.cs">
@@ -383,6 +385,13 @@
     </Compile>
     <Compile Include="webSitesi\test\assignedJobdetails.aspx.designer.cs">
       <DependentUpon>assignedJobdetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webSitesi\test\completedJobs.aspx.cs">
+      <DependentUpon>completedJobs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webSitesi\test\completedJobs.aspx.designer.cs">
+      <DependentUpon>completedJobs.aspx</DependentUpon>
     </Compile>
     <Compile Include="webSitesi\test\createAd.aspx.cs">
       <DependentUpon>createAd.aspx</DependentUpon>
