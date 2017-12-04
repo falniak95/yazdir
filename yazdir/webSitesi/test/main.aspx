@@ -514,7 +514,9 @@ return (key == 8 || key == 13);
                              <p><asp:Label ID="haberIcerikTxt" runat="server" Text='<%# Eval("haberIcerik") %>'></asp:Label></p><br />
                                 <asp:Label ID="haberZaman" Font-Size="X-Small" runat="server" Text='<%# Eval("haberZaman") %>'></asp:Label><br />
                           <a id="yorumYonlendirme" runat="server" href=<%#"/webSitesi/test/comments.aspx?id="+ Eval("haberID") %> > <asp:Label ID="yorumlarText" Font-Size="Small" runat="server" Text="Yorumlar.."></asp:Label></a>
-                                <asp:Label ID="Label1" runat="server" Text="<center><p>----------------------------------</p></center>"></asp:Label>
+                               
+
+                                 <asp:Label ID="Label1" runat="server" Text="<center><p>----------------------------------</p></center>"></asp:Label>
                             </asp:Panel>
                             </ItemTemplate>
                     </asp:Repeater>
