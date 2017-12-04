@@ -18,14 +18,14 @@ namespace yazdir.webSitesi.test
         databaseConnection dC = new databaseConnection();
         protected void clickedUpdate(object sender, EventArgs e)
         {
-            Button clickedButton = (Button)sender;
+            /*Button clickedButton = (Button)sender;
             string gidecekID = clickedButton.ToolTip;
             if (connection.State == ConnectionState.Closed)
                 connection.Open();
-            MySqlCommand command = new MySqlCommand("update news set confirm=1 where id=" + gidecekID, connection);
+            MySqlCommand command = new MySqlCommand("update news set  header='"+baslikTxt.Text+"', content='"+icerikTxt.Text+"', confirm=0  where id=" + gidecekID, connection);
             command.ExecuteNonQuery();
             connection.Close();
-            Response.Redirect("webSitesi/test/inspectNews.aspx");
+            Response.Redirect("/webSitesi/test/inspectNews.aspx");*/
             
         }
         protected void clickedDelete(object sender, EventArgs e)
@@ -37,11 +37,12 @@ namespace yazdir.webSitesi.test
             MySqlCommand command = new MySqlCommand("delete from news where id=" + gidecekID, connection);
             command.ExecuteNonQuery();
             connection.Close();
-            Response.Redirect("webSitesi/test/inspectNews.aspx");
+            Response.Redirect("/webSitesi/test/inspectNews.aspx");
 
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(!IsPostBack)
             getAllNews();
         }
         private List<haber> changeWithUserName(List<haber> haber)
@@ -55,7 +56,7 @@ namespace yazdir.webSitesi.test
                 while (reader.Read())
                 {
                     haber_.haberSahipIsim = reader["comName"].ToString();
-
+                   
                 }
                 reader.Close();
                 connection.Close();
@@ -68,7 +69,7 @@ namespace yazdir.webSitesi.test
             string _owner = dC.findCompanyId(Session["on_eMail"].ToString());
             if (connection.State == ConnectionState.Closed)
                 connection.Open();
-            MySqlCommand command = new MySqlCommand("select * from news where ownerID="+ _owner + "order by date desc", connection);
+            MySqlCommand command = new MySqlCommand("select * from news where ownerID="+ _owner + " order by date desc", connection);
             MySqlDataReader reader = command.ExecuteReader();
             List<haber> newsList = new List<haber>();
             while (reader.Read())
@@ -80,6 +81,10 @@ namespace yazdir.webSitesi.test
                 _haber.haberOnay = reader["confirm"].ToString();
                 _haber.haberZaman = reader["date"].ToString();
                 _haber.haberSahip = reader["ownerID"].ToString();
+                if (reader["confirm"].ToString() == "0")
+                    _haber.haberOnay = "Haber yayında değil.";
+                else
+                    _haber.haberOnay = "Haber yayında.";
                 newsList.Add(_haber);
 
             }
@@ -89,6 +94,32 @@ namespace yazdir.webSitesi.test
             ilanlarimRepeater.DataSource = newsList;
             ilanlarimRepeater.DataBind();
 
+        }
+       
+        protected void ilanlarimRepeater_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            if(e.CommandName== "duzenle") {
+
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
+
+                string baslikTxt = ((TextBox)e.Item.FindControl("baslikTxt")).Text;
+                string icerikTxt = ((TextBox)e.Item.FindControl("icerikTxt")).Text;
+                string haberDurumu = ((Label)e.Item.FindControl("yayinDurumu")).Text;
+                string deleteBtn = ((Button)e.Item.FindControl("haberisil")).ToolTip;
+                string UpdateBtn = ((LinkButton)e.Item.FindControl("haberiDuzenle")).ToolTip ;
+
+                string gidecekID = UpdateBtn;
+             
+                MySqlCommand command = new MySqlCommand("update news set  header='" + baslikTxt + "', content='" + icerikTxt + "', confirm=0  where id=" + gidecekID, connection);
+                command.ExecuteNonQuery();
+                connection.Close();
+                System.Diagnostics.Debug.WriteLine("Bu buton calisti.");
+
+             //   Response.Redirect("/webSitesi/test/inspectNews.aspx");
+              
+
+            }
         }
     }
 }
