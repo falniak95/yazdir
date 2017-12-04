@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="inspectNews.aspx.cs" Inherits="yazdir.webSitesi.test.inspectNews" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="inspectNews.aspx.cs"   Inherits="yazdir.webSitesi.test.inspectNews" %>
 
 <!DOCTYPE html>
 
@@ -20,8 +20,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- font-awesome-icons -->
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!-- //font-awesome-icons -->
-<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-<link href="//fonts.googleapis.com/css?family=Raleway:100i,200,200i,300,400,500,500i,600,700,700i,800,800i" rel="stylesheet">
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'/>
+<link href="//fonts.googleapis.com/css?family=Raleway:100i,200,200i,300,400,500,500i,600,700,700i,800,800i" rel="stylesheet"/>
 
 </head>
 <body>
@@ -58,20 +58,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<!-- //agile_inner_banner_info -->
 <!-- events-top -->
 	<div class="services">
-       <asp:Repeater ID="ilanlarimRepeater" runat="server">
+         <center>
+       <asp:Repeater ID="ilanlarimRepeater" runat="server" OnItemCommand="ilanlarimRepeater_ItemCommand">
            <ItemTemplate>
-                <center>
-                    <b>Haber Başlığı:</b><asp:TextBox ID="baslikTxt" runat="server" Text='<%# Eval("haberBaslik") %>'></asp:TextBox><br/>
-                    <b>Haber İçeriği: </b><asp:TextBox ID="icerikTxt" runat="server" Text='<%# Eval("haberIcerik") %>'></asp:TextBox><br />
-                    <b>Haber Yayın Durumu:</b><asp:Label ID="yayinDurumu" runat="server" Text="Label"></asp:Label><br />
-                    <asp:Button ID="haberiDuzenle" runat="server" Text="Haberi Düzenle"></asp:Button><br />
-                    <asp:Button ID="haberisil" ToolTip='<%# Eval("haberID") %>' runat="server" Text="Haberi Sil"></asp:Button><br />
+               
+                    <b>Haber Başlığı:</b><br/><asp:TextBox ID="baslikTxt" runat="server" Text='<%# Eval("haberBaslik") %>'></asp:TextBox><br/>
+                    <b>Haber İçeriği: </b><br/>
+               <asp:TextBox ID="icerikTxt" runat="server" TextMode="MultiLine" Text='<%# Eval("haberIcerik") %>'></asp:TextBox><br />
+                    <b>Haber Yayın Durumu:</b><asp:Label ID="yayinDurumu" runat="server" Text='<%# Eval("haberOnay") %>' ></asp:Label><br />
+                    <asp:LinkButton ID="haberiDuzenle" CommandName="duzenle" ToolTip='<%# Eval("haberID") %>'  runat="server" Text="Haberi Düzenle"></asp:LinkButton><br />
+                    <asp:Button ID="haberisil" ToolTip='<%# Eval("haberID") %>' OnClick="clickedDelete" runat="server" Text="Haberi Sil"></asp:Button><br />
                     <p>--------------------------------------------------------------------</p><br />
 
-        </center>
            </ItemTemplate>
        </asp:Repeater>
-       
+              </center>          
+        
+
 </div>
 <!-- //events-top -->
 <!-- footer -->
