@@ -39,7 +39,7 @@ namespace yazdir.webSitesi.test.adminPanel
        private string findAdOwnerName(string ownerId)
         {
             string ownerName="";
-            MySqlCommand command = new MySqlCommand("select id,comName from uye_Kurumsal where id=" + ownerId, connection);
+            MySqlCommand command = new MySqlCommand("select id,comName from uye_Kurumsal where comEmail='" + ownerId+"'", connection);
             if (connection.State == ConnectionState.Closed)
                 connection.Open();
             MySqlDataReader reader = command.ExecuteReader();

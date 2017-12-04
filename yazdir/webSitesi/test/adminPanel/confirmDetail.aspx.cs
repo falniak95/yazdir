@@ -46,7 +46,7 @@ namespace yazdir.webSitesi.test.adminPanel
             while (reader.Read())
             {
                 adHeader = reader["ad_header"].ToString();
-                adOwner = findAdOwnerName(reader["ad_ownerCompany"].ToString());
+                adOwner = reader["ad_ownerCompany"].ToString();
                 adPrice = reader["ad_price"].ToString();
                 adLevel = reader["ad_level"].ToString();
                 adContractUrl = reader["ad_contract"].ToString();
@@ -54,7 +54,7 @@ namespace yazdir.webSitesi.test.adminPanel
             connection.Close();
             reader.Close();
             ilanBaslik.Text = adHeader;
-            ilanSahibi.Text = adOwner;
+            ilanSahibi.Text = findAdOwnerName(adOwner);
             ilanUcret.Text = adPrice;
             ilanSeviyesi.Text = adLevel;
             ilanKontratı.Text ="<a href="+adContractUrl+"> Kontrat için tıkla</a>";
@@ -62,7 +62,7 @@ namespace yazdir.webSitesi.test.adminPanel
         private string findAdOwnerName(string ownerId)
         {
             string ownerName = "";
-            MySqlCommand command = new MySqlCommand("select id,comName from uye_Kurumsal where id=" + ownerId, connection);
+            MySqlCommand command = new MySqlCommand("select id,comName from uye_Kurumsal where comEmail='" + ownerId+"'", connection);
             if (connection.State == ConnectionState.Closed)
                 connection.Open();
             MySqlDataReader reader = command.ExecuteReader();
