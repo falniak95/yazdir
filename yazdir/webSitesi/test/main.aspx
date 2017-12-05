@@ -496,6 +496,7 @@ return (key == 8 || key == 13);
 
                     <br />
                     <br />
+                    <asp:Button ID="filtre" class="btn btn-primary" runat="server" UseSubmitBehavior="false" OnClick="arama1" Text="filtre" />
                     <asp:Panel ID="DinamikPanel" runat="server" style="width:100%">
               
 

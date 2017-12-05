@@ -59,6 +59,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><i class="fa fa-phone" aria-hidden="true"></i> +(010) 221 918 811</li>
 					<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">info@example.com</a></li>
 				</ul>--%>
+       
 			</div>
 			<div class="w3l_header_right">
 				<div class="w3ls-social-icons text-left">
@@ -279,6 +280,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div> 
 
                 </div>
+     <%--   ******************************************************************************************************************--%>
+        
     <!------------------------------------------------------------------------------------------------------------------------------>
 <!-- Modal1 -->
 							<div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
@@ -378,14 +381,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 					<!-- //agile_inner_banner_info -->
 					<!-- contact -->
+        
 	<div class="services">
 		<div class="container">
 
             <div class="row">
+                
+               
+                <asp:Button ID="filtre" class="btn btn-primary" runat="server" UseSubmitBehavior="false" OnClick="arama1" Text="filtre" />
+
                 <div class="col-md-12">
 
-                    <br />
-                    <br />
+                    
                     <asp:Panel ID="DinamikPanel" runat="server" style="width:100%">
               
                         

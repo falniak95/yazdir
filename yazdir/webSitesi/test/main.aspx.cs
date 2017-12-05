@@ -36,6 +36,10 @@ namespace yazdir.webSitesi.test
             Session.Clear();
             Response.Redirect("/websitesi/test/anaSayfa.aspx");
         }
+        public void arama1(object sender, EventArgs e)
+        {
+            Response.Redirect("/webSitesi/test/filtreleme.aspx");
+        }
         protected void AlinmisIsler_Click(object sender,EventArgs e)
         {
             Response.Redirect("/websitesi/test/assignedApps.aspx");

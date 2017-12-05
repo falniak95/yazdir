@@ -51,7 +51,7 @@ namespace yazdir.webSitesi.test.Libraries
         public int[] getAssignedJobLinks(string userId)
         {
 
-            MySqlCommand countCommand = new MySqlCommand("select COUNT(id),ad_appPersonid from isler where ad_appPersonid LIKE '%." + userId + ".%'", connection);
+            MySqlCommand countCommand = new MySqlCommand("select COUNT(id),ad_appPersonid from isler where  ad_appPersonid LIKE '%." + userId + ".%'", connection);
             openConnection();
             int jobCount = Convert.ToInt16(countCommand.ExecuteScalar());
             closeConnection();
@@ -72,9 +72,9 @@ namespace yazdir.webSitesi.test.Libraries
         
         public string[] getAssignedJobList(string userId)
         {
-
+            
             string[] idList;
-            MySqlCommand countCommand = new MySqlCommand("select COUNT(ad_ownerCompany) from isler where ad_appPersonid LIKE '%."+userId+".%'", connection);
+            MySqlCommand countCommand = new MySqlCommand("select COUNT(ad_ownerCompany) from isler  where ad_appPersonid LIKE '%." + userId+".%'", connection);
             openConnection();
             totalCount = Convert.ToInt16(countCommand.ExecuteScalar());
             idList = new string[totalCount];
@@ -84,7 +84,7 @@ namespace yazdir.webSitesi.test.Libraries
             jobDate = new string[totalCount];
             jobLevel = new string[totalCount];
             MySqlCommand command = new MySqlCommand();
-            command.CommandText = "select * from isler where ad_appPersonid LIKE '%." + userId + ".%'";
+            command.CommandText = "select * from isler where  ad_appPersonid LIKE '%." + userId + ".%'";
             command.Connection = connection;
             MySqlDataReader dataRead = command.ExecuteReader();
             int count = 0;
@@ -453,7 +453,7 @@ namespace yazdir.webSitesi.test.Libraries
         
         public int[] getJobLinks()
         {
-            MySqlCommand countCommand = new MySqlCommand("select COUNT(id) from isler", connection);
+            MySqlCommand countCommand = new MySqlCommand("select COUNT(id) from isler ", connection);
             openConnection();
             int jobCount = Convert.ToInt16(countCommand.ExecuteScalar());
             closeConnection();
@@ -472,36 +472,47 @@ namespace yazdir.webSitesi.test.Libraries
             return _jobs;
 
         }
+        //************************************************************************
+       
+        //*************************************************************************
         public string[] getJobListID()
         {
+           
             string[] idList;
-            MySqlCommand countCommand = new MySqlCommand("select COUNT(ad_ownerCompany) from isler where confirm=1", connection);
+
+
+            MySqlCommand countCommand = new MySqlCommand("select COUNT(ad_ownerCompany) from isler where  confirm=1", connection);
             openConnection();
             totalCount = Convert.ToInt16(countCommand.ExecuteScalar());
             idList = new string[totalCount];
-            jobType= new string[totalCount];
-            jobHeader= new string[totalCount];
-            jobPrice= new string[totalCount];
-            jobDate= new string[totalCount];
-            jobLevel= new string[totalCount];
+            jobType = new string[totalCount];
+            jobHeader = new string[totalCount];
+            jobPrice = new string[totalCount];
+            jobDate = new string[totalCount];
+            jobLevel = new string[totalCount];
+            closeConnection();
             MySqlCommand command = new MySqlCommand();
+            openConnection();
             command.CommandText = "select * from isler where confirm=1";
             command.Connection = connection;
             MySqlDataReader dataRead = command.ExecuteReader();
             int count = 0;
-            while(dataRead.Read())
+            while (dataRead.Read())
             {
                 idList[count] = dataRead["ad_ownerCompany"].ToString();
                 jobType[count] = dataRead["ad_jobType"].ToString();
                 jobHeader[count] = dataRead["ad_header"].ToString();
-                jobPrice[count]= dataRead["ad_price"].ToString();
+                jobPrice[count] = dataRead["ad_price"].ToString();
                 jobDate[count] = dataRead["ad_date"].ToString();
                 jobLevel[count] = dataRead["ad_level"].ToString();
                 count++;
             }
             closeConnection();
 
+
+
             return idList;
+
         }
         public string[] getCompanyInfo(int comingId)
         {
@@ -529,9 +540,10 @@ namespace yazdir.webSitesi.test.Libraries
        
         public DataSet getJobs()
         {
+            
             DataSet _dataSet = new DataSet();
             MySqlCommand command = new MySqlCommand();
-            command.CommandText = "select * from isler";
+            command.CommandText = "select * from isler ";
             command.Connection = connection;
             openConnection();
             DataTable dataT = new DataTable();

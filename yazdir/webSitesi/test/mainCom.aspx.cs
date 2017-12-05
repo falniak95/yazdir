@@ -18,16 +18,20 @@ namespace yazdir.webSitesi.test
         #endregion
         System.Web.UI.WebControls.Literal Literal1;
         databaseConnection dC = new databaseConnection();
+        
+       
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+           
             sirket.InnerText = "Merhaba " + Session["on_eMail"];
-            isListesiniGetir();
-
+           
+                isListesiniGetir();
 
             DinamikPanel.Controls.Add(Literal1);
             if (!IsPostBack)
             {
-                myModal2();
+                myModal2(); 
             }
 
         }
@@ -61,7 +65,8 @@ namespace yazdir.webSitesi.test
 
 
             int[] jobs = dC.getJobLinks();
-            string[] allJobs = dC.getJobListID();
+           
+                string[] allJobs = dC.getJobListID();
 
             for (int i = 0; i < dC.totalCount; i++)
             {
@@ -193,6 +198,26 @@ namespace yazdir.webSitesi.test
 
 
         }
+        //*************************************************************************
+        public void arama1(object sender, EventArgs e)
+        {
+            Response.Redirect("/webSitesi/test/filtreleme.aspx");
+        }
+        //*************************************************************************
+       
+        //public void getir()
+        //{
+        //    arama = TextBox1.Text;
+        //    MySqlCommand command = new MySqlCommand("select id,ad_header,ad_content,ad_price,ad_jobType,ad_date from isler where ad_jobType='"+arama+"'", connection);
+        //    connection.Open();
+        //    MySqlDataReader dataRead = command.ExecuteReader();
+
+
+        //    liste.DataSource = dataRead;
+        //    liste.DataBind();
+        //    connection.Close();
+        //    dataRead.Close();
+        //}
         //*************************************************************************
         public void hsbSil(object sender, EventArgs e)
         {
