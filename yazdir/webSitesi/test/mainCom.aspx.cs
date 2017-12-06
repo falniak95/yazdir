@@ -22,8 +22,8 @@ namespace yazdir.webSitesi.test
        
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-           
+
+            Session["loginType"] = "0";
             sirket.InnerText = "Merhaba " + Session["on_eMail"];
            
                 isListesiniGetir();

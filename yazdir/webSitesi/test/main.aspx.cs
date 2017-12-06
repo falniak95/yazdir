@@ -158,8 +158,8 @@ namespace yazdir.webSitesi.test
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-             
 
+            Session["loginType"] = "1";
             DataSet ds = dC.getJobs();
             //try
             //{

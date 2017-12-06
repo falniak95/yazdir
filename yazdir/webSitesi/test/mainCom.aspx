@@ -98,7 +98,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 								<ul class="dropdown-menu agile_short_dropdown">
                                     <li><a class="active" href="#" data-toggle="modal" data-target="#modalNewMes">yeni mesaj</a></li>
-									<li><a href="icons.html">Gelen kutusu</a></li>
+									<li><a href="/webSitesi/test/inBox.aspx">Gelen kutusu</a></li>
 									<li><a href="typography.html">Giden kutusu</a></li>
 								</ul>
 							</li>

@@ -7,7 +7,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>GELEN KUTUSU</title>
+    <title>Mesaj Görüntüle</title>
 
     <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,49 +22,60 @@
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- //custom-theme -->
+
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/blog.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/single.css" rel="stylesheet" type="text/css" media="all" />
-<!-- font-awesome-icons -->
+
 <link href="css/font-awesome.css" rel="stylesheet"> 
-<!-- //font-awesome-icons -->
+
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 <link href="//fonts.googleapis.com/css?family=Raleway:100i,200,200i,300,400,500,500i,600,700,700i,800,800i" rel="stylesheet">
 
 
 </head>
+
+    
 <body>
     <script src="vendors/jquery-1.9.1.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="vendors/easypiechart/jquery.easy-pie-chart.js"></script>
 <script src="assets/scripts.js"></script>
+   <form id="form1" runat="server">
 
-    <form id="form1" runat="server">
-    <div>
-        <%--******************************************************************************************--%>
-          <div class="agileits_top_menu">
-   <div class="w3l_header_left">
-<%--				<ul>
-					<li><i class="fa fa-map-marker" aria-hidden="true"></i> 1143 New York, USA</li>
-					<li><i class="fa fa-phone" aria-hidden="true"></i> +(010) 221 918 811</li>
-					<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">info@example.com</a></li>
-				</ul>--%>
-         <b>GELEN MESAJLAR</b>  
-			</div>
-			<div class="w3l_header_right">
-				<div class="w3ls-social-icons text-left">
-					<%--<a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
-					<a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
-					<a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a>
-					<a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>--%>
+
+   <div class="agileits_w3layouts_banner_nav">
+			<nav class="navbar navbar-default">
+				<div class="navbar-header navbar-left">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<h1><a class="navbar-brand" href="anaSayfa.aspx"><img src="images/logocuk.png" /></a></h1>
+
+
 				</div>
-			</div>
-			<div class="clearfix"> </div>
-		</div>
-        <%--*****************************************************************************************--%>
-    <div class="container">
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+
+			</nav>	
+			
+	<div class="clearfix"> </div> 
+</div> 
+													
+	<!-- /agile_inner_banner_info -->													
+							<div class="agile_inner_banner_info">
+							   <h2>YAZZDIR </h2>
+
+</div>
+
+<br />
+<br />
+<br />
+ <div class="container">
 
 
      <div class="row">
@@ -82,35 +93,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                 </div>
                 <div class="col-md-9">
-     
-                  <asp:ListView  ID="list" runat="server">
-                      <ItemTemplate>
-                         <div class="col-md-9">
-                            <div class="w3-panel w3-blue w3-round-xlarge">
-
-                                <asp:Label ID="Label2" runat="server" Text='<%#Eval("senderID")%>'>
-                          </asp:Label>     :
-
-                           <asp:Label ID="lblad" runat="server" Text='<%#Eval("header")%>'>
-                          </asp:Label>     :
-                                <asp:Label ID="Label1" runat="server" Text='<%#Eval("content")%>'>
+      <div class="w3-panel w3-blue w3-round-xlarge">
+                                 <asp:Label ID="ilan" runat="server" Text="Mesajlar">
                           </asp:Label>
-                          </div>
-                          </div>
-                           <%--<asp:Label ID="Label1" runat="server" Text=" kahramansssssssssssssssssssssssssssssss">
-                          </asp:Label>--%>
-                          
+                             </div>
+                 <asp:Repeater ID="liste" runat="server"  >
+                      <ItemTemplate>
+                         <div class="col-md-11">
+                      <b>Gönderici:       <asp:Label ID="Label3" runat="server" Text='<%#Eval("messageSenderName")%>'></asp:Label></b><br />
+                     <b>Mesaj Başlığı:</b>        <asp:Label ID="Label2" runat="server" Text='<%# Eval("messageHeader") %>'></asp:Label><br />
+                      <b>Mesaj İçeriği</b>       <asp:Label ID="Label4" runat="server" Text='<%#Eval("messageContent")%>'></asp:Label><br /><br />
+
+                          <p>---------------------------------------------------------------------------------------------</p><br />
                           
                       </ItemTemplate>
 
-                  </asp:ListView>
+                  </asp:Repeater>
                     
-                    
+                    <br /><br />
                  <%--   <asp:Panel ID="DinamikPanel" runat="server" style="width:100%"></asp:Panel>
                     </div>--%>
-                <div class="col-md-2" style="width:20px">
-                   
-                    </div>
+               
 
             </div>
                 <div class="col-md-2">
@@ -124,69 +127,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
     </div>
+
+
+
+<%--<div class="footer" style="color:white">
+	FURKAN ALNIAK 14545548 <br />
+        KAHRAMAN ÇINAR 13542524<br />
+        E-TİCARET<br />
+        YAZZDIR<br />
+    
+	</div>--%>
+
     </form>
-    <style>
-
-        .wrapper {
-  margin: 0 auto;
-  padding: 40px;
-  max-width: 800px;
-}
-
-.table {
-  margin: 0 0 40px 0;
-  width: 100%;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  display: table;
-}
-
-.satir {
-  display: table-row;
-  background: #f6f6f6;
-}
-
-.row:nth-of-type(odd) {
-  background: #e9e9e9;
-}
-
-.satir.header {
-  font-weight: 900;
-  color: #ffffff;
-  /*background: #ea6153;*/
-  background:#c60f0f;
-}
-
-.satir.green {
-  background: #27ae60;
-}
-
-.satir.blue {
-  background: #2980b9;
-}
-
-.cell {
-  padding: 6px 12px;
-  display: table-cell;
-}
-@media screen and (max-width: 580px) {
-  .cell {
-    padding: 2px 12px;
-    display: block;
-  }
-  @media screen and (max-width: 580px) {
-  .row {
-    padding: 8px 0;
-    display: block;
-  }
-}
-  
-@media screen and (max-width: 580px) {
-  .table {
-    display: block;
-  }
-}
-
-    </style>
-
 </body>
+
 </html>

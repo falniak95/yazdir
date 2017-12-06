@@ -251,6 +251,7 @@
     <Content Include="webSitesi\test\inBox.aspx" />
     <Content Include="webSitesi\test\inspectNews.aspx" />
     <Content Include="webSitesi\test\jobdetail.aspx" />
+    <Content Include="webSitesi\test\jobHistory.aspx" />
     <Content Include="webSitesi\test\main.aspx" />
     <Content Include="webSitesi\test\mainCom.aspx" />
     <Content Include="webSitesi\test\viewAd.aspx" />
@@ -312,6 +313,8 @@
     <Compile Include="commentsClass.cs" />
     <Compile Include="completedJobsClass.cs" />
     <Compile Include="haber.cs" />
+    <Compile Include="jobHistory.cs" />
+    <Compile Include="myMessages.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service.asmx.cs">
       <DependentUpon>Service.asmx</DependentUpon>
@@ -442,6 +445,13 @@
     </Compile>
     <Compile Include="webSitesi\test\jobdetail.aspx.designer.cs">
       <DependentUpon>jobdetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webSitesi\test\jobHistory.aspx.cs">
+      <DependentUpon>jobHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webSitesi\test\jobHistory.aspx.designer.cs">
+      <DependentUpon>jobHistory.aspx</DependentUpon>
     </Compile>
     <Compile Include="webSitesi\test\Libraries\databaseConnection.cs" />
     <Compile Include="webSitesi\test\main.aspx.cs">
