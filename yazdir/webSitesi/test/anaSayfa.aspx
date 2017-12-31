@@ -50,7 +50,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<link href="//fonts.googleapis.com/css?family=Raleway:100i,200,200i,300,400,500,500i,600,700,700i,800,800i" rel="stylesheet">
 
 
-    
+  
  
 
 
@@ -150,6 +150,10 @@ return (key == 8 || key == 13);
 </head>
 
 <body>
+    <script src="vendors/jquery-1.9.1.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="vendors/easypiechart/jquery.easy-pie-chart.js"></script>
+<script src="assets/scripts.js"></script>
    
     <div class="tamami" >
         
@@ -201,10 +205,11 @@ return (key == 8 || key == 13);
           		
 
 
-
+                            <asp:Button ID="kayitbtn" UseSubmitBehavior="false" runat="server" Text="Yeni Kayit" OnClick="kayit" />
 
 								<ul class="dropdown-menu agile_short_dropdown">
                                     <li><a class="active" id="registerButtonTab" runat="server" href="#" data-toggle="modal" data-target="#editorEkle3">bireysel</a> </li>
+                                    
                                    <li><a class="active" id="registerButtonTab2" runat="server" href="#" data-toggle="modal" data-target="#editorEkle4">kurumsal</a> </li>
 
 								</ul>
@@ -344,7 +349,7 @@ return (key == 8 || key == 13);
             <div class="modal fade" id="editorEkle4" tabindex="-1" role="dialog">
 
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    <!-- bireysel kayıt-->
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -365,6 +370,16 @@ return (key == 8 || key == 13);
                                      <input type="password" runat="server" name="password" id="password3" placeholder="Şifre" required="">
                                     <input type="password" runat="server" name="password" id="password4" placeholder="Şifre Tekrarı" required="">
                                
+                                     <div class="w3-panel w3-blue w3-round-xlarge">
+                                    <asp:Label ID="C1" runat="server" ></asp:Label>
+                                    <asp:Label ID="C2" runat="server" ></asp:Label>
+                                    <asp:Label ID="C3" runat="server" ></asp:Label>
+                                    <asp:Label ID="C4" runat="server" ></asp:Label>
+                                    <asp:Label ID="C5" runat="server" ></asp:Label>
+                                    <asp:Label ID="C6" runat="server" ></asp:Label>
+                                         </div>
+
+
                                      <div class="btnKayit" >
                                       <asp:Button ID="comRegisterPageButton" runat="server" UseSubmitBehavior="false" Text="Tamamla!" OnClick="registerNowKurumsal"  />
                                     </div>

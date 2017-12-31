@@ -90,9 +90,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       <div class="w3-panel w3-blue w3-round-xlarge">
                                  <asp:Label ID="ilan" runat="server" Text="İLANLAR">
                           </asp:Label>
-          <asp:TextBox ID="TextBox1" style="color:cornflowerblue" placeholder="ARA" runat="server" ></asp:TextBox>
-          <asp:Button class="w3-button w3-black" ID="deleteAd" ToolTip='<%# Eval("id") %>' runat="server" Text="ARA"  OnClick="ara"></asp:Button>  
-          <asp:Button class="w3-button w3-black" ID="Button1" ToolTip='<%# Eval("id") %>' runat="server" Text="Filtreyi Kaldır"  OnClick="ıptal"></asp:Button>
+          <asp:TextBox ID="TextBox1" style="color:cornflowerblue" placeholder="Fiyata Göre ARA" runat="server" ></asp:TextBox>
+          <asp:Button class="w3-button w3-black" ID="deleteAd" ToolTip='<%# Eval("id") %>' runat="server" Text="ARA"  OnClick="ara"></asp:Button>   
+         
+         
+           <asp:Button class="w3-button w3-black" ID="Button1" ToolTip='<%# Eval("id") %>' runat="server" Text="Filtreyi Kaldır"  OnClick="ıptal"></asp:Button>
+          <asp:Button class="w3-button w3-black" ID="Button2" ToolTip='<%# Eval("id") %>' runat="server" Text="Fiyata göre sırala" style="width:20%" OnClick="sırala"></asp:Button>
+          <asp:Button class="w3-button w3-black" ID="Button3" ToolTip='<%# Eval("id") %>' runat="server" Text="tarihe göre sırala"  OnClick="sıralatarih"></asp:Button>
                              </div>
                  <asp:Repeater ID="liste" runat="server" OnItemCommand="liste_ItemCommand" >
                       <ItemTemplate>
@@ -101,6 +105,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                              
                             <br />
                               
+                               <asp:LinkButton ID="tkp" CommandName="tkpet" ToolTip='<%# Eval("id") %>'  runat="server" Text="takipEt    "></asp:LinkButton>
                                  
                              <div class="w3-panel w3-red">
                                   <asp:Label ID="konu" runat="server"  Text="KONU:">
