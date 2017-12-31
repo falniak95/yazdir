@@ -407,6 +407,9 @@ return (key == 8 || key == 13);
                                     <input type="text" runat="server" id="surname" name="surname" placeholder="Soyisim" required="">
                                     <input type="password" runat="server" name="password" id="password1" placeholder="Şifre" required="">
                                     <input type="password" runat="server" name="password" id="password2" placeholder="Şifre Tekrarı" required="">
+                                     <input type="text" runat="server" name="gSoru" id="gSoru" placeholder="Gizli Soru Belirleyin" required="">
+                                    <input type="text" runat="server" name="gCevap" id="gCevap" placeholder="Gizli Cevap belirleyin" required="">
+                                       
                                        
                                     <div class="btnKayit">
                                       <asp:Button ID="registerPageButton" runat="server" UseSubmitBehavior="false" Text="Tamamla!" OnClick="registerNow"  />

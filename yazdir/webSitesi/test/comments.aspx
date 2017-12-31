@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="comments.aspx.cs" Inherits="yazdir.webSitesi.comments" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" EnableEventValidation="false" CodeBehind="comments.aspx.cs" Inherits="yazdir.webSitesi.comments" %>
 
 <!DOCTYPE html>
 
@@ -71,10 +71,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	   <!-- Buraya koyacaz -->
         <center>
               <asp:Label ID="yorumYok" Visible="false" runat="server" Text="Bu gönderiye Daha önce Hiç yorum yapılmamış.."></asp:Label><br /><br />
-                    <asp:Repeater ID="commentsRepeater" runat="server">
+                    <asp:Repeater ID="commentsRepeater" runat="server" OnItemCommand="commentsRepeater_ItemCommand" >
                         <ItemTemplate>
-                          
-                            <asp:Label ID="commentOwner" runat="server" Text='<%# Eval("yorumSahipIsim") %>'></asp:Label><br />
+                         
+                         
+                               <asp:CheckBox ID="CheckBox1" ToolTip='<%# Eval("yorumID") %>' CommandName="alintila" Text="Alinti yapp.."  runat="server"></asp:CheckBox>
+                          <asp:LinkButton ID="LinkButton1" CommandName="alinti"  runat="server">LinkButton</asp:LinkButton>
+                            <asp:Button ID="Button1" runat="server" ToolTip='<%# Eval("yorumSahipIsim") %>' CommandName="alinti" UseSubmitBehavior="false" Text="Bunu alıntı Yap!" ></asp:Button>
+                            <br /> <asp:Label ID="commentOwner" runat="server" Text='<%# Eval("yorumSahipIsim") %>'></asp:Label><br />
                             <asp:Label ID="commentContent" runat="server" Text='<%# Eval("yorumIcerik") %>'></asp:Label><br />
                         <p>    <asp:Label ID="labelEmpty" runat="server" Text="------------------------------"></asp:Label></p><br />
 
@@ -82,7 +86,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </ItemTemplate>
                     </asp:Repeater>
             <asp:Label ID="lbl1" runat="server" Text="Yorumunuz:"></asp:Label>
-            <asp:TextBox ID="yorumTxt" TextMode="MultiLine" runat="server"></asp:TextBox><br />
+            <asp:TextBox ID="yorumTxt" TextMode="MultiLine" MaxLength="255" runat="server"></asp:TextBox><br />
             <asp:Button ID="yorumGonder" runat="server" Text="Yorum Gönder" OnClick="yorumGonder_Click"></asp:Button>
   
         </center>

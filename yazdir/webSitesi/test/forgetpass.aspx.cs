@@ -66,7 +66,7 @@ namespace yazdir.webSitesi.test
             connection.Open();
             MySqlCommand command = new MySqlCommand();
             command.Connection = connection;
-            command.CommandText = "select * from uye_Bireysel where eMail='" + Session["on_eMail"].ToString() + "'";
+            command.CommandText = "select * from uye_Bireysel where eMail='" + eMail.Value+"'";
             MySqlDataReader dataReader = command.ExecuteReader();
             while (dataReader.Read())
             {
@@ -84,10 +84,24 @@ namespace yazdir.webSitesi.test
         //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
         //}
 
+        public string GenerateNewPassword(int size)
+        {
+            char[] cr = "0123456789abcdefghijklmnopqrstuvwxyz".ToCharArray();
+            string result = string.Empty;
+            Random r = new Random();
+            for (int i = 0; i < size; i++)
+            {
+                result += cr[r.Next(0, cr.Length - 1)].ToString();
+            }
+            return result;
+        }
+
+
 
         public void changepass(object sender , EventArgs e)
         {
-            
+
+            string newPass = string.Empty;
             connection = new MySqlConnection("Server=furkanalniak.com;Database=furkanal_yazdir;Uid=furkanal_admin;Pwd='fk2017';");
             connection.Open();
             MySqlCommand command = new MySqlCommand();
@@ -96,19 +110,30 @@ namespace yazdir.webSitesi.test
             MySqlDataReader dataReader = command.ExecuteReader();
             while (dataReader.Read())
             {
-                if (dataReader["mobileNo"].ToString() == tlf.Value && dataReader["tcKimlik"].ToString() == tc.Value && dataReader["gizliCevap"].ToString() == secretA.Value)
+                if (dataReader["gizliCevap"].ToString() == secretA.Value)
                 {
+                   newPass= GenerateNewPassword(5);
 
-                    ScriptManager.RegisterStartupScript(this, this.GetType(),"pop", "ac();", true);
+                  
 
                 }
                 else
                 {
-
+                    Response.Write("<script>alert('Gizli Soru Yanlış.')</script>");
                 }
 
             }
             connection.Close();
+            connection.Open();
+            MySqlCommand kmt = new MySqlCommand("update uye_Bireysel set password='" + newPass + "' where eMail='" + eMail.Value + "'", connection);
+
+          
+            kmt.ExecuteNonQuery();
+
+            connection.Close();
+
+            Response.Write("<script>alert('Yeni Şifre oluşturuldu. Şifreniz: " + newPass + ".')</script>");
+
         }
 
 

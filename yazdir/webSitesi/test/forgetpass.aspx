@@ -134,15 +134,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="col-sm-6">
       <h3>mail adresi</h3>
         <input type="email" id="eMail" class="form-control" runat="server" name="eMail" placeholder="" required="" disabled>
-        <h3>Telefon Numarası</h3>
-        <input type="text" id="tlf" class="form-control" runat="server" name="tlf" placeholder="" required="" >
-        <h3>TC Kimlik</h3>
-        <input type="text" id="tc" class="form-control" runat="server" name="tc" placeholder="" required="" >
-        <h3>Hatırladığınız son şifreniz</h3>
-        <input type="password" id="lastpass" class="form-control" runat="server" name="lastpass" placeholder="" required="" >
-
+        
         <h3>Gizli Soru</h3>
-        <input type="text" id="secretQ" class="form-control" runat="server" name="secretQ" placeholder="" required="" disabled>
+        <input type="text" id="secretQ" class="form-control" runat="server" name="secretQ" placeholder="" required="" >
 
         <h3>Gizli Cevap</h3>
         <input type="password" id="secretA" class="form-control" runat="server" name="secretA" placeholder="" required="" >

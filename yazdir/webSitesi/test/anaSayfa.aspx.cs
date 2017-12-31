@@ -73,9 +73,9 @@ namespace yazdir.webSitesi.test
             }
         }
 
-    
-        //******************************************************************************
 
+        //******************************************************************************
+        string sUserName, sPassword;
         public void registerNow(object sender, EventArgs e)
         {
              connection = new MySqlConnection("Server=furkanalniak.com;Database=furkanal_yazdir;Uid=furkanal_admin;Pwd='fk2017';");
@@ -86,7 +86,16 @@ namespace yazdir.webSitesi.test
                     connection.Open();
                     MySqlCommand command = new MySqlCommand();
                     command.Connection = connection;
-                    command.CommandText = "insert into uye_Bireysel (userName,password,eMail,name,surname) values ('" + kAdi.Value + "','" + password1.Value + "','" + mail.Value + "','" + name.Value + "','" + surname.Value + "')";
+
+                  /*  foreach (char cryptoUsernameChar in kAdi.Value)
+                        sUserName += Convert.ToChar(cryptoUsernameChar + 7);*/
+                    foreach (char cryptoPasswordChar in password1.Value)
+                        sPassword += Convert.ToChar(cryptoPasswordChar + 14);
+                  
+
+
+
+                    command.CommandText = "insert into uye_Bireysel (userName,password,eMail,name,surname,gizliSoru,gizliCevap) values ('" + kAdi.Value + "','" + sPassword + "','" + mail.Value + "','" + name.Value + "','" + surname.Value + "','"+gSoru.Value+"','"+gCevap.Value+"')";
                     command.ExecuteNonQuery();
                     connection.Close();
                     Session["on_eMail"] = mail.Value;
@@ -195,13 +204,13 @@ namespace yazdir.webSitesi.test
 
             }
         }
-     
-        
-        
 
 
 
 
+
+
+        string _userName, _password;
         public void grsbutonBireysel(object sender, EventArgs e)
         {
 
@@ -210,7 +219,13 @@ namespace yazdir.webSitesi.test
             {
                 if (grsMail.Value != "" && grsPassword.Value != "")
                 {
-                    
+
+                  /*  foreach (char encryptUsernameChar in grsMail.Value)
+                        _userName += Convert.ToChar(encryptUsernameChar - 7);*/
+                    foreach (char encryptPasswordChar in grsPassword.Value)
+                            _password += Convert.ToChar(encryptPasswordChar + 14);
+
+
                     connection.Open();
                     MySqlCommand command = new MySqlCommand();
                     command.Connection = connection;
@@ -218,10 +233,10 @@ namespace yazdir.webSitesi.test
                     MySqlDataReader dataReader = command.ExecuteReader();
                     while (dataReader.Read())
                     {
-                        if (dataReader[5].ToString() == grsPassword.Value)
+                        if (dataReader[5].ToString() == _password)
                         {
                             Session["on_eMail"] = grsMail.Value;
-                            Session["on_password"] = grsPassword.Value;
+                            Session["on_password"] = _password;
                             Response.Redirect("/webSitesi/test/main.aspx");
                             
 

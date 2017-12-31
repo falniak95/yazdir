@@ -20,37 +20,47 @@ namespace yazdir.webSitesi
         #endregion
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.QueryString["id"] != null)
-                haberID = Request.QueryString["id"].ToString();
-            getComments();
+            if (!IsPostBack)
+            {
+                if (Request.QueryString["id"] != null)
+                    haberID = Request.QueryString["id"].ToString();
+
+                haberID = "1";
+                Session["on_eMail"] = "test@test";
+
+                getComments();
+            }
         }
         public commentsClass _yorumlar = new commentsClass();
         private void getComments()
         {
-            if (connection.State == ConnectionState.Closed)
-                connection.Open();
-            MySqlCommand command = new MySqlCommand("select * from comments where commentedNewId="+haberID, connection);
-            MySqlDataReader reader = command.ExecuteReader();
-            List<commentsClass> newList = new List<commentsClass>();
-            while (reader.Read())
-            {
-                _yorumlar = new commentsClass();
-                _yorumlar.yorumSahipID = reader["ownerID"].ToString();
-                _yorumlar.yorumIcerik=reader["commentContent"].ToString();
-                newList.Add(_yorumlar);
-            }
-            reader.Close();
-            connection.Close();
-            if (newList.Count > 0)
-            {
-                newList = changeWithUserName(newList);
-                commentsRepeater.DataSource = newList;
-                commentsRepeater.DataBind();
-            }
-            else
-            {
-                yorumYok.Visible = true;
-            }
+           
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
+                MySqlCommand command = new MySqlCommand("select * from comments where commentedNewId=" + haberID, connection);
+                MySqlDataReader reader = command.ExecuteReader();
+                List<commentsClass> newList = new List<commentsClass>();
+                while (reader.Read())
+                {
+                    _yorumlar = new commentsClass();
+                    _yorumlar.yorumID = reader["id"].ToString();
+                    _yorumlar.yorumSahipID = reader["ownerID"].ToString();
+                    _yorumlar.yorumIcerik = reader["commentContent"].ToString();
+                    newList.Add(_yorumlar);
+                }
+                reader.Close();
+                connection.Close();
+                if (newList.Count > 0)
+                {
+                    newList = changeWithUserName(newList);
+                    commentsRepeater.DataSource = newList;
+                    commentsRepeater.DataBind();
+                }
+                else
+                {
+                    yorumYok.Visible = true;
+                }
+            
         }
         private List<commentsClass> changeWithUserName(List<commentsClass> yorumListesi)
         {
@@ -71,15 +81,84 @@ namespace yazdir.webSitesi
             return yorumListesi;
         }
         databaseConnection dC = new databaseConnection();
+        bool aynisiVarMi = false,alintiYapildiMi=false;
         protected void yorumGonder_Click(object sender, EventArgs e)
         {
-            string userID = dC.findUserId(Session["on_eMail"].ToString());
-            MySqlCommand command = new MySqlCommand("insert into comments (commentContent,ownerID,commentedNewId) values ('"+yorumTxt.Text+"',"+userID+","+haberID+")", connection);
+            
+                string userID = dC.findUserId(Session["on_eMail"].ToString());
+
+            if (Request.QueryString["id"] != null)
+                haberID = Request.QueryString["id"].ToString();
+
             if (connection.State == ConnectionState.Closed)
-                connection.Open();
-            command.ExecuteNonQuery();
-            connection.Close();
-            Response.Redirect("/webSitesi/test/comments.aspx?id=" + haberID);
+                    connection.Open();
+                MySqlCommand command = new MySqlCommand("select * from comments where commentedNewId=" + haberID, connection);
+                MySqlDataReader reader = command.ExecuteReader();
+                List<commentsClass> yorumList = new List<commentsClass>();
+                while (reader.Read())
+                {
+                    _yorumlar = new commentsClass();
+                    _yorumlar.yorumSahipID = reader["ownerID"].ToString();
+                    _yorumlar.yorumIcerik = reader["commentContent"].ToString();
+                    yorumList.Add(_yorumlar);
+                }
+                reader.Close();
+                connection.Close();
+
+
+                foreach (commentsClass yorumlar in yorumList)
+                {
+                    if (yorumlar.yorumIcerik.ToUpper() == yorumTxt.Text.ToUpper())
+                        aynisiVarMi = true;
+
+                }
+                if (!aynisiVarMi && !alintiYapildiMi)
+                {
+                    MySqlCommand _command = new MySqlCommand("insert into comments (commentContent,ownerID,commentedNewId) values ('" + yorumTxt.Text + "'," + userID + "," + haberID + ")", connection);
+                    if (connection.State == ConnectionState.Closed)
+                        connection.Open();
+                    _command.ExecuteNonQuery();
+                    connection.Close();
+                    Response.Redirect("/webSitesi/test/comments.aspx?id=" + haberID);
+                }
+                else if(alintiYapildiMi)
+               {
+                string alintiIcerik = Session["alinti"].ToString();
+                MySqlCommand _command = new MySqlCommand("insert into comments (commentContent,ownerID,commentedNewId) values ('" +"Alinti Sahib:"+alintiIcerik+" " + yorumTxt.Text + "'," + userID + "," + haberID + ")", connection);
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
+                _command.ExecuteNonQuery();
+                connection.Close();
+                Response.Redirect("/webSitesi/test/comments.aspx?id=" + haberID);
+            }
+                else
+                {
+                    Response.Write("<script>alert('Aynı yorumdan mevcut.')</script>");
+                }
+
+            
+        }
+
+        protected void commentsRepeater_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+           
+                System.Diagnostics.Debug.WriteLine("Alinti ya tıklandı...");
+                System.Diagnostics.Debug.WriteLine(e.CommandName);
+                if (e.CommandName == "alinti")
+                {
+
+                //Label sahip = ((Label)e.Item.FindControl("commentOwner"));
+                string commentOwner = ((Button)e.Item.FindControl("Button1")).ToolTip; //sahip.Text;
+
+
+                    Session["alinti"] = commentOwner;
+                    alintiYapildiMi = true;
+                    System.Diagnostics.Debug.WriteLine("Butona tıklandı Alıntı yapılan kişi:"+Session["alinti"].ToString());
+                  //  sahip.Text = "alintilandi....";
+                }
+            
+
+        }
+
         }
     }
-}

@@ -265,6 +265,24 @@ namespace yazdir.webSitesi.test {
         protected global::System.Web.UI.HtmlControls.HtmlInputPassword password2;
         
         /// <summary>
+        /// gSoru control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText gSoru;
+        
+        /// <summary>
+        /// gCevap control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText gCevap;
+        
+        /// <summary>
         /// registerPageButton control.
         /// </summary>
         /// <remarks>

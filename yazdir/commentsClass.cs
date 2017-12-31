@@ -11,6 +11,7 @@ namespace yazdir
         {
 
         }
+        public string yorumID { get; set; }
         public string yorumSahipID { get; set; }
 
         public string yorumSahipIsim { get; set; }

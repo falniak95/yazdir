@@ -58,33 +58,6 @@ namespace yazdir.webSitesi.test {
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl eMail;
         
         /// <summary>
-        /// tlf control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText tlf;
-        
-        /// <summary>
-        /// tc control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText tc;
-        
-        /// <summary>
-        /// lastpass control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword lastpass;
-        
-        /// <summary>
         /// secretQ control.
         /// </summary>
         /// <remarks>
