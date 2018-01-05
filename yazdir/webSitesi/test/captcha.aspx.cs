@@ -90,15 +90,17 @@ namespace yazdir.webSitesi.test
             }
             return res.ToString();
         }
+
         string createdCapcha;
+
+
+
         public void Guvenlik(int H, int W, string fonts, int Punto, int X, int Y, string arkaplanResmi)
         {
             createdCapcha = generateCaptcha(6); ;
             Bitmap bmp = new Bitmap(H, W);
             Graphics g = Graphics.FromImage(bmp);
             Font font = new Font(fonts, Punto);
-            Random r = new Random();
-            int sayi = r.Next(100000, 9999999);
             ViewState["captcha"] = createdCapcha;
             System.Drawing.Image img = System.Drawing.Image.FromFile(arkaplanResmi);
             g.DrawImage(img, 1, 1);
