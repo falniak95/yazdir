@@ -160,6 +160,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Service.asmx" />
     <Content Include="webSitesi\test\adminPanel\confirmNews.aspx" />
+    <Content Include="webSitesi\test\captcha.aspx" />
     <Content Include="webSitesi\test\comments.aspx" />
     <Content Include="webSitesi\test\404.html" />
     <Content Include="webSitesi\test\adminPanel\404.html" />
@@ -248,6 +249,7 @@
     <Content Include="webSitesi\test\filtreleme.aspx" />
     <Content Include="webSitesi\test\forgetpass.aspx" />
     <Content Include="webSitesi\test\images\404.png" />
+    <Content Include="webSitesi\test\images\arkaplan.png" />
     <Content Include="webSitesi\test\inBox.aspx" />
     <Content Include="webSitesi\test\inspectNews.aspx" />
     <Content Include="webSitesi\test\jobdetail.aspx" />
@@ -326,6 +328,13 @@
     </Compile>
     <Compile Include="webSitesi\test\adminPanel\confirmNews.aspx.designer.cs">
       <DependentUpon>confirmNews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webSitesi\test\captcha.aspx.cs">
+      <DependentUpon>captcha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webSitesi\test\captcha.aspx.designer.cs">
+      <DependentUpon>captcha.aspx</DependentUpon>
     </Compile>
     <Compile Include="webSitesi\test\comments.aspx.cs">
       <DependentUpon>comments.aspx</DependentUpon>

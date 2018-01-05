@@ -26,6 +26,16 @@ namespace yazdir.webSitesi.test
         //}
 
         public MySqlConnection connection;
+        //***********************************************************************************
+       public void kayit(object sender,EventArgs e)
+        {
+            Response.Redirect("/webSitesi/test/captcha.aspx");
+            //C1.Text = "A";
+            //C2.Text = "s";
+            //C3.Text = "d";
+        }
+
+        //***********************************************************************************
 
         public void forget (object sender,EventArgs e)
         {

@@ -125,7 +125,7 @@ namespace yazdir.webSitesi.test
             //
             lType = findMyType();
 
-          //  string myID = dC.findUserId(Session["on_eMail"].ToString());
+         //   string myID = dC.findUserId(Session["on_eMail"].ToString());
             MySqlCommand command = new MySqlCommand("select * from messages where receiverID=" + _owner + " and receiverColumn=" + lType, connection);
             MySqlDataReader reader = command.ExecuteReader();
             List<myMessages> newsList = new List<myMessages>();

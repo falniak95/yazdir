@@ -20,13 +20,32 @@ namespace yazdir.webSitesi.test
         {
             if (!IsPostBack)
             {
-                getir();
+               
+              getir();
+               
             }
 
         }
+        //public void getirFav()
+        //{
+           
+            
+
+        //    MySqlCommand command = new MySqlCommand("select id,ad_header,ad_content,ad_price,ad_jobType,ad_date from isler where fav=1 and confirm=1", connection);
+        //    connection.Open();
+        //    MySqlDataReader dataRead = command.ExecuteReader();
+
+
+        //    liste.DataSource = dataRead;
+        //    liste.DataBind();
+        //    connection.Close();
+        //    dataRead.Close();
+        //}
         public void getir()
         {
-            MySqlCommand command = new MySqlCommand("select id,ad_header,ad_content,ad_price,ad_jobType,ad_date from isler where confirm=1", connection);
+
+
+            MySqlCommand command = new MySqlCommand("select id,ad_header,ad_content,ad_price,ad_jobType,ad_date,fav from isler where confirm=1 order by fav desc", connection);
             connection.Open();
             MySqlDataReader dataRead = command.ExecuteReader();
 
@@ -38,8 +57,34 @@ namespace yazdir.webSitesi.test
         }
         public void ıptal(object sender, EventArgs e)
         {
-            getir();
+            
+           getir();
             TextBox1.Text = "";
+        }
+        public void sırala(object sender, EventArgs e)
+        {
+            MySqlCommand command = new MySqlCommand("select id,ad_header,ad_content,ad_price,ad_jobType,ad_date from isler where confirm=1 order by ad_price desc ", connection);
+            connection.Open();
+            MySqlDataReader dataRead = command.ExecuteReader();
+
+
+            liste.DataSource = dataRead;
+            liste.DataBind();
+            connection.Close();
+            dataRead.Close();
+
+        }
+        public void sıralatarih (object sender,EventArgs e)
+        {
+            MySqlCommand command = new MySqlCommand("select id,ad_header,ad_content,ad_price,ad_jobType,ad_date from isler where confirm=1 order by ad_date desc ", connection);
+            connection.Open();
+            MySqlDataReader dataRead = command.ExecuteReader();
+
+
+            liste.DataSource = dataRead;
+            liste.DataBind();
+            connection.Close();
+            dataRead.Close();
         }
         public void ara(object sender, EventArgs e)
         {
@@ -53,23 +98,21 @@ namespace yazdir.webSitesi.test
             connection.Close();
             dataRead.Close();
         }
+       
         public void liste_ItemCommand(object sender, RepeaterCommandEventArgs e)
         {
-            if (e.CommandName == "duzenle")
+            if (e.CommandName == "tkpet")
             {
-
+                LinkButton tik =(LinkButton) e.Item.FindControl("tkp");
                 if (connection.State == ConnectionState.Closed)
                     connection.Open();
-                string baslikTxt = ((TextBox)e.Item.FindControl("konuT")).Text;
-                string icerikTxt = ((TextBox)e.Item.FindControl("acıklamaT")).Text;
-                string fiyatTxt = ((TextBox)e.Item.FindControl("fiyatT")).Text;
-                string isTürüTxt = ((TextBox)e.Item.FindControl("isTürüT")).Text;
-                string UpdateBtn = ((LinkButton)e.Item.FindControl("Duzenle")).ToolTip;
-                string gidecekID = UpdateBtn;
-                MySqlCommand command = new MySqlCommand("update isler set  ad_header='" + baslikTxt + "', ad_content='" + icerikTxt + "',ad_price='" + fiyatTxt + "',ad_jobType='" + fiyatTxt + "',ad_date=CURRENT_TIMESTAMP,confirm=0  where id=" + gidecekID, connection);
+                string myId = tik.ToolTip;
+                MySqlCommand command = new MySqlCommand("update isler set  fav=1 where id='"+myId+"' ", connection);
+
                 command.ExecuteNonQuery();
                 connection.Close();
             }
+
         }
     }
 }
