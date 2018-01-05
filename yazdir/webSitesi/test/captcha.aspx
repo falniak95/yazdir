@@ -67,15 +67,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                      <h3 class="agileinfo_sign">Üye OL</h3>
 
                      
-                                    <input type="text" runat="server" id="kAdi" name="userName" placeholder="Kullanıcı Adı" class="form-control" required=""><br />
-                                    <input type="email" runat="server" id="mail" name="email" placeholder="E-mail" class="form-control" required=""><br />
-                                    <input type="text" class="form-control" runat="server" id="name" name="name" placeholder="İsim" required=""><br />
-                                    <input type="text" class="form-control" runat="server" id="surname" name="surname" placeholder="Soyisim" required=""><br />
-                                    <input type="password" class="form-control" runat="server" name="password" id="password1" placeholder="Şifre" required=""><br />
-                                    <input type="password" class="form-control" runat="server" name="password" id="password2" placeholder="Şifre Tekrarı" required=""><br />
+                                    <input type="text" runat="server" id="kAdi" name="userName" placeholder="Kullanıcı Adı" class="form-control" required=""/><br />
+                                    <input type="email" runat="server" id="mail" name="email" placeholder="E-mail" class="form-control" required=""/><br />
+                                    <input type="text" class="form-control" runat="server" id="name" name="name" placeholder="İsim" required="" /><br />
+                                    <input type="text" class="form-control" runat="server" id="surname" name="surname" placeholder="Soyisim" required="" /><br />
+                                    <input type="password" class="form-control" runat="server" name="password" id="password1" placeholder="Şifre" required="" /><br />
+                                    <input type="password" class="form-control" runat="server" name="password" id="password2" placeholder="Şifre Tekrarı" required="" /><br />
                                     
                                     
-                     <img src="images/captcha.png" alt="sayi" title="sayi" />
+                     <img src="images/captcha.png" alt="sayi"  title="sayi" />
                      <br />
                      <br />
                      
